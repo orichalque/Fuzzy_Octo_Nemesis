@@ -1,5 +1,5 @@
 /*
-* Character Class Definition for FuzzyOctoNemesis 
+* Character abstract Class Definition for FuzzyOctoNemesis 
 *
 * C++ 11
 *
@@ -29,7 +29,7 @@ class Character{ //Abstract Class
 		std::string desc_; //Short description of the character
 	
 	public:
-		virtual	Character(std::string _name, std::string _desc); //Virtual pure
+		Character(std::string _name, std::string _desc); //Virtual pure
 		~Chararacter();
 		
 		//Getters
@@ -43,7 +43,7 @@ class Character{ //Abstract Class
 		std::string desc();
 		
 		//Setters		
-		void setLife(int _life) = 0; //Virtual pure
+		virtual void setLife(int _life) = 0; //Virtual pure
 		void setAttack(int _attack);
 		void setDef(int _def);
 		void setDext(int _dext);

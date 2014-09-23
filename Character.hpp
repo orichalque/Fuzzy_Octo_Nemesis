@@ -29,7 +29,7 @@ class Character{ //Abstract Class
 		std::string desc_; //Short description of the character
 	
 	public:
-		virtual	Character(std::string _name, std::string _desc) = 0; //Virtual pure
+		virtual	Character(std::string _name, std::string _desc); //Virtual pure
 		~Chararacter();
 		
 		//Getters
@@ -43,7 +43,7 @@ class Character{ //Abstract Class
 		std::string desc();
 		
 		//Setters		
-		void setLife(int _life);
+		void setLife(int _life) = 0; //Virtual pure
 		void setAttack(int _attack);
 		void setDef(int _def);
 		void setDext(int _dext);
@@ -54,6 +54,13 @@ class Character{ //Abstract Class
 		
 		//Other Methods
 		void substractLife(int damages);
+		void addLife(int heal);
+		
+		//Deplacement methods
+		void moveRight();
+		void moveLeft();
+		void moveUp();
+		void moveDown();
 }
 
 #include "Character.cpp"

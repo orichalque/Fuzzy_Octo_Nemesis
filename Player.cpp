@@ -47,6 +47,12 @@ void Player::equipItem(Item item) {
 	}
 }
 
+//Remove an equiped armor or weapon
+void Player::unEquipItem(int i) {
+	assert(i>= 0 && i < 5);
+	equipement[i] = NULL;
+}
+
 //return player's attack plus weapon's att
 int Player::attacking() {
 	int i = 0;

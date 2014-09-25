@@ -1,6 +1,6 @@
 /*
-* Inventory Concrete class
-*
+* Inventory Concrete class. Each item have an Id that corresponds to his 
+* position in the item pointer array
 * C++ 11
 *
 * OPEN SOURCE @ https://github.com/orichalque/Fuzzy_Octo_Nemesis
@@ -14,17 +14,20 @@
 #define NMAX 50
 class Inventory {
 	protected:
-		int itemNb;
-		Item *items[NMAX];
-		int amount;
+		int itemNb; //Number of item in the bag
+		Item *items[NMAX]; //Array of 50 ptrs, for 50 differents items
+		int amount[NMAX]; //Number of item of 1 kind
 	
 	public: 
 		Inventory():
 		~Inventory();
-		void addItem(Item *item);	
+		Item* getItem(int id);
+		int getitemAmount(int id);
+		void addItem(Item *_item);	
 		void dropItem(Item *item);
 		Item* useItem(Item *item);
 		
 }
 
+#endif
 

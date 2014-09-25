@@ -20,20 +20,26 @@
 
 class Player : public Character {
 	protected:
-		
-		
+		Inventory inventory;
+		Item equipement;
 	public:
 		//constructor
 		Player();
 		~Player();
 		
 		//getter
-		item lootList();
-		int nbLoot();
-		virtual int lootPb() = 0;		
+		Inventory inventory();
 		
 		//methods
-		Item loot(void); //Return an item from the dropList
+		//Item methods
+		void addItem(Item item);
+		void useItem(Item item);
+		void dropItem(Item item);
+		void equipItem(Item item);
+		
+		//Fighting methods
+		int attacking(); //return attack + att weapon stat
+		int defending(); //return defense + def armor stat
 	
 }
 

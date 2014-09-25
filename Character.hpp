@@ -29,7 +29,7 @@ class Character{ //Abstract Class
 		std::string desc_; //Short description of the character
 	
 	public:
-		Character(std::string _name, std::string _desc); //Virtual pure
+		Character(std::string _name, std::string _desc);
 		~Chararacter();
 		
 		//Getters

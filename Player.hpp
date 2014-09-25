@@ -1,6 +1,6 @@
 /*
-* Monster abstract Class Definition for FuzzyOctoNemesis
-* Will be able to drop item with a certain probability 
+* Player abstract Class Definition for FuzzyOctoNemesis
+* Implements principal player methods
 *
 * C++ 11
 *
@@ -10,24 +10,22 @@
 * @version 1.0.0a
 */
 
-#ifndef MONSTER.HPP
-#define MONSTER.HPP
+#ifndef Player.HPP
+#define Player.HPP
 
 #include <iostream>
 #include <stdlib.h> 
 #include "Character.hpp"
 
 
-class Monster : public Character {
+class Player : public Character {
 	protected:
-		Item lootList; //array of item
-		int nbLoot; //number of item the monster will have
-		int lootPb; //loot probability of an item.
+		
 		
 	public:
 		//constructor
-		Monster();
-		~Monster();
+		Player();
+		~Player();
 		
 		//getter
 		item lootList();
@@ -39,5 +37,5 @@ class Monster : public Character {
 	
 }
 
-#include "Monster.cpp"
+#include "Player.cpp"
 #endif 

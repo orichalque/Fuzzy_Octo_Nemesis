@@ -1,5 +1,5 @@
 /*
-* Misc Class Definition for FuzzyOctoNemesis 
+* Consumable Class Definition for FuzzyOctoNemesis 
 *
 * C++ 11
 *
@@ -9,14 +9,16 @@
 * @version 1.0.0a
 */
 
-#ifndef __MISC_HPP__
-#define __MISC_HPP__
+#ifndef __CONSUMABLE_HPP__
+#define __CONSUMABLE_HPP__
 
 #include <cassert>
 #include <string>
 
-class Misc : public Item /* Abstract class */
+class Consumable : public Item
 {
+	public:
+		bool isConsumable() const = 0;
 };
 
 #endif

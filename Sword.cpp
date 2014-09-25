@@ -15,8 +15,8 @@ Sword::~Sword()
 {
 }
 
-int Sword::attack() const
+bool Sword::isSword() const
 {
-	return value_;
+	return true;
 }
 

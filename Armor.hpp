@@ -15,8 +15,10 @@
 #include <cassert>
 #include <string>
 
-class Armor : public Item /* Abstract class */
+class Armor : public Item
 {
+	public:
+		bool isArmor() const;
 };
 
 #endif

@@ -20,7 +20,7 @@ class Sword : public Weapon
 	public:
 		Sword();
 		~Sword();
-		virtual int attack() const;
+		bool isSword() const;
 };
 
 #endif

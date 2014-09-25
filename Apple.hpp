@@ -1,5 +1,5 @@
 /*
-* Weapon Class Definition for FuzzyOctoNemesis 
+* Apple Class Definition for FuzzyOctoNemesis 
 *
 * C++ 11
 *
@@ -15,13 +15,11 @@
 #include <cassert>
 #include <string>
 
-class Apple : public Misc
+class Apple : public Consumable
 {
 	public:
 		Apple();
 		~Apple();
-
-		int use() const;
 };
 
 #endif

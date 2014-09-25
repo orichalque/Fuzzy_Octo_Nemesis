@@ -18,7 +18,7 @@
 class Weapon : public Item /* Abstract class */
 {
 	public:
-		virtual int attack() = 0;
+		bool isWeapon() const = 0;
 };
 
 #endif

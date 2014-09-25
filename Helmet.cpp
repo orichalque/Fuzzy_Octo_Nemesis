@@ -15,3 +15,8 @@ Helmet::~Helmet()
 {
 }
 
+bool Helmet::isHelmet() const
+{
+	return true;
+}
+

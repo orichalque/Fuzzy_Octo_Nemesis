@@ -15,8 +15,3 @@ Apple::~Apple()
 {
 }
 
-int Apple::use() const
-{
-	return value_;
-}
-

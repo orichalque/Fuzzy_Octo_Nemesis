@@ -20,6 +20,8 @@ class Helmet : public Armor
 	public:
 		Helmet();
 		~Helmet();
+
+		bool isHelmet() const;
 };
 
 #endif

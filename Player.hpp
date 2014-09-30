@@ -14,7 +14,7 @@
 #define Player.HPP
 
 #include <iostream>
-#include <stdlib.h> 
+#include <cstdlib> 
 #include "Character.hpp"
 
 
@@ -36,6 +36,7 @@ class Player : public Character {
 		void useItem(Item item);
 		void dropItem(Item item);
 		void equipItem(Item item);
+		void unequipItem(int i);
 		
 		//Fighting methods
 		int attacking(); //return attack + att weapon stat
@@ -43,5 +44,4 @@ class Player : public Character {
 	
 }
 
-#include "Player.cpp"
 #endif 

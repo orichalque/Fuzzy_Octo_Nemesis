@@ -14,7 +14,7 @@
 #define MONSTER.HPP
 
 #include <iostream>
-#include <stdlib.h> 
+#include <cstdlib> 
 #include "Character.hpp"
 
 
@@ -30,7 +30,7 @@ class Monster : public Character {
 		~Monster();
 		
 		//getter
-		item lootList();
+		Item lootList();
 		int nbLoot();
 		virtual int lootPb() = 0;		
 		
@@ -39,5 +39,4 @@ class Monster : public Character {
 	
 }
 
-#include "Monster.cpp"
 #endif 

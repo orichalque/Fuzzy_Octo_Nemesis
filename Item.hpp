@@ -18,10 +18,10 @@
 class Item /* Abstract class */
 {
 	public:
-		Item() = 0;
+		Item();
 		std::string name() const;
 		std::string description() const;
-		int value() const;
+		virtual int value() const = 0;
 		bool consumable() const;
 		bool settable() const;
 

@@ -21,14 +21,16 @@ class Item /* Abstract class */
 		Item();
 		std::string name() const;
 		std::string description() const;
-		virtual int value() const = 0;
+		int value() const;
 		bool consumable() const;
 		bool settable() const;
+		int id() const;
 
 	protected:
 		std::string name_;
 		std::string desc_;
 		int value_;
+		int id_;
 		bool consumable_;
 		bool settable_;
 };

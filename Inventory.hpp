@@ -12,8 +12,9 @@
 #ifndef INVENTORY_HPP
 #define INVENTORY_HPP
 
+#include<cstddef>
+#include<iostream>
 #include"Item.hpp"
-
 class Inventory {
 	private:
 		static const int NMAX = 50;
@@ -25,13 +26,12 @@ class Inventory {
 		Inventory();
 		~Inventory();
 		Item* getItem(int id);
-		int getitemAmount(int id);
+		int getItemAmount(int id);
 		void addItem(Item *_item);	
 		void dropItem(Item *item);
-		Item* useItem(Item *item);
+		bool useItem(Item *item);
 		
 };
-
 
 #endif
 

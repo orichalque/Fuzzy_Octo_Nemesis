@@ -1,3 +1,5 @@
+#include "Inventory.hpp"
+
 Inventory::Inventory() {
 	int itemNb = 0;
 	for (int i = 0; i < NMAX; i ++ ) {

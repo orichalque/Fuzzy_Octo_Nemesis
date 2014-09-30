@@ -63,7 +63,4 @@ class Character{ //Abstract Class
 		void moveDown();
 }
 
-#include "Character.cpp"
 #endif
-		
-			

@@ -1,3 +1,5 @@
+#include "Player.hpp"
+
 Player::Player() {
 	inventory = new Inventory();
 	equipement = Item[4];
@@ -7,7 +9,7 @@ Player::Player() {
 }
 
 /* Equipement table : What do u think modafakin Corentin ? */
-/* pointer table ofc
+/* pointer table ofc */
 /*   [0]     [1]      [2]      [3] */
 /* Weapon - Shield - Helmet - Armor */
 
@@ -48,7 +50,7 @@ void Player::equipItem(Item item) {
 }
 
 //Remove an equiped armor or weapon
-void Player::unEquipItem(int i) {
+void Player::unequipItem(int i) {
 	assert(i>= 0 && i < 5);
 	equipement[i] = NULL;
 }
@@ -59,7 +61,7 @@ int Player::attacking() {
 	if (equipement[0] != NULL) { //testing if sword equiped
 		i = equipement[0] -> attacking(); //Return weapon's attack.
 	}
-	return (this->attack() + i); 
+	return (this->attacking() + i); 
 }
 
 //return player's def plus armor bonuses
@@ -76,5 +78,4 @@ int Player::defending() {
 	}
 	return (this -> defend() +i);
 }
-
 

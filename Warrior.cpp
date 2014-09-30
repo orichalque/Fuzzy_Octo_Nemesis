@@ -1,0 +1,3 @@
+Warrior::Warrior() {
+	Character(
+}

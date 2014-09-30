@@ -9,8 +9,8 @@
 * @version 1.0.0a
 */
 
-#ifndef CHARACTER.HPP
-#define CHARACTER.HPP
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
 
 #include<iostream>
 #include<cassert>
@@ -30,7 +30,7 @@ class Character{ //Abstract Class
 	
 	public:
 		Character(std::string _name, std::string _desc);
-		~Chararacter();
+		~Character();
 		
 		//Getters
 		int life();
@@ -61,6 +61,6 @@ class Character{ //Abstract Class
 		void moveLeft();
 		void moveUp();
 		void moveDown();
-}
+};
 
 #endif

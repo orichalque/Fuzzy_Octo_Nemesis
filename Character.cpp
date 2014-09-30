@@ -6,76 +6,76 @@ using namespace std;
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~Constructor~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 Character::Character(string _name, string _desc) {
-	name = _name;
-	desc = _desc;
+	name_ = _name;
+	desc_ = _desc;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Getters~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 int Character::life(void) {
-	return life;
+	return life_;
 }
 
 int Character::attack(void) {
-	return attack;
+	return attack_;
 }
 
 int Character::def(void) {
-	return def;
+	return def_;
 }
 
 int Character::dext(void) {
-	return dext;
+	return dext_;
 }
 
 int Character::x(void) {
-	return x;
+	return x_;
 }
 
 int Character::y(void) {
-	return y;
+	return y_;
 }
 
 string Character::name(void) {
-	return name;
+	return name_;
 }
 
 string Character::desc(void) {
-	return desc;
+	return desc_;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Setters~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 void Character::setLife(int _life) {
-	life = _life;
+	life_ = _life;
 }
 
 void Character::setAttack(int _attack) {
-	attack = _attack;
+	attack_ = _attack;
 }
 
 void Character::setDef(int _def) {
-	def = _def;
+	def_ = _def;
 }
 
 void Character::setDext(int _dext) {
-	dext = _dext;
+	dext_ = _dext;
 }
 
 void Character::setX(int _x) {
-	x = _x;
+	x_ = _x;
 }
 
 void Character::setY(int _y) {
-	y = _y;
+	y_ = _y;
 }
 
 void Character::setName(string _name) {
-	name = _name;
+	name_ = _name;
 }
 
 void Character::setDesc(string _desc) {
-	desc = _desc;
+	desc_ = _desc;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~OthersMethods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -85,7 +85,7 @@ void Character::setDesc(string _desc) {
 */
 void Character::substractLife(int damages) {
 	assert(damages >= 0);
-	life = life - damages;
+	life_ = life_ - damages;
 }
 
 /*
@@ -93,7 +93,7 @@ void Character::substractLife(int damages) {
 */
 void Character::addLife(int heal) {
 	assert(heal >= 0);
-	life = life + heal;
+	life_ = life_ + heal;
 }
 
 
@@ -102,26 +102,26 @@ void Character::moveRight(void) {
 	/*
 	* add map size assertion 
 	*/
-	x = x + 1;
+	x_ = x_ + 1;
 }
 
 void Character::moveLeft(void) {
 	/*
 	* add map size assertion 
 	*/
-	x = x - 1;
+	x_ = x_ - 1;
 }
 
 void Character::moveUp(void) {
 	/*
 	* add map size assertion 
 	*/
-	y = y - 1;
+	y_ = y_ - 1;
 }
 
 void Character::moveDown(void) {
 	/*
 	* add map size assertion 
 	*/
-	y = y + 1;
+	y_ = y_ + 1;
 }

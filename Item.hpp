@@ -18,17 +18,19 @@
 class Item /* Abstract class */
 {
 	public:
-		Item() = 0;
+		Item();
 		std::string name() const;
 		std::string description() const;
 		int value() const;
 		bool consumable() const;
 		bool settable() const;
+		int id() const;
 
 	protected:
 		std::string name_;
 		std::string desc_;
 		int value_;
+		int id_;
 		bool consumable_;
 		bool settable_;
 };

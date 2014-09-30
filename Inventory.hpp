@@ -9,25 +9,29 @@
 * @version 1.0.0a
 */
 
-#ifndef INVENTORY.HPP
-#define INVENTORY.HPP
-#define NMAX 50
+#ifndef INVENTORY_HPP
+#define INVENTORY_HPP
+
+#include<cstddef>
+#include<iostream>
+#include"Item.hpp"
 class Inventory {
-	protected:
+	private:
+		static const int NMAX = 50;
 		int itemNb; //Number of item in the bag
 		Item *items[NMAX]; //Array of 50 ptrs, for 50 differents items
 		int amount[NMAX]; //Number of item of 1 kind
-	
+		
 	public: 
-		Inventory():
+		Inventory();
 		~Inventory();
 		Item* getItem(int id);
-		int getitemAmount(int id);
+		int getItemAmount(int id);
 		void addItem(Item *_item);	
 		void dropItem(Item *item);
-		Item* useItem(Item *item);
+		bool useItem(Item *item);
 		
-}
+};
 
 #endif
 

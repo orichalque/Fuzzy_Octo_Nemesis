@@ -27,3 +27,7 @@ bool Item::settable() const
 	return settable_;
 }
 
+int Item::id() const
+{
+	return id_;
+}

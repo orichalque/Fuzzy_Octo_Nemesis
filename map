@@ -1,0 +1,26 @@
+#######S########	# : mur
+#####      #####	P : Porte
+#   #      #   #	S : Sortie de la map
+#   #      P   #	@ : Personnage
+###P#      #####
+#              #
+S              S
+#      ####    #
+#      #  #    #
+#      #  #    #
+#      ##P#    #
+#              #
+#       @   ####
+#           #  #
+#           P  #
+#######S########
+
+/*
+MAP EXEMPLE:
+@ : perso
+Le joueur entre une direction.
+Ex : Haut
+Si cellule au dessus du joueur "#"
+Ne peux pas avancer
+
+*/

@@ -5,9 +5,8 @@
 
 class Generator {
     private:
-        static const uint32_t MAX_LEAF_SIZE = 20;
-        static const uint32_t w = 32;
-        static const uint32_t h = 32;
+        static const uint32_t w = 10;
+        static const uint32_t h = 10;
         
         
     public:
@@ -15,6 +14,7 @@ class Generator {
         Generator();
         void fetchNodes(Leaf f);
         void generate(void);
+        void draw(void);
         Leaf getRoot(void);
 };
 

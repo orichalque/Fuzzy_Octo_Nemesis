@@ -47,6 +47,14 @@ int Leaf::getWidth() {
     return width;
 }
 
+int Leaf::getX() {
+    return x;
+}
+
+int Leaf::getY() {
+    return y;
+}
+
 bool Leaf::split(vector<Leaf> &leafs) { //Divide the room in 2 distincts room    
     if (left != NULL || right != NULL || (getWidth() <= MIN_LEAF_SIZE  && getHeight() <= MIN_LEAF_SIZE)) {
         return false; //The room have already been splitted   
@@ -56,30 +64,30 @@ bool Leaf::split(vector<Leaf> &leafs) { //Divide the room in 2 distincts room
     leafs.push_back(*this);
     bool splitH;
     
-    if (width >= height) { /* [______] -> cut verticaly */
+    if (width > height) { /* [______] -> cut verticaly */
         splitH = false;    
     } else if (width < height) { /* [] -> cut horizontaly */
         splitH = true;
-    } 
+    } else {
+        splitH = rand()%10>4;
+    }
     
     int split = rand() %(MAX_LEAF_SIZE-MIN_LEAF_SIZE) + MIN_LEAF_SIZE; /* We define randomly the size of the cut*/
     
     if (splitH) {
         cout << "Split Horizontal à "<< split << " " << endl;
         right = new Leaf(x, y, this -> width, split);
-        left = new Leaf(x, y+split, this->width, this -> height-split);
-        
-        
-        
+        left = new Leaf(x, y+split, this->width, this -> height-split); 
     } else {
         cout << "Split Vertical à "<< split << " " << endl;
         right = new Leaf(x, y, split, height);
         left = new Leaf(x+split, y, width-split, height);
     }
-    if (right -> getWidth() > MIN_LEAF_SIZE || right -> getHeight() > MIN_LEAF_SIZE){
+    
+    if (right -> getWidth() > MAX_LEAF_SIZE || right -> getHeight() > MAX_LEAF_SIZE ){
          right -> split(leafs);
     }
-    if (left -> getWidth() > MIN_LEAF_SIZE || left -> getHeight() > MIN_LEAF_SIZE){
+    if (left -> getWidth() > MAX_LEAF_SIZE || left -> getHeight() > MAX_LEAF_SIZE){
          left -> split(leafs);  
     }
     return true;

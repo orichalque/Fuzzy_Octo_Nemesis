@@ -1,3 +1,4 @@
+#include"Rectangle.cpp"
 #include"Leaf.cpp"
 #include"Generator.hpp"
 #include<vector>
@@ -24,7 +25,7 @@ void Generator::draw(void) {
     int k(0);
     for (Leaf l : leafs) {
         if (l.getRight() == NULL && l.getLeft() == NULL) { //feuille de taille minimum
-            mat[l.getWidth()][l.getHeight()] = k;
+            mat[l.getX()][l.getY()] = k;
             ++k;
         }
     }

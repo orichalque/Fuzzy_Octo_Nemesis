@@ -4,10 +4,6 @@
 
 using namespace std;
 
-Rectangle::Rectangle() {
-    x = y = width = height = 0;
-}
-
 Rectangle::Rectangle(int x_, int y_, int width_, int height_) {
     x = x_;
     y = y_;

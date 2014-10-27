@@ -1,3 +1,5 @@
+#include"Rectangle.cpp"
+#include"Point.cpp"
 #include"Leaf.cpp"
 #include"Generator.hpp"
 #include<vector>

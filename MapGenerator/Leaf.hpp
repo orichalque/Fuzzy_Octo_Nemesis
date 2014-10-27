@@ -4,8 +4,6 @@
 #include<iostream>
 #include<stdint.h>
 #include<vector>
-//#include"Rectangle.hpp"
-
 
 class Leaf {
     private:
@@ -25,7 +23,7 @@ class Leaf {
         Leaf();
         Leaf(int x_, int y_, int width_, int height_);
         ~Leaf();
-        
+        void createRoom();
         void getStat();
         Leaf* getRight();
         Leaf* getLeft();

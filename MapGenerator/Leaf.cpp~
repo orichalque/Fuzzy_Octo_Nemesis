@@ -55,6 +55,24 @@ int Leaf::getY() {
     return y;
 }
 
+
+void Leaf::createRoom() {
+    if (left != NULL || right != NULL) {
+        if ( left != NULL ) {
+            left -> createRoom();
+        } 
+        if ( right != NULL ) {
+            right -> createRoom(); 
+        }
+    } else {
+        //Room creation inside the leaf
+        Point roomSize(rand()%(width-5)+3, rand()%(height-5)+3); //From 3*3 to Width-2*Height-2
+        //We put the room in the leaf
+        Point roomPos(rand()%(width-roomSize.getX()-2)+1, rand()%(height-roomSize.getY()-2)+1);
+        Rectangle room(x+roomPos.getX(), y+roomPos.getY(), roomSize.getX(), roomSize.getY());
+    }
+}
+
 bool Leaf::split(vector<Leaf> &leafs) { //Divide the room in 2 distincts room    
     if (left != NULL || right != NULL || (getWidth() <= MIN_LEAF_SIZE  && getHeight() <= MIN_LEAF_SIZE)) {
         return false; //The room have already been splitted   
@@ -64,11 +82,13 @@ bool Leaf::split(vector<Leaf> &leafs) { //Divide the room in 2 distincts room
     leafs.push_back(*this);
     bool splitH;
     
-    if (width >= height) { /* [______] -> cut verticaly */
+    if (width > height) { /* [______] -> cut verticaly */
         splitH = false;    
     } else if (width < height) { /* [] -> cut horizontaly */
         splitH = true;
-    } 
+    } else {
+        splitH = rand()%10>4;
+    }
     
     int split = rand() %(MAX_LEAF_SIZE-MIN_LEAF_SIZE) + MIN_LEAF_SIZE; /* We define randomly the size of the cut*/
     

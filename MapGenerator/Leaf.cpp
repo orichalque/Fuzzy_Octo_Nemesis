@@ -55,6 +55,27 @@ int Leaf::getY() {
     return y;
 }
 
+
+void Leaf::createRoom() {
+    if (left != NULL || right != NULL) {
+        if ( left != NULL ) {
+            left -> createRoom();
+        } 
+        if ( right != NULL ) {
+            right -> createRoom(); 
+        }
+    } else {
+        //Room creation inside the leaf
+        Point roomSize(rand()%(width-5)+3, rand()%(height-5)+3); //From 3*3 to Width-2*Height-2
+        //We put the room in the leaf
+        Point roomPos(rand()%(width-roomSize.getX()-2)+1, rand()%(height-roomSize.getY()-2)+1);
+        
+        //We create our room with the position and the size
+        Rectangle room(x+roomPos.getX(), y+roomPos.getY(), roomSize.getX(), roomSize.getY());
+    }
+}
+
+
 bool Leaf::split(vector<Leaf> &leafs) { //Divide the room in 2 distincts room    
     if (left != NULL || right != NULL || (getWidth() <= MIN_LEAF_SIZE  && getHeight() <= MIN_LEAF_SIZE)) {
         return false; //The room have already been splitted   

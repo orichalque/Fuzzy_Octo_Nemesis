@@ -4,8 +4,6 @@
 #include<iostream>
 #include<stdint.h>
 #include<vector>
-//#include"Rectangle.hpp"
-
 
 class Leaf {
     private:
@@ -17,7 +15,7 @@ class Leaf {
         int width;
         Leaf *right; // Sons of the node
         Leaf *left;
-        //Rectangle room; //The room, inside the leaf
+        Rectangle room; //The room, inside the leaf
         //std::vector<Rectangle> halls; //Halllway between rooms
 
     

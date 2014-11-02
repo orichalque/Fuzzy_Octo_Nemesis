@@ -13,6 +13,7 @@ Generator::Generator(void) {
 void Generator::generate(void) {
     Leaf root(0,0,w,h);
     root.split(leafs);
+    root.createRoom(halls);
 }
 
 void Generator::draw(void) {
@@ -43,10 +44,7 @@ void Generator::draw(void) {
 int main() {
     Generator g;
     g.generate();
-    for (Leaf l : g.leafs) {
-        //l.getStat();
-    }
-    
+
     g.draw();
     return 0;
 }

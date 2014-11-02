@@ -23,6 +23,15 @@ int Rectangle::getY() {
     return y;
 }
 
+int Rectangle::getX2() { //up left corner
+    return (x+width);
+}
+
+int Rectangle::getY2() { //bottom right corner
+    return (y+height);
+}
+
+
 int Rectangle::getWidth() {
     return width;
 }

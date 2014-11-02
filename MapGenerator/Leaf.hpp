@@ -7,7 +7,7 @@
 
 class Leaf {
     private:
-        int static const MIN_LEAF_SIZE = 4; //Min size of the leaf
+        int static const MIN_LEAF_SIZE = 5; //Min size of the leaf
         int static const MAX_LEAF_SIZE = 12;
         int x; // Room Position
         int y; 
@@ -15,15 +15,16 @@ class Leaf {
         int width;
         Leaf *right; // Sons of the node
         Leaf *left;
-        Rectangle room; //The room, inside the leaf
-        //std::vector<Rectangle> halls; //Halllway between rooms
+        Rectangle *room; //The room, inside the leaf
 
     
     public:
         Leaf();
         Leaf(int x_, int y_, int width_, int height_);
         ~Leaf();
-        void createRoom();
+        void createRoom(vector<Rectangle> &halls);
+        Rectangle* getRoom();
+        void createHall(Rectangle l, Rectangle r, std::vector<Rectangle> &halls);
         void getStat();
         Leaf* getRight();
         Leaf* getLeft();

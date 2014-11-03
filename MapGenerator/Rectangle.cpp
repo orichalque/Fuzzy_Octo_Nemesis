@@ -15,6 +15,9 @@ Rectangle::Rectangle(int x_, int y_, int width_, int height_) {
     height = height_; 
 }
 
+void Rectangle::getInfo() {
+	cout << "("<<x<<","<<y<<") de taille "<<width<<"*"<<height<<" .";
+}
 int Rectangle::getX() {
     return x;
 }

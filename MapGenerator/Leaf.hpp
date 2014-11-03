@@ -33,6 +33,7 @@ class Leaf {
         int getX();
         int getY();
         bool split(std::vector<Leaf> &leafs);
+		void getRoomsAndHalls();
 };
 
 

@@ -19,6 +19,7 @@ class Rectangle {
         int getZ();
         int getWidth();
         int getHeight();
+        void getInfo();
 };
 
 #endif 

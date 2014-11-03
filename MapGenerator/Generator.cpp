@@ -41,11 +41,20 @@ void Generator::draw(void) {
 
 }
 
+void Generator::getRoomsAndHalls(void) {
+	for (Leaf l : leafs) {
+		if (l.getRight() == NULL && l.getLeft() == NULL) {
+			l.getRoom() -> getInfo();
+		}
+	} 	
+}
+
 int main() {
     Generator g;
     g.generate();
 
     g.draw();
+    g.getRoomsAndHalls();
     return 0;
 }
 

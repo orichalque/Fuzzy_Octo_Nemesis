@@ -17,6 +17,7 @@ class Generator {
         void generate(void);
         void draw(void);
         Leaf getRoot(void);
+		void getRoomsAndHalls();
 };
 
 

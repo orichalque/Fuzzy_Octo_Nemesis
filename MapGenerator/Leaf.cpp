@@ -66,6 +66,7 @@ int Leaf::getY() {
 
 /* ||||||||||||||||||||||CreateRoom||||||||||||||||||||||| */
 /* ||||||||||||||Create a room inside a Leaf|||||||||||||| */
+/* CETTE METHODE MODIFIE PAS L'INSTANCE C'EST DE LA MERDE JE COMPRENDS PAS POURQUOI */
 void Leaf::createRoom(vector<Rectangle> &halls) {
     srand(time(NULL));
     if (left != NULL || right != NULL) {
@@ -78,8 +79,7 @@ void Leaf::createRoom(vector<Rectangle> &halls) {
         if (left != NULL && right != NULL) {
             createHall(*left -> getRoom(), *right -> getRoom(), halls);
         }
-    } else {
-        this -> getStat();
+    } else if (left == NULL and right == NULL) {
         //Room creation inside the leaf
         int a = rand()%(width-2);
         int b = rand()%(height-2);
@@ -93,12 +93,16 @@ void Leaf::createRoom(vector<Rectangle> &halls) {
         //We put the room in the leaf
         Point roomPos(rand()%(width-a)+1, rand()%(height-b)+1);
         //We create our room with the position and the size
-        room = new Rectangle(x+roomPos.getX(), y+roomPos.getY(), roomSize.getX(), roomSize.getY());
+        //cout << "Je crée une piece dans cette feuille" << endl;
+        this -> room = new Rectangle(x+roomPos.getX(), y+roomPos.getY(), roomSize.getX(), roomSize.getY());
+        cout << "Feuille: "; this -> getStat();
+        cout << "Pièce intérieur: "; room -> displayInfo();
     }
 }
 
 /* |||||||||||||||||||||||||||||||||||||getRoom||||||||||||||||||||||||||||||||||| */
 /* ||||||||||||||return the room inside the leaf, in a recursive way|||||||||||||| */
+/* CETTE METHODE FONCTIONNE */
 Rectangle* Leaf::getRoom(void) {
     if (room != NULL){
       return room;
@@ -123,8 +127,12 @@ Rectangle* Leaf::getRoom(void) {
     }
 }
 
+Rectangle* Leaf::getRoom2(void) {
+    return room;
+}
 /* ||||||||||||||||||||||||CreateHall||||||||||||||||||||||| */
 /* ||||||||||||||Create a Hall between 2 rooms|||||||||||||| */
+/* JE SAIS PAS SI CETTE METHODE FONCTIONNE */
 void Leaf::createHall(Rectangle l, Rectangle r, vector<Rectangle> &halls)  {
     srand(time(NULL));
     Point p1(rand()%(l.getX()-l.getX2())+1, rand()%(l.getY() - l.getY2()) - 2);
@@ -189,6 +197,7 @@ void Leaf::createHall(Rectangle l, Rectangle r, vector<Rectangle> &halls)  {
 
 /* |||||||||||||||||||||||||||||split||||||||||||||||||||||||||||| */
 /* ||||||||||||||divide a leaf inside 2 little leafs|||||||||||||| */
+/* CETTE METHODE FONCTIONNE */
 bool Leaf::split(vector<Leaf> &leafs) { //Divide the room in 2 distincts room    
     if (left != NULL || right != NULL || (getWidth() <= MIN_LEAF_SIZE  && getHeight() <= MIN_LEAF_SIZE)) {
         return false; //The room have already been splitted   

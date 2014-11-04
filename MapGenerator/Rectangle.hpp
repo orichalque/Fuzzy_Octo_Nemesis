@@ -17,6 +17,7 @@ class Rectangle {
         int getY(); //up left                     |           |
         int getY2(); //bottom left               Y2___________Z
         int getZ();
+        void displayInfo();
         int getWidth();
         int getHeight();
 };

@@ -38,14 +38,30 @@ void Generator::draw(void) {
         }
         cout << endl;
     }
+}
 
+void Generator::displayHalls(void) {
+    int i = 1;
+    for (Leaf l : leafs) {
+        if (l.getRoom2() != NULL) {
+            l.getRoom2() -> displayInfo();
+            i++;
+        } 
+    }
+    if (i == 1) {
+            cout << "pas de pieces du tout" << endl;
+    }
 }
 
 int main() {
     Generator g;
     g.generate();
-
-    g.draw();
+    cout<< "LHDFILNPQSF" << endl;
+    for (Leaf l : g.leafs) {
+        if ((l.getLeft() == NULL) and (l.getRight() == NULL)) {
+            l.getRoom2() -> displayInfo();
+        }
+    }
     return 0;
 }
 

@@ -16,6 +16,7 @@ class Generator {
         void fetchNodes(Leaf f);
         void generate(void);
         void draw(void);
+        void displayHalls();
         Leaf getRoot(void);
 };
 

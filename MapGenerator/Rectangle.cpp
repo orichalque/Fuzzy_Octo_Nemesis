@@ -15,6 +15,10 @@ Rectangle::Rectangle(int x_, int y_, int width_, int height_) {
     height = height_; 
 }
 
+void Rectangle::displayInfo() {
+    cout << "Coordonnées :"<<x<<"*"<<y<<" Dimensions :"<<width<<"*"<<height<<endl;
+}
+
 int Rectangle::getX() {
     return x;
 }

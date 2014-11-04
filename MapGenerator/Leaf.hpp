@@ -24,6 +24,7 @@ class Leaf {
         ~Leaf();
         void createRoom(vector<Rectangle> &halls);
         Rectangle* getRoom();
+        Rectangle* getRoom2();
         void createHall(Rectangle l, Rectangle r, std::vector<Rectangle> &halls);
         void getStat();
         Leaf* getRight();

@@ -18,6 +18,7 @@ class Generator {
         void draw(void);
         void displayHalls();
         Leaf getRoot(void);
+		void getRoomsAndHalls();
 };
 
 

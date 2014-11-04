@@ -53,15 +53,29 @@ void Generator::displayHalls(void) {
     }
 }
 
+void Generator::getRoomsAndHalls(void) {
+	for (Leaf l : leafs) {
+		if (l.getRight() == NULL && l.getLeft() == NULL) {
+			l.getRoom() -> getInfo();
+		}
+	} 	
+}
+
 int main() {
     Generator g;
     g.generate();
+<<<<<<< HEAD
     cout<< "LHDFILNPQSF" << endl;
     for (Leaf l : g.leafs) {
         if ((l.getLeft() == NULL) and (l.getRight() == NULL)) {
             l.getRoom2() -> displayInfo();
         }
     }
+=======
+
+    g.draw();
+    g.getRoomsAndHalls();
+>>>>>>> ff879ccdb39ccbc7ee3f32a55d6a42bb9cf1d31a
     return 0;
 }
 

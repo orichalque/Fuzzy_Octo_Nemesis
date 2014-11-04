@@ -20,6 +20,7 @@ class Rectangle {
         void displayInfo();
         int getWidth();
         int getHeight();
+        void getInfo();
 };
 
 #endif 

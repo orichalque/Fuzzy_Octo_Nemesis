@@ -15,8 +15,9 @@ Display::Display() {
 
 WINDOW* Display::createWindow(int height, int width, int starty, int startx) {
 	WINDOW *local_win;
-	local_win = newwin(height, width, startx, starty);
+	local_win = newwin(height, width, starty, startx);
 	box(local_win, 0,0); // 0,0 : default characters for vertical and horizontal lines
+	wborder(local_win, '|', '|', '-', '-', '+', '+', '+', '+');
 	wrefresh(local_win); //show the box
 	return local_win;
 }
@@ -29,41 +30,25 @@ void Display::destroyWindow(WINDOW* local_win) {
 }
 
 void Display::windowBuilding(void) {
-	WINDOW *win;
-	int x, y, width, height;
+	WINDOW *winMap;
+	WINDOW *winStat;
+	WINDOW *winTxt;
 	int ch;
+	int x; int y; int height; int width;
+
 	initscr(); //start curses mode
 	cbreak(); //line buffering disabled
-	keypad(stdscr, TRUE);
-	
-	height = 5;
-	width = 5;
-	y = (LINES-height)/2; //calculation for a center placement
-	x = (COLS - width) /2; //of the window
-	printW("Press END to exit");
+	keypad(stdscr, TRUE); //allow FA ... F12 buttons
+	height = LINES;
+	width = COLS * 0.25;
+	x = (LINES - height) /2;
+	y = (COLS - width) /2;
 	refresh();
-	win = createWindow(height, width, y, x);
+	winStat = createWindow(height, width, 0, 0);
+	winMap = createWindow(0.75*LINES, 0.75*COLS, 0, 0.26*COLS);
+	winTxt = createWindow(0.26*LINES, 0.75*COLS, 0.75*LINES, 0.26*COLS);
+	ch = getch();
 	
-	while ((ch=getch()) != KEY_END) {
-		switch(ch) {
-			case KEY_LEFT:
-				destroyWindow(win);
-				win = createWindow(height, width, y, --x);
-				break;
-			case KEY_RIGHT:
-				destroyWindow(win);
-				win = createWindow(height, width, y, ++x);
-				break;
-			case KEY_UP:
-				destroyWindow(win);
-				win = createWindow(height, width, --y, x);
-				break;
-			case KEY_DOWN:
-				destroyWindow(win);
-				win = createWindow(height, width, ++y, x);
-				break;
-		};
-	}
 	endwin();
 	
 }
@@ -80,15 +65,12 @@ void Display::display(string s){
 void Display::bold(){
 	int ch;
 	char* str;
-	
 	initscr();
 	raw();
 	keypad(stdscr, TRUE);
 	noecho();
-	
 	printW("Type smthing to see it in bold");
 	ch = getch();
-	
 	while(ch != KEY_END) {
 		printW("The key pressed is: ");
 		attron(A_BOLD);
@@ -98,7 +80,6 @@ void Display::bold(){
 		ch = getch();
 	}
 	endwin();
-	
 }
 
 void printW(string s) {

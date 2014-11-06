@@ -93,7 +93,6 @@ void Leaf::createRoom(vector<Rectangle> &halls) {
         //We put the room in the leaf
         Point roomPos(rand()%(width-a)+1, rand()%(height-b)+1);
         //We create our room with the position and the size
-        //cout << "Je crée une piece dans cette feuille" << endl;
         this -> room = new Rectangle(x+roomPos.getX(), y+roomPos.getY(), roomSize.getX(), roomSize.getY());
         cout << "Feuille: "; this -> getStat();
         cout << "Pièce intérieur: "; room -> displayInfo();

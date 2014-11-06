@@ -15,16 +15,13 @@ Rectangle::Rectangle(int x_, int y_, int width_, int height_) {
     height = height_; 
 }
 
-<<<<<<< HEAD
 void Rectangle::displayInfo() {
     cout << "Coordonnées :"<<x<<"*"<<y<<" Dimensions :"<<width<<"*"<<height<<endl;
 }
 
-=======
 void Rectangle::getInfo() {
 	cout << "("<<x<<","<<y<<") de taille "<<width<<"*"<<height<<" .";
 }
->>>>>>> ff879ccdb39ccbc7ee3f32a55d6a42bb9cf1d31a
 int Rectangle::getX() {
     return x;
 }

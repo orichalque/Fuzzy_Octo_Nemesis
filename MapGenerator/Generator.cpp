@@ -64,18 +64,13 @@ void Generator::getRoomsAndHalls(void) {
 int main() {
     Generator g;
     g.generate();
-<<<<<<< HEAD
     cout<< "LHDFILNPQSF" << endl;
     for (Leaf l : g.leafs) {
         if ((l.getLeft() == NULL) and (l.getRight() == NULL)) {
-            l.getRoom2() -> displayInfo();
+            cout << l.getRoom2();
         }
     }
-=======
-
-    g.draw();
     g.getRoomsAndHalls();
->>>>>>> ff879ccdb39ccbc7ee3f32a55d6a42bb9cf1d31a
     return 0;
 }
 

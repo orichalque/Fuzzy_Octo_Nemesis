@@ -7,6 +7,7 @@
 /*http://en.tldp.org/HOWTO/NCURSES-Programming-HOWTO/windows.html*/
 using namespace std;
 void printW(string s);
+void wprintW(WINDOW* w, string s);
 
 Display::Display() {
 
@@ -45,8 +46,15 @@ void Display::windowBuilding(void) {
 	y = (COLS - width) /2;
 	refresh();
 	winStat = createWindow(height, width, 0, 0);
+	wprintw(winStat, "Ki \n ko \n o");
+	wrefresh(winStat);
+	getch();
 	winMap = createWindow(0.75*LINES, 0.75*COLS, 0, 0.26*COLS);
+	getch();
 	winTxt = createWindow(0.26*LINES, 0.75*COLS, 0.75*LINES, 0.26*COLS);
+	getch();
+	wprintw(winStat, "Kikoo");
+	refresh();
 	ch = getch();
 	
 	endwin();
@@ -82,13 +90,16 @@ void Display::bold(){
 	endwin();
 }
 
+void wprintW(WINDOW* w, string s) {
+    char* s2;
+	s2 = (char*)s.c_str();
+	wprintw(w, s2);
+	refresh();
+}
+
 void printW(string s) {
 	char* s2;
 	s2 = (char*)s.c_str();
 	printw(s2);
 }
 
-int main() {
-	Display d;
-	d.windowBuilding();
-}

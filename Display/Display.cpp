@@ -79,6 +79,7 @@ void Display::bold(){
 	noecho();
 	printW("Type smthing to see it in bold");
 	ch = getch();
+	
 	while(ch != KEY_END) {
 		printW("The key pressed is: ");
 		attron(A_BOLD);

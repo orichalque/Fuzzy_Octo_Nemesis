@@ -12,10 +12,22 @@ Screen::Screen() {
     refresh();
     curs_set(0); //hide the cursor 
     keypad(stdscr, TRUE); //For keyboard complete use
-    win = createWindow(LINES, COLS, 0, 0);
+    win = createWindow(LINES, COLS, 0, 0); //Initialise Main Window
     wrefresh(win);
 }
 
+WINDOW* Screen::getWinStat(void) {
+    return winStat;
+}
+
+WINDOW* Screen::getWinTxt(void) {
+    return winTxt;
+} 
+        
+WINDOW* Screen::getWinMap(void) {
+    return winMap;
+}       
+        
 void Screen::displayIntro(void) {
     string s = "FUZZY OCTO NEMESIS";
     int x(COLS/2 - (0.5)*s.length());
@@ -42,17 +54,35 @@ void Screen::displayIntro(void) {
 void Screen::windowBuilding(void) {
     //we assume that introduction has already been displayed
 	winStat = createWindow(LINES , COLS*0.25, 0, 0);
-	wrefresh(winStat);
 	winMap = createWindow(0.75*LINES, 0.77*COLS, 0, 0.24*COLS);
 	winTxt = createWindow(0.30*LINES, 0.77*COLS, 0.73*LINES, 0.24*COLS);
 	getch();
 }
 
+void Screen::wprintW(WINDOW* win, string s) {
+    char* s2;
+	s2 = (char*)s.c_str();
+	wprintw(win, s2);
+	wrefresh(win);
+}
 
-void Screen::mvwprintW(int x, int y, WINDOW* win, std::string s) {
+void Screen::mvprintStat(int x, int y, string s) {
+    mvwprintW(x, y, winStat, s);
+}
+
+void Screen::mvprintMap(int x, int y, string s) {
+    mvwprintW(x, y, winMap, s);
+}
+
+void Screen::mvprintTxt(int x, int y, string s) {
+    mvwprintW(x, y, winTxt, s);
+}
+
+void Screen::mvwprintW(int x, int y, WINDOW* win, string s) {
     char* s2;
 	s2 = (char*)s.c_str();
 	mvwprintw(win, y, x, "%s", s2);
+	wrefresh(win);
 }
 
 void Screen::printW(std::string s) {
@@ -82,6 +112,9 @@ int main() {
     Screen s;
     //s.displayIntro();
     s.windowBuilding();
+    s.mvprintStat(1, 1, "Statistiques");
+    s.mvprintMap(1, 1, "Map");
+    s.mvprintTxt(1, 1, "Texte");
     getch();
     endwin();
     return 0;

@@ -20,7 +20,7 @@ void Rectangle::displayInfo() {
 }
 
 void Rectangle::getInfo() {
-	cout << "("<<x<<","<<y<<") de taille "<<width<<"*"<<height<<" .";
+	cout << "("<<x<<","<<y<<") de taille "<<width<<"*"<<height<<" ."<<endl;
 }
 int Rectangle::getX() {
     return x;

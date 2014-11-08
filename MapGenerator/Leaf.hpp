@@ -22,10 +22,10 @@ class Leaf {
         Leaf();
         Leaf(int x_, int y_, int width_, int height_);
         ~Leaf();
-        void createRoom(vector<Rectangle> &halls);
+        void createRoom(vector<Rectangle*> &halls);
         Rectangle* getRoom();
         Rectangle* getRoom2();
-        void createHall(Rectangle l, Rectangle r, std::vector<Rectangle> &halls);
+        void createHall(Rectangle l, Rectangle r, std::vector<Rectangle*> &halls);
         void getStat();
         Leaf* getRight();
         Leaf* getLeft();
@@ -33,7 +33,7 @@ class Leaf {
         int getHeight();
         int getX();
         int getY();
-        bool split(std::vector<Leaf> &leafs);
+        bool split(std::vector<Leaf*> &leafs);
 		void getRoomsAndHalls();
 };
 

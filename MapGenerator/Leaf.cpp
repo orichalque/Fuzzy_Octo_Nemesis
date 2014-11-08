@@ -67,7 +67,7 @@ int Leaf::getY() {
 /* ||||||||||||||||||||||CreateRoom||||||||||||||||||||||| */
 /* ||||||||||||||Create a room inside a Leaf|||||||||||||| */
 /* CETTE METHODE MODIFIE PAS L'INSTANCE C'EST DE LA MERDE JE COMPRENDS PAS POURQUOI */
-void Leaf::createRoom(vector<Rectangle> &halls) {
+void Leaf::createRoom(vector<Rectangle*> &halls) {
     srand(time(NULL));
     if (left != NULL || right != NULL) {
         if ( left != NULL ) {
@@ -132,7 +132,7 @@ Rectangle* Leaf::getRoom2(void) {
 /* ||||||||||||||||||||||||CreateHall||||||||||||||||||||||| */
 /* ||||||||||||||Create a Hall between 2 rooms|||||||||||||| */
 /* JE SAIS PAS SI CETTE METHODE FONCTIONNE */
-void Leaf::createHall(Rectangle l, Rectangle r, vector<Rectangle> &halls)  {
+void Leaf::createHall(Rectangle l, Rectangle r, vector<Rectangle*> &halls)  {
     srand(time(NULL));
     Point p1(rand()%(l.getX()-l.getX2())+1, rand()%(l.getY() - l.getY2()) - 2);
     Point p2(rand()%(r.getX()-r.getX2())+1, rand()%(r.getY() - r.getY2()) - 2);
@@ -143,51 +143,51 @@ void Leaf::createHall(Rectangle l, Rectangle r, vector<Rectangle> &halls)  {
     if (w < 0) {
         if (h < 0) {
             if (rand()%10 < 4) {
-                halls.push_back(*new Rectangle(p2.getX(), p1.getY(), abs(w), 1));
-                halls.push_back(*new Rectangle(p2.getX(), p2.getY(), 1, abs(h)));
+                halls.push_back(new Rectangle(p2.getX(), p1.getY(), abs(w), 1));
+                halls.push_back(new Rectangle(p2.getX(), p2.getY(), 1, abs(h)));
             } else {
-                halls.push_back(*new Rectangle(p2.getX(), p2.getY(), abs(w), 1));
-                halls.push_back(*new Rectangle(p1.getX(), p2.getY(), 1, abs(h)));
+                halls.push_back(new Rectangle(p2.getX(), p2.getY(), abs(w), 1));
+                halls.push_back(new Rectangle(p1.getX(), p2.getY(), 1, abs(h)));
             }
         } else if (h > 0)  {
             if (rand()%10 < 4) {
-                halls.push_back(*new Rectangle(p2.getX(), p1.getY(), abs(w), 1));
-                halls.push_back(*new Rectangle(p2.getX(), p1.getY(), 1, abs(h)));
+                halls.push_back(new Rectangle(p2.getX(), p1.getY(), abs(w), 1));
+                halls.push_back(new Rectangle(p2.getX(), p1.getY(), 1, abs(h)));
             } else {
-                halls.push_back(*new Rectangle(p2.getX(), p2.getY(), abs(w), 1));
-                halls.push_back(*new Rectangle(p1.getX(), p1.getY(), 1, abs(h)));
+                halls.push_back(new Rectangle(p2.getX(), p2.getY(), abs(w), 1));
+                halls.push_back(new Rectangle(p1.getX(), p1.getY(), 1, abs(h)));
             }
         } else {
-            halls.push_back(*new Rectangle(p2.getX(), p2.getY(), abs(w), 1));
+            halls.push_back(new Rectangle(p2.getX(), p2.getY(), abs(w), 1));
         }
     } else if (w > 0) {
         if (h < 0) {
             if (rand()%10 < 4) {
-                halls.push_back(*new Rectangle(p1.getX(), p2.getY(), abs(w), 1));
-                halls.push_back(*new Rectangle(p1.getX(), p2.getY(), 1, abs(h)));
+                halls.push_back(new Rectangle(p1.getX(), p2.getY(), abs(w), 1));
+                halls.push_back(new Rectangle(p1.getX(), p2.getY(), 1, abs(h)));
             } else {
-                halls.push_back(*new Rectangle(p1.getX(), p1.getY(), abs(w), 1));
-                halls.push_back(*new Rectangle(p2.getX(), p2.getY(), 1, abs(h)));
+                halls.push_back(new Rectangle(p1.getX(), p1.getY(), abs(w), 1));
+                halls.push_back(new Rectangle(p2.getX(), p2.getY(), 1, abs(h)));
             }
         } else if (h > 0)  {
             if (rand()%10 < 4) {
-                halls.push_back(*new Rectangle(p1.getX(), p1.getY(), abs(w), 1));
-                halls.push_back(*new Rectangle(p2.getX(), p1.getY(), 1, abs(h)));
+                halls.push_back(new Rectangle(p1.getX(), p1.getY(), abs(w), 1));
+                halls.push_back(new Rectangle(p2.getX(), p1.getY(), 1, abs(h)));
             } else {
-                halls.push_back(*new Rectangle(p1.getX(), p2.getY(), abs(w), 1));
-                halls.push_back(*new Rectangle(p1.getX(), p1.getY(), 1, abs(h)));
+                halls.push_back(new Rectangle(p1.getX(), p2.getY(), abs(w), 1));
+                halls.push_back(new Rectangle(p1.getX(), p1.getY(), 1, abs(h)));
             }
         } else {
-            halls.push_back(*new Rectangle(p1.getX(), p1.getY(), abs(w), 1));
+            halls.push_back(new Rectangle(p1.getX(), p1.getY(), abs(w), 1));
         }
     } else {
         if (h < 0)
         {
-            halls.push_back(*new Rectangle(p2.getX(), p2.getY(), 1, abs(h)));
+            halls.push_back(new Rectangle(p2.getX(), p2.getY(), 1, abs(h)));
         }
         else if (h > 0)
         {
-            halls.push_back(*new Rectangle(p1.getX(), p1.getY(), 1, abs(h)));
+            halls.push_back(new Rectangle(p1.getX(), p1.getY(), 1, abs(h)));
             
         }
     }
@@ -197,12 +197,13 @@ void Leaf::createHall(Rectangle l, Rectangle r, vector<Rectangle> &halls)  {
 /* |||||||||||||||||||||||||||||split||||||||||||||||||||||||||||| */
 /* ||||||||||||||divide a leaf inside 2 little leafs|||||||||||||| */
 /* CETTE METHODE FONCTIONNE */
-bool Leaf::split(vector<Leaf> &leafs) { //Divide the room in 2 distincts room    
-    if (left != NULL || right != NULL || (getWidth() <= MIN_LEAF_SIZE  && getHeight() <= MIN_LEAF_SIZE)) {
+bool Leaf::split(vector<Leaf*> &leafs) { //Divide the room in 2 distincts room    
+    if ((left != NULL && right != NULL) || (getWidth() <= MIN_LEAF_SIZE  && getHeight() <= MIN_LEAF_SIZE)) {
         return false; //The room have already been splitted   
     }
+    
     srand(time(NULL));
-    leafs.push_back(*this);
+    leafs.push_back(this); 
     bool splitH;    
     if (width > height) { /* [______] -> cut verticaly */
         splitH = false;    
@@ -211,6 +212,7 @@ bool Leaf::split(vector<Leaf> &leafs) { //Divide the room in 2 distincts room
     } else {
         splitH = rand()%10>4;
     }
+    
     int split = rand() %(MAX_LEAF_SIZE-MIN_LEAF_SIZE) + MIN_LEAF_SIZE +1; /* We define randomly the size of the cut*/
     
     if (splitH) {

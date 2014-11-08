@@ -10,8 +10,8 @@ class Generator {
         
         
     public:
-        std::vector<Rectangle> halls; //Hallway between rooms
-        std::vector<Leaf> leafs;
+        std::vector<Rectangle*> halls; //Hallway between rooms
+        std::vector<Leaf*> leafs;
         Generator();
         void fetchNodes(Leaf f);
         void generate(void);

@@ -11,9 +11,9 @@ Generator::Generator(void) {
 }
 
 void Generator::generate(void) {
-    Leaf root(0,0,w,h);
-    root.split(leafs);
-    root.createRoom(halls);
+    Leaf* root = new Leaf(0,0,w,h);
+    root -> split(leafs);
+    root -> createRoom(halls);
 }
 
 void Generator::draw(void) {
@@ -25,9 +25,9 @@ void Generator::draw(void) {
     }
     
     int k(0);
-    for (Leaf l : leafs) {
-        if (l.getRight() == NULL && l.getLeft() == NULL) { //feuille de taille minimum
-            mat[l.getX()][l.getY()] = k;
+    for (Leaf* l : leafs) {
+        if (l -> getRight() == NULL && l -> getLeft() == NULL) { //feuille de taille minimum
+            mat[l -> getX()][l -> getY()] = k;
             ++k;
         }
     }
@@ -41,7 +41,7 @@ void Generator::draw(void) {
 }
 
 void Generator::displayHalls(void) {
-    int i = 1;
+  /*  int i = 1;
     for (Leaf l : leafs) {
         if (l.getRoom2() != NULL) {
             l.getRoom2() -> displayInfo();
@@ -50,26 +50,26 @@ void Generator::displayHalls(void) {
     }
     if (i == 1) {
             cout << "pas de pieces du tout" << endl;
-    }
+    }*/
 }
 
 void Generator::getRoomsAndHalls(void) {
-	for (Leaf l : leafs) {
-		if (l.getRight() == NULL && l.getLeft() == NULL) {
-			l.getRoom() -> getInfo();
-		}
-	} 	
+	for (Leaf* l : leafs) {
+	    cout << "lol" << endl;
+	    l -> getStat();
+		l -> getRoom() -> getInfo();
+	} 
+	
+	for (Rectangle* l : halls) {
+		l -> getInfo();
+	}	
 }
 
 int main() {
     Generator g;
     g.generate();
-    cout<< "LHDFILNPQSF" << endl;
-    for (Leaf l : g.leafs) {
-        if ((l.getLeft() == NULL) and (l.getRight() == NULL)) {
-            cout << l.getRoom2();
-        }
-    }
+    g.draw();
+    cout << "getRoomandHalls" << endl;
     g.getRoomsAndHalls();
     return 0;
 }

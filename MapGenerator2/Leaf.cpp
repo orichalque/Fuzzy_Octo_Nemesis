@@ -26,7 +26,9 @@ Leaf::Leaf(int x_, int y_, int width_, int height_) {
 }
 
 Leaf::~Leaf() {
-
+    delete right;
+    delete left;
+    delete room;
 }
 
 Leaf* Leaf::getRight() {
@@ -77,16 +79,25 @@ bool Leaf::split(vector<Leaf*> *leafs, int seed) {
     return true;
 }
 
+int Leaf::getRoomSurface() {
+    return (room -> getWidth() * room -> getHeight());
+}
+
+
 bool Leaf::createRoom(int seed) {
     if (right != NULL and left != NULL) {
         cout << "Cette feuille n'est pas terminale" << endl;
         return false;    
     }
-    int w = randomize(4, width-2, seed); // 4 to width -2
-    int h = randomize(4, height-2, seed);
-    //The room can go from 4*4 to Width-2*height-2
+    
     int x2 = randomize(2, (width-4), seed); // 2 to width -4
     int y2 = randomize(2, (height-4), seed);
+    
+    
+    int w = randomize(4, width-x2, seed); // 4 to width -2
+    int h = randomize(4, height-y2, seed);
+    //The room can go from 4*4 to Width-2*height-2
+ 
         
     room = new Rectangle(x+x2, y+y2, w, h);
 }   

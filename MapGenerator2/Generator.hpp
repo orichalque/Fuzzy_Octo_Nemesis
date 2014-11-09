@@ -4,7 +4,7 @@
 
 class Generator {
     private:
-        int static const SIZE = 25; //we assume using a square map.
+        int static const SIZE = 32; //we assume using a square map.
         std::vector<Leaf*> leafs; //vector avec toutes les feuilles terminales
         std::vector<Rectangle*> halls;
         Leaf* root;  

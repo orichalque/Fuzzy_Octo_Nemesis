@@ -110,7 +110,7 @@ void Screen::destroyWindow(WINDOW* local_win) {
 
 int main() {
     Screen s;
-    //s.displayIntro();
+    s.displayIntro();
     s.windowBuilding();
     s.mvprintStat(1, 1, "Statistiques");
     s.mvprintMap(1, 1, "Map");

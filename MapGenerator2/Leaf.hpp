@@ -8,7 +8,7 @@
 class Leaf {
     private:
         int static const MIN_LEAF_SIZE = 5; //Min size of the leaf
-        int static const MAX_LEAF_SIZE = 12;
+        int static const MAX_LEAF_SIZE = 15;
         int x; // Room Position
         int y; 
         int height; // Dimensions of the leaf
@@ -26,6 +26,7 @@ class Leaf {
         Leaf* getRight();
         Leaf* getLeft();
         Rectangle* getRoom();
+        int getRoomSurface();
         bool split(vector<Leaf*> *leafs, int seed);
         bool createRoom(int seed);
         void getInfo();

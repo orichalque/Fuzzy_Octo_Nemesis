@@ -6,11 +6,10 @@ using namespace std;
 
 Generator::Generator() {
     root = new Leaf(0,0, SIZE, SIZE); // main leaf
-    
 }
 
 Generator::~Generator() {
-    delete root;
+
 }
 
 void Generator::split() {
@@ -32,7 +31,7 @@ void Generator::createRoom() {
 }
 
 void Generator::display() {
-    char mat[SIZE][SIZE];
+    char mat[SIZE][SIZE]; 
     int k(0);
     
     for (int i = 0; i < SIZE; i++) {
@@ -41,17 +40,21 @@ void Generator::display() {
         }
     }
     
-    //très propre en complexité
+    int abs, w2, ord, h2;
+    // 3 for that kinda makes a lot of executions :\
     for (Leaf* l : leafs) {
-        int abs = l -> getRoom() -> getX();
-        int w2 = l -> getRoom() -> getWidth();
-        int ord = l -> getRoom() -> getY();
-        int h2 = l -> getRoom() -> getHeight();
-        for (int l = abs; l < (abs + w2); l++) {
-            for (int m = ord; m < (ord + h2); m++) {
-                mat[l][m] = '#';
+        if (l -> getRoom() != NULL) {
+            abs = l -> getRoom() -> getX();
+            w2 = l -> getRoom() -> getWidth();
+            ord = l -> getRoom() -> getY();
+            h2 = l -> getRoom() -> getHeight();
+            
+            for (int i = abs; i < (abs+w2); ++i) {
+                for (int j = ord; j < (ord+h2); ++j) {
+                    mat[j-1][i-1] = '#';
+                }
             }
-        }    
+        }
         ++k;
     }
     

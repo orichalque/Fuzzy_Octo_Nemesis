@@ -36,12 +36,12 @@ void Generator::display() {
     
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
-            mat[i][j] = ' ';
+            mat[i][j] = '#';
         }
     }
     
     int abs, w2, ord, h2;
-    // 3 for that kinda makes a lot of executions :\
+    // 3 for that kinda makes a lot of executions 
     for (Leaf* l : leafs) {
         if (l -> getRoom() != NULL) {
             abs = l -> getRoom() -> getX();
@@ -51,7 +51,7 @@ void Generator::display() {
             
             for (int i = abs; i < (abs+w2); ++i) {
                 for (int j = ord; j < (ord+h2); ++j) {
-                    mat[j-1][i-1] = '#';
+                    mat[j-1][i-1] = ' ';
                 }
             }
         }

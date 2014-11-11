@@ -7,7 +7,7 @@
 
 class Leaf {
     private:
-        int static const MIN_LEAF_SIZE = 5; //Min size of the leaf
+        int static const MIN_LEAF_SIZE = 6; //Min size of the leaf
         int static const MAX_LEAF_SIZE = 15;
         int x; // Room Position
         int y; 
@@ -16,6 +16,7 @@ class Leaf {
         Leaf *right; // Sons of the node
         Leaf *left;
         Rectangle *room; //The room, inside the leaf
+        bool linked;
 
     
     public:
@@ -27,11 +28,15 @@ class Leaf {
         Leaf* getLeft();
         Rectangle* getRoom();
         int getRoomSurface();
+        int getRoomCenterX();
+        int getRoomCenterY();
+        bool isJoined();
+        
         bool split(vector<Leaf*> *leafs, int seed);
         bool createRoom(int seed);
         void getInfo();
         void getInfoRec();
-        
+        void join();
 };
 
 

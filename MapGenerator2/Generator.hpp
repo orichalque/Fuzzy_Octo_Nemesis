@@ -14,7 +14,9 @@ class Generator {
         ~Generator();
         void split();
         void createRoom();
+        void createHalls();
         void display();
+        bool findLeaf(Rectangle* l);
     
 };
 

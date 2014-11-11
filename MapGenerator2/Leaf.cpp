@@ -13,6 +13,7 @@ Leaf::Leaf() {
     right = NULL;
     left = NULL;
     room = NULL;
+    linked = false;
 }
 
 Leaf::Leaf(int x_, int y_, int width_, int height_) {
@@ -23,6 +24,7 @@ Leaf::Leaf(int x_, int y_, int width_, int height_) {
     right = NULL;
     left = NULL;
     room = NULL;
+    linked = false;
 }
 
 Leaf::~Leaf() {
@@ -79,10 +81,33 @@ bool Leaf::split(vector<Leaf*> *leafs, int seed) {
     return true;
 }
 
+void Leaf::join() {
+    linked = true;
+}
+
+bool Leaf::isJoined() {
+    return linked;
+}
+
 int Leaf::getRoomSurface() {
     return (room -> getWidth() * room -> getHeight());
 }
 
+int Leaf::getRoomCenterX() {
+    if (room != NULL) {
+        return room -> getXCenter();
+    } else {
+        return 0;
+    }
+}
+
+int Leaf::getRoomCenterY() {
+    if (room != NULL) {
+        return room -> getYCenter();
+    } else {
+        return 0;
+    }
+}
 
 bool Leaf::createRoom(int seed) {
     if (right != NULL and left != NULL) {
@@ -90,8 +115,8 @@ bool Leaf::createRoom(int seed) {
         return false;    
     }
     
-    int x2 = randomize(2, (width-4), seed); // 2 to width -4
-    int y2 = randomize(2, (height-4), seed);
+    int x2 = randomize(1, (width-4), seed); // 2 to width -4
+    int y2 = randomize(1, (height-4), seed);
     
     
     int w = randomize(4, width-x2, seed); // 4 to width -2

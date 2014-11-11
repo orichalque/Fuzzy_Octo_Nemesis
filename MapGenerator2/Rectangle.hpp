@@ -7,7 +7,8 @@ class Rectangle {
         int y;
         int width;
         int height;
-       
+        int xCenter;
+        int yCenter;
      
     public:
         Rectangle(void);
@@ -17,6 +18,9 @@ class Rectangle {
         int getY(); //up left                     |           |
         int getY2(); //bottom left               Y2___________Z
         int getZ();
+        int getXCenter();
+        int getYCenter();
+        int distFromThis(Rectangle *r);
         void displayInfo();
         int getWidth();
         int getHeight();

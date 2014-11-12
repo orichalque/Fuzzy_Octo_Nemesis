@@ -13,6 +13,7 @@ class Screen {
         WINDOW* getWinStat(void);
         WINDOW* getWinTxt(void);
         WINDOW* getWinMap(void);
+        void init(void);
         void printW(std::string s);
         void mvwprintW(int x, int y, WINDOW* win, std::string s);
         void wprintW(WINDOW* win, std::string s);

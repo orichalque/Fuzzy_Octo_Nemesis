@@ -8,12 +8,7 @@
 using namespace std;
 
 Screen::Screen() {
-    initscr();
-    refresh();
-    curs_set(0); //hide the cursor 
-    keypad(stdscr, TRUE); //For keyboard complete use
-    win = createWindow(LINES, COLS, 0, 0); //Initialise Main Window
-    wrefresh(win);
+    //empty ctor u mad ?
 }
 
 WINDOW* Screen::getWinStat(void) {
@@ -27,7 +22,16 @@ WINDOW* Screen::getWinTxt(void) {
 WINDOW* Screen::getWinMap(void) {
     return winMap;
 }       
-        
+
+void Screen::init(void) {
+    initscr();
+    refresh();
+    curs_set(0); //hide the cursor 
+    keypad(stdscr, TRUE); //For keyboard complete use
+    win = createWindow(LINES, COLS, 0, 0); //Initialise Main Window
+    wrefresh(win);
+}      
+  
 void Screen::displayIntro(void) {
     string s = "FUZZY OCTO NEMESIS";
     int x(COLS/2 - (0.5)*s.length());
@@ -107,7 +111,7 @@ void Screen::destroyWindow(WINDOW* local_win) {
 	delwin(local_win);
 }
 
-
+/*
 int main() {
     Screen s;
     s.displayIntro();
@@ -118,4 +122,4 @@ int main() {
     getch();
     endwin();
     return 0;
-}
+} */

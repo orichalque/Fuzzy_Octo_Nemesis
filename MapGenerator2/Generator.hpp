@@ -13,6 +13,7 @@ class Generator {
     public:
         Generator();
         ~Generator();
+        int getSize();
         void split();
         void createRoom();
         void createHalls();

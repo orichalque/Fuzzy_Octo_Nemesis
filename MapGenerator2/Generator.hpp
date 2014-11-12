@@ -8,6 +8,7 @@ class Generator {
         std::vector<Leaf*> leafs; //vector avec toutes les feuilles terminales
         std::vector<Rectangle*> halls;
         Leaf* root;  
+        std::vector< std::vector<char> > mat;
                  
     public:
         Generator();
@@ -15,8 +16,9 @@ class Generator {
         void split();
         void createRoom();
         void createHalls();
-        void display();
+        void  buildMap();
         bool findLeaf(Rectangle* l);
+        vector< vector<char> >  getMap();
     
 };
 

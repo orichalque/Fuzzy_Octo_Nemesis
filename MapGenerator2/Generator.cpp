@@ -19,6 +19,10 @@ void Generator::split() {
     }
 }
 
+vector< vector<char> >  Generator::getMap() {
+	return mat;
+}
+
 void Generator::createRoom() {
     int n = 0;
     for (Leaf* l : leafs) {
@@ -118,18 +122,17 @@ void Generator::createHalls() {
     }   
 }
 
-void Generator::display() {
-    char mat[SIZE][SIZE]; 
+void Generator::buildMap() {
     int k(0);
     
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
             mat[i][j] = '#';
         }
-    }
+    }  
     int abs, w2, ord, h2;
     // 3 for that kinda makes a lot of executions 
-    for (Leaf* l : leafs) {
+    /*for (Leaf* l : leafs) {
         if (l -> getRoom() != NULL) {
             abs = l -> getRoom() -> getX();
             w2 = l -> getRoom() -> getWidth();
@@ -139,14 +142,13 @@ void Generator::display() {
             for (int i = abs; i < (abs+w2); ++i) {
                 for (int j = ord; j < (ord+h2); ++j) {
                  
-                    mat[j-1][i-1] = ' ';
+                    mat[j].push_back( ' ' );
                 }
             }
         }
         ++k;
-    }
-    
-    for (Rectangle * r : halls )  {
+    } 
+    /*for (Rectangle * r : halls )  {
         abs = r ->  getX();
         w2 = r -> getWidth();
         ord = r -> getY();
@@ -154,25 +156,24 @@ void Generator::display() {
         
         for (int i = abs; i < (abs+w2); ++i) {
             for (int j = ord; j < (ord+h2); ++j) {
-                mat[j-1][i-1] = '.';
+                mat[j][i] = '.';
             }
         }
     }
-    
+    cout << endl;
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
             cout << mat[i][j];
         }
         cout << endl;
-    }
+    }*/
+    
 }
 
 int main() {
     Generator g;
     g.split();
     g.createRoom();
-    g.display();
-    cout << endl;
     g.createHalls();
-    g.display();
+   	g.buildMap();
 }

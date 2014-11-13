@@ -10,6 +10,7 @@ class Screen {
         
     public:
         Screen();
+        ~Screen();
         WINDOW* getWinStat(void);
         WINDOW* getWinTxt(void);
         WINDOW* getWinMap(void);

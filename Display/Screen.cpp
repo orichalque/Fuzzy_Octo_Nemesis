@@ -8,7 +8,17 @@
 using namespace std;
 
 Screen::Screen() {
-    //empty ctor u mad ?
+	win = NULL;
+	winTxt = NULL;
+	winMap = NULL;
+	winStat = NULL;
+}
+
+Screen::~Screen() {
+	if (win != NULL) delete win ;
+	if (winTxt != NULL)	delete winTxt;
+	if (winMap != NULL) delete winMap;
+	if (winStat != NULL) delete winStat;
 }
 
 WINDOW* Screen::getWinStat(void) {
@@ -111,15 +121,3 @@ void Screen::destroyWindow(WINDOW* local_win) {
 	delwin(local_win);
 }
 
-/*
-int main() {
-    Screen s;
-    s.displayIntro();
-    s.windowBuilding();
-    s.mvprintStat(1, 1, "Statistiques");
-    s.mvprintMap(1, 1, "Map");
-    s.mvprintTxt(1, 1, "Texte");
-    getch();
-    endwin();
-    return 0;
-} */

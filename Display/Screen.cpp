@@ -15,13 +15,14 @@ Screen::Screen() {
 }
 
 Screen::~Screen() {
-	if (win != NULL) delete win ;
-	if (winTxt != NULL)	delete winTxt;
-	if (winMap != NULL) delete winMap;
-	if (winStat != NULL) delete winStat;
+	if ((win != NULL) || (winTxt != NULL) || (winMap != NULL) || (winStat != NULL)) {
+	    endwin();
+	    //endwin() kill the WINDOW item from ncurses
+	}
 }
 
 WINDOW* Screen::getWinStat(void) {
+    
     return winStat;
 }
 
@@ -33,6 +34,24 @@ WINDOW* Screen::getWinMap(void) {
     return winMap;
 }       
 
+void Screen::clearTxt() {
+    wclear(winTxt);
+    wborder(winTxt, '|', '|', '-', '-', '+', '+', '+', '+');
+    wrefresh(winTxt);
+}
+    
+void Screen::clearMap() {
+    wclear(winMap);
+    wborder(winMap, '|', '|', '-', '-', '+', '+', '+', '+');
+    wrefresh(winMap);
+}
+
+void Screen::clearStat() {
+    wclear(winStat);
+    wborder(winStat, '|', '|', '-', '-', '+', '+', '+', '+');
+    wrefresh(winStat);
+}
+        
 void Screen::init(void) {
     initscr();
     refresh();
@@ -51,7 +70,7 @@ void Screen::displayIntro(void) {
          mvwprintW(x, y + 1 , this -> win, "                       ");
          wrefresh(win);
          y--;
-         this_thread::sleep_for(chrono::milliseconds(500));
+         this_thread::sleep_for(chrono::milliseconds(200));
     }
     int ch(0);
     string s2 = "Press End";
@@ -65,11 +84,14 @@ void Screen::displayIntro(void) {
     } 
 }
 
-void Screen::windowBuilding(void) {
+
+void Screen::windowBuilding(int size) {
     //we assume that introduction has already been displayed
-	winStat = createWindow(LINES , COLS*0.25, 0, 0);
-	winMap = createWindow(0.75*LINES, 0.77*COLS, 0, 0.24*COLS);
-	winTxt = createWindow(0.30*LINES, 0.77*COLS, 0.73*LINES, 0.24*COLS);
+	winStat = createWindow(size +5 , 25, 0, 0);
+	
+	winMap = createWindow(size+5, size+15, 0, 25);
+	
+	winTxt = createWindow(LINES - (size + 5), COLS, LINES - 13, 0);
 	getch();
 }
 

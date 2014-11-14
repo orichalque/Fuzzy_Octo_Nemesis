@@ -24,7 +24,10 @@ class Screen {
         WINDOW* createWindow(int height, int width, int starty, int startx);
         void destroyWindow(WINDOW* win);
         void displayIntro(void);
-        void windowBuilding(void);
+        void windowBuilding(int size);
+        void clearTxt();
+        void clearMap();
+        void clearStat();
 };
 
 #endif

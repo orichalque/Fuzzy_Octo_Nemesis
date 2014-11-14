@@ -59,9 +59,6 @@ vector< vector<char> >  Generator::getMap() {
 /*  Starts from root leaf, and divide it recursiveley until there's no space remaining  */
 void Generator::split() {
     root -> split(&leafs, 1); //on met en entrée l'adresse du vector.
-    for (Leaf* l : leafs) {
-         l -> getInfo(); 
-    }
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */
 
@@ -73,10 +70,7 @@ void Generator::createRoom() {
     for (Leaf* l : leafs) {
         ++n;
         l -> createRoom(n);
-    }
-    for (Leaf* l : leafs) {
-         l -> getInfo(); 
-    }
+    }   
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */
 
@@ -166,7 +160,14 @@ void Generator::createHalls() {
 void Generator::buildMap() {
     int k(0);
     int abs, w2, ord, h2;
-    // 3 for that kinda makes a lot of executions 
+    // 3 for that kinda makes a lot of executions
+     
+    for (int i = 0; i < SIZE; ++i) {
+        for (int j = 0; j < SIZE; ++j) {
+            mat[j][i] = '#'; //init map before building it
+        }
+    }
+    
     for (Leaf* l : leafs) {
         if (l -> getRoom() != NULL) {
             abs = l -> getRoom() -> getX();
@@ -195,13 +196,7 @@ void Generator::buildMap() {
             }
         }
     }
-    cout << endl;
-    for (int i = 0; i < SIZE; i++) {
-        for (int j = 0; j < SIZE; j++) {
-            cout << mat[i][j];
-        }
-        cout << endl;
-    }
+    
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */
 

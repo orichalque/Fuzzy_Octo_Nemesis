@@ -17,8 +17,9 @@ class Generator {
         void split();
         void createRoom();
         void createHalls();
-        void  buildMap();
+        void buildMap();
         bool findLeaf(Rectangle* l);
+        void init();
         vector< vector<char> >  getMap();
     
 };

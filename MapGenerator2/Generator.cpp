@@ -164,7 +164,7 @@ void Generator::buildMap() {
      
     for (int i = 0; i < SIZE; ++i) {
         for (int j = 0; j < SIZE; ++j) {
-            mat[j][i] = '#'; //init map before building it
+            mat[i][j] = '#'; //init map before building it
         }
     }
     
@@ -192,11 +192,22 @@ void Generator::buildMap() {
         
         for (int i = abs; i < (abs+w2); ++i) {
             for (int j = ord; j < (ord+h2); ++j) {
-                mat[j][i] = '.';
+                mat[j][i] = ' ';
             }
         }
     }
     
+}
+
+/*
+ *  Init Method
+ *  Clear all the vectors for new Map Generation
+ */
+void Generator::init() {
+    root = new Leaf(0,0, SIZE, SIZE); // main leaf
+    mat.resize( SIZE, vector<char>( SIZE, '#'));
+    leafs.clear();
+    halls.clear();
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */
 

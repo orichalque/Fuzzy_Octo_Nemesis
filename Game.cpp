@@ -28,6 +28,7 @@ void Game::launchGame() {
 }
 
 void Game::generateMap() {
+    generator -> init();
     generator -> split();
     generator -> createRoom();
     generator -> createHalls();
@@ -35,6 +36,7 @@ void Game::generateMap() {
 }
 
 void Game::displayMap() {
+    init_pair(1, COLOR_RED, COLOR_BLUE);
     screen -> clearMap();
     vector< vector<char> > map = generator -> getMap();
     string line = "";
@@ -44,19 +46,22 @@ void Game::displayMap() {
         vLine = vLine + "#";
     }
     
-    screen -> mvprintMap(7,2,vLine);    
-    screen -> mvprintMap(7,2+generator->getSize()+1,vLine);
-    
-    for (int i = 0; i < generator -> getSize(); i++) {
-        for (int j = 0; j < generator -> getSize(); j++) {
-            line = line + map[i][j];
-        }
-        screen -> mvprintMap(7,i+3,line);    
-        line = "";  
-    }
-    
+    attron(1);
+    screen -> mvprintMap(7,1,vLine);    
+    screen -> mvprintMap(7,1+generator->getSize()+1,vLine);
 
     
+    for (int i = 0; i < generator -> getSize(); i++) {
+        line = line + "#";
+        for (int j = 0; j < generator -> getSize(); j++) {
+            //screen -> mvprintMap(7+j, i+3, to_string(map[i][j]));
+            line = line + map[i][j];
+        }
+        line  = line + "#";
+        screen -> mvprintMap(7,i+2,line);    
+        line = "";  
+    }
+
     getch();
     screen -> clearMap();
 }
@@ -64,6 +69,7 @@ void Game::displayMap() {
 int main() {
     Game game;
     game.launchGame();
+    start_color();
     while (true) {
         game.generateMap();
         game.displayMap();

@@ -55,6 +55,8 @@ void Screen::clearStat() {
 void Screen::init(void) {
     initscr();
     refresh();
+    start_color();
+    init_pair(1, COLOR_GREEN, COLOR_BLACK);
     curs_set(0); //hide the cursor 
     keypad(stdscr, TRUE); //For keyboard complete use
     win = createWindow(LINES, COLS, 0, 0); //Initialise Main Window
@@ -130,6 +132,7 @@ void Screen::printW(std::string s) {
 WINDOW* Screen::createWindow(int height, int width, int starty, int startx) {
 	WINDOW *local_win;
 	local_win = newwin(height, width, starty, startx);
+	wattron(local_win, COLOR_PAIR(1));
 	box(local_win, 0,0); // 0,0 : default characters for vertical and horizontal lines
 	wborder(local_win, '|', '|', '-', '-', '+', '+', '+', '+');
 	wrefresh(local_win); //show the box

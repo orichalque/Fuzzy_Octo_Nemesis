@@ -4,7 +4,9 @@
 #include<memory>
 #include"Display/Screen.cpp"
 #include"MapGenerator2/Generator.cpp"
+#include"Player.cpp"
 #include"Game.hpp"
+
 
 Game::Game() {
     generator = make_shared<Generator>();
@@ -36,7 +38,6 @@ void Game::generateMap() {
 }
 
 void Game::displayMap() {
-    init_pair(1, COLOR_RED, COLOR_BLUE);
     screen -> clearMap();
     vector< vector<char> > map = generator -> getMap();
     string line = "";
@@ -46,22 +47,20 @@ void Game::displayMap() {
         vLine = vLine + "#";
     }
     
-    attron(1);
+    wattron(screen -> getWinMap(), COLOR_PAIR(1));
     screen -> mvprintMap(7,1,vLine);    
     screen -> mvprintMap(7,1+generator->getSize()+1,vLine);
 
     
     for (int i = 0; i < generator -> getSize(); i++) {
+        line = "";
         line = line + "#";
         for (int j = 0; j < generator -> getSize(); j++) {
-            //screen -> mvprintMap(7+j, i+3, to_string(map[i][j]));
             line = line + map[i][j];
         }
-        line  = line + "#";
-        screen -> mvprintMap(7,i+2,line);    
-        line = "";  
+        line = line + "#";
+        screen -> mvprintMap(7, i+2, line);    
     }
-
     getch();
     screen -> clearMap();
 }
@@ -69,7 +68,6 @@ void Game::displayMap() {
 int main() {
     Game game;
     game.launchGame();
-    start_color();
     while (true) {
         game.generateMap();
         game.displayMap();

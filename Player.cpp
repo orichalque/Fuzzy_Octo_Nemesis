@@ -13,9 +13,9 @@ Player::Player() {
 /*   [0]     [1]      [2]      [3] */
 /* Weapon - Shield - Helmet - Armor */
 
-Inventory Player::inventory(void) {
+/*Inventory Player::inventory(void) {
 	return inventory;
-}
+}*/
 
 void Player::addItem(Item item) {
 	inventory.addItem(item);

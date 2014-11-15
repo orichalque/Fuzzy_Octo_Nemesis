@@ -10,17 +10,18 @@
 * @version 1.0.0a
 */
 
-#ifndef Player.HPP
-#define Player.HPP
+#ifndef PLAYER_HPP
+#define PLAYER_HPP
 
 #include <iostream>
 #include <cstdlib> 
+//#include "Inventory.cpp"
 #include "Character.hpp"
 
 
 class Player : public Character {
 	protected:
-		Inventory inventory;
+		//Inventory inventory;
 		Item equipement;
 	public:
 		//constructor
@@ -28,7 +29,7 @@ class Player : public Character {
 		~Player();
 		
 		//getter
-		Inventory inventory();
+		//Inventory inventory();
 		
 		//methods
 		//Item methods
@@ -42,6 +43,6 @@ class Player : public Character {
 		int attacking(); //return attack + att weapon stat
 		int defending(); //return defense + def armor stat
 	
-}
+};
 
 #endif 

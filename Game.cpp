@@ -4,7 +4,7 @@
 #include<memory>
 #include"Display/Screen.cpp"
 #include"MapGenerator2/Generator.cpp"
-#include"Player.cpp"
+//#include"Player.cpp"
 #include"Game.hpp"
 
 

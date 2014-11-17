@@ -2,6 +2,10 @@
 
 using namespace std;
 
+Item::Item() {
+
+}
+
 string Item::name() const
 {
 	return name_;

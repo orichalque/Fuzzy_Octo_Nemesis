@@ -24,7 +24,7 @@ class Item /* Abstract class */
 		int value() const;
 		bool consumable() const;
 		bool settable() const;
-		int id() const;
+		virtual int id() const = 0;
 
 	protected:
 		std::string name_;

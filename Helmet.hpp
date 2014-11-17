@@ -15,13 +15,13 @@
 #include <cassert>
 #include <string>
 
-class Helmet : public Armor
+class Helmet : public Equipement
 {
 	public:
 		Helmet();
 		~Helmet();
 
-		bool isHelmet() const;
+		virtual bool isHelmet() const;
 };
 
 #endif

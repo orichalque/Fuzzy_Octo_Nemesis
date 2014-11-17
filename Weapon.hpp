@@ -15,10 +15,10 @@
 #include <cassert>
 #include <string>
 
-class Weapon : public Item /* Abstract class */
+class Weapon : public Equipement /* Abstract class */
 {
 	public:
-		bool isWeapon() const = 0;
+		virtual bool isWeapon() const = 0;
 };
 
 #endif

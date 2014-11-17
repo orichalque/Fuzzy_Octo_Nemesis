@@ -9,16 +9,13 @@
 * @version 1.0.0a
 */
 
-#ifndef __ARMOR_HPP__
-#define __ARMOR_HPP__
+#ifndef ARMOR_HPP
+#define ARMOR_HPP
 
-#include <cassert>
-#include <string>
-
-class Armor : public Item
+class Armor : public Equipement
 {
 	public:
-		bool isArmor() const;
+		virtual bool isArmor() const = 0;
 };
 
 #endif

@@ -1,3 +1,10 @@
+#include"Armor.cpp"
+#include"Helmet.cpp"
+#include"Weapon.cpp"
+#include<memory>
+#include<iostream>
+#include<cassert>
+#include<string>
 #include "Character.hpp"
 
 using namespace std;
@@ -125,3 +132,8 @@ void Character::moveDown(void) {
 	*/
 	y_ = y_ + 1;
 }
+
+int main() {
+
+}
+

@@ -12,21 +12,20 @@
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 
-#include<iostream>
-#include<cassert>
-#include<string>
-
-
 class Character{ //Abstract Class 
 	protected:
 		int life_; //Life Points of the character 
 		int attack_; //Attack points of the character
-		int def_; //Defence points of the character
+		int def_; //Defense points of the character
 		int dext_; //Dexterity of the Character
 		int x_; //X Axis of the character. Used for graphic display
 		int y_; //Y Axis of the character. Used for graphic display
 		std::string name_; //Name of the character. 
 		std::string desc_; //Short description of the character
+		shared_ptr<Weapon> weapon;
+		shared_ptr<Helmet> helmet;
+		shared_ptr<Armor> armor;
+		
 	
 	public:
 		Character(std::string _name, std::string _desc);

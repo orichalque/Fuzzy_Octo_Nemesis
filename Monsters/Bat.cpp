@@ -1,13 +1,11 @@
-#include"../Monster.cpp"
-
 class Bat : public Monster {
+    public: 
 	Bat() {
-		desc_ = "Une chauve-souris sanguinaire !";
-		name_ = "Chauve-Souris";
-		attack_ = 8;
-		def_ = 4;
-		life_ = 23;
-		dext_ = 19;
+		Character::name_ = "Chauve-Souris";
+        Character::attack_ = 8;
+        Character::def_ = 4;
+        Character::life_ = 23;
+        Character::dext_ = 19;
+        Character::desc_ = "Une chauve-souris sanguinaire !";
 	}
-//string _name, string _desc, int life_, int attack_, int def_, int dext_
 };

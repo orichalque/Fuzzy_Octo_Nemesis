@@ -1,12 +1,16 @@
-#include"../Monster.cpp"
 
 class ArchMagus : public Monster {
+    public: 
 	ArchMagus() {
-		desc_ = "Un archimage dégageant une aura sinistre";
-		name_ = "Archimage";
-		attack_ = 52;
-		def_ = 23;
-		life_ = 99;
-		dext_ = 27;
+		Character::desc_ = "Un archimage dégageant une aura sinistre";
+        Character::name_ = "Archimage";
+        Character::attack_ = 52;
+        Character::def_ = 23;
+        Character::life_ = 99;
+		Character::dext_ = 27;	
 	}
 };
+
+
+
+

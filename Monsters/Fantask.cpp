@@ -1,12 +1,11 @@
-#include"../Monster.cpp"
-
 class Fantask : public Monster {
+    public: 
 	Fantask() {
-		desc_ = "Un fantassin squelette, caché derrière un immense bouclier";
-		name_ = "Fantassin Squelette";
-		attack_ = 26;
-		def_ = 35;
-		life_ = 78;
-		dext_ = 25;
+		Character::desc_ = "Un fantassin squelette, caché derrière un immense bouclier";
+		Character::name_ = "Fantassin Squelette";
+		Character::attack_ = 26;
+		Character::def_ = 35;
+		Character::life_ = 78;
+		Character::dext_ = 25;
 	}
 };

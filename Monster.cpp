@@ -1,6 +1,8 @@
 #include "Monster.hpp"
 
 Monster::Monster() { }
+
+Monster::~Monster() { }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Getters~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*
 Item Monster::lootList(void) {

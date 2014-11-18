@@ -1,12 +1,11 @@
-#include"../Monster.cpp"
-
 class Vampire : public Monster {
+    public: 
 	Vampire() {
-		desc_ = "Un vampire assoiffé de sang";
-		name_ = "Vampire";
-		attack_ = 36;
-		def_ = 25;
-		life_ = 86;
-		dext_ = 24;
+		Character::desc_ = "Un vampire assoiffé de sang";
+		Character::name_ = "Vampire";
+		Character::attack_ = 36;
+		Character::def_ = 25;
+		Character::life_ = 86;
+		Character::dext_ = 24;
 	}
 };

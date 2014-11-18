@@ -38,7 +38,7 @@ class Character{ //Abstract Class
 		std::string desc();
 		
 		//Setters		
-		virtual void setLife(int _life) = 0; //Virtual pure
+		void setLife(int _life); //Virtual pure
 		void setAttack(int _attack);
 		void setDef(int _def);
 		void setDext(int _dext);
@@ -50,7 +50,7 @@ class Character{ //Abstract Class
 		//Other Methods
 		void substractLife(int damages);
 		void addLife(int heal);
-		
+		void virtualPure(void);
 		//Deplacement methods
 		void moveRight();
 		void moveLeft();

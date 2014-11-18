@@ -1,12 +1,11 @@
-#include"../Monster.cpp"
-
 class Elemental : public Monster {
+    public: 
 	Elemental() {
-		desc_ = "Un nuage dégageant des flammes et des éclairs ";
-		name_ = "Elemental";
-		attack_ = 46;
-		def_ = 28;
-		life_ = 135;
-		dext_ = 28;
+		Character::     desc_ = "Un nuage dégageant des flammes et des éclairs ";
+        Character::		name_ = "Elemental";
+        Character::		attack_ = 46;
+        Character::		def_ = 28;
+        Character::		life_ = 135;
+        Character::		dext_ = 28;
 	}
 };

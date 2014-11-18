@@ -1,12 +1,11 @@
-#include"../Monster.cpp"
-
 class Dragon : public Monster {
+    public: 
 	Dragon() {
-		desc_ = "Un lézard vert de 15 mètres crachant du feu";
-		name_ = "Dragon";
-		attack_ = 60;
-		def_ = 40;
-		life_ = 230;
-		dext_ = 29;
+		Character::desc_ = "Un lézard vert de 15 mètres crachant du feu";
+        Character::name_ = "Dragon";
+        Character::attack_ = 60;
+        Character::def_ = 40;
+        Character::life_ = 230;
+        Character::dext_ = 29;
 	}
 };

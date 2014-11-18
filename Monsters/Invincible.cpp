@@ -1,6 +1,5 @@
-#include"../Monster.cpp"
-
 class Invincible : public Monster {
+    public: 
 	Invincible() {
 		desc_ = "THE big boss";
 		name_ = "L\'invincible";

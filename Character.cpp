@@ -14,6 +14,8 @@ using namespace std;
 Character::Character() {
 }
 
+Character::~Character() {
+}
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Getters~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -131,7 +133,5 @@ void Character::moveDown(void) {
 	y_ = y_ + 1;
 }
 
-int main() {
 
-}
 

@@ -1,12 +1,11 @@
-#include"../Monster.cpp"
-
 class Harpy : public Monster {
+    public: 
 	Harpy() {
-		desc_ = "Une femme-oiseau extremement rapide.";
-		name_ = "Harpie";
-		attack_ = 36;
-		def_ = 34;
-		life_ = 115;
-		dext_ = 32;
+		Character::desc_ = "Une femme-oiseau extremement rapide.";
+		Character::name_ = "Harpie";
+		Character::attack_ = 36;
+		Character::def_ = 34;
+		Character::life_ = 115;
+		Character::dext_ = 32;
 	}
 };

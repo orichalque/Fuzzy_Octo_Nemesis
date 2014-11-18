@@ -1,12 +1,13 @@
-#include"../Monster.cpp"
-
 class Bully : public Monster {
+    public: 
 	Bully() {
-		desc_ = "Un orc en armure, il est enragé.";
-		name_ = "Brute";
-		attack_ = 60;
-		def_ = 45;
-		life_ = 200;
-		dext_ = 29;
+		Character::desc_ = "Un orc en armure, il est enragé.";
+        Character::name_ = "Brute";
+        Character::attack_ = 60;
+        Character::def_ = 45;
+        Character::life_ = 200;
+	    Character::dext_ = 29;
 	}
 };
+
+

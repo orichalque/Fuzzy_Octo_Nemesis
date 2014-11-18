@@ -1,12 +1,11 @@
-#include"../Monster.cpp"
-
 class Zombie : public Monster {
+    public: 
 	Zombie() {
-		desc_ = "Un zombie ... Il danse ?!";
-		name_ = "Zombie";
-		attack_ = 34;
-		def_ = 36;
-		life_ = 120;
-		dext_ = 23;
+		Character::desc_ = "Un zombie ... Il danse ?!";
+		Character::name_ = "Zombie";
+		Character::attack_ = 34;
+		Character::def_ = 36;
+		Character::life_ = 120;
+		Character::dext_ = 23;
 	}
 };

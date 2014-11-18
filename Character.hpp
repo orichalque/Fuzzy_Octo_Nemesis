@@ -21,14 +21,10 @@ class Character{ //Abstract Class
 		int x_; //X Axis of the character. Used for graphic display
 		int y_; //Y Axis of the character. Used for graphic display
 		std::string name_; //Name of the character. 
-		std::string desc_; //Short description of the character
-		shared_ptr<Weapon> weapon;
-		shared_ptr<Helmet> helmet;
-		shared_ptr<Armor> armor;
-		
+		std::string desc_; //Short description of the character		
 	
 	public:
-		Character(std::string _name, std::string _desc);
+		Character();
 		~Character();
 		
 		//Getters

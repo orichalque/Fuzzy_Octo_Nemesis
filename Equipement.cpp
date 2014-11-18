@@ -1,4 +1,3 @@
-#include"Item.cpp"
 #include"Equipement.hpp"
 
 int Equipement::getAtt() {

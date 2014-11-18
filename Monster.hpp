@@ -10,17 +10,18 @@
 * @version 1.0.0a
 */
 
-#ifndef MONSTER.HPP
-#define MONSTER.HPP
+#ifndef MONSTER_HPP
+#define MONSTER_HPP
 
 #include <iostream>
 #include <cstdlib> 
-#include "Character.hpp"
+#include <string>
+#include "Character.cpp"
 
 
 class Monster : public Character {
 	protected:
-		Item lootList; //array of item
+		//Item lootList; //array of item
 		int nbLoot; //number of item the monster will have
 		int lootPb; //loot probability of an item.
 		
@@ -30,13 +31,14 @@ class Monster : public Character {
 		~Monster();
 		
 		//getter
-		Item lootList();
-		int nbLoot();
-		virtual int lootPb() = 0;		
+		//Item lootList();
+		int getNbLoot();
+		int getLootPb();		
+		
 		
 		//methods
-		Item loot(void); //Return an item from the dropList
+	//	Item loot(void); //Return an item from the dropList
 	
-}
+};
 
 #endif 

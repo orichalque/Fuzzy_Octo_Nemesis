@@ -1,10 +1,9 @@
-#include"Armor.cpp"
-#include"Helmet.cpp"
-#include"Weapon.cpp"
-#include<memory>
+
 #include<iostream>
 #include<cassert>
 #include<string>
+#include"Item.cpp"
+#include<memory>
 #include "Character.hpp"
 
 using namespace std;
@@ -12,10 +11,9 @@ using namespace std;
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~Constructor~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-Character::Character(string _name, string _desc) {
-	name_ = _name;
-	desc_ = _desc;
+Character::Character() {
 }
+
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Getters~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 

@@ -1,21 +1,23 @@
 #include "Monster.hpp"
 
+Monster::Monster() { }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Getters~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
+/*
 Item Monster::lootList(void) {
 	return lootList;
 }
 
-int Monster::nbLoot(void) {
+*/
+int Monster::getNbLoot(void) {
 	return nbLoot;
 }
 
-int lootPb(void) {
+int Monster::getLootPb(void) {
 	return lootPb;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~Methods~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
+/*
 Item Monster::loot(void) {
 	int v = rand() % 100 + 1; // number from 1 to 100
 	if ( v <= lootPb) { //loot
@@ -25,4 +27,4 @@ Item Monster::loot(void) {
 		return NULL;
 	}
 }
-
+*/

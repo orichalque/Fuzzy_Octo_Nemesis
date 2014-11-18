@@ -14,11 +14,15 @@
 
 #include <cassert>
 #include <string>
+#include"Equipement.cpp"
 
 class Weapon : public Equipement /* Abstract class */
 {
 	public:
-		virtual bool isWeapon() const = 0;
+	    Weapon();
+	    virtual ~Weapon();
+		virtual bool isWeapon();
+		virtual bool isEquipement(); 
 };
 
 #endif

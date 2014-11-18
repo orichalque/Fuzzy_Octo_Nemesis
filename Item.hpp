@@ -19,12 +19,13 @@ class Item /* Abstract class */
 {
 	public:
 		Item();
-		std::string name() const;
-		std::string description() const;
-		int value() const;
-		bool consumable() const;
-		bool settable() const;
-		virtual int id() const = 0;
+		std::string getName();
+		std::string getDescription();
+		int getValue();
+		bool isConsumable();
+		bool isSettable();
+		int getId();
+		virtual bool isEquipement() = 0;
 
 	protected:
 		std::string name_;

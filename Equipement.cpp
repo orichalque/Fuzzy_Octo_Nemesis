@@ -1,5 +1,14 @@
 #include"Equipement.hpp"
 
+Equipement::Equipement() {
+
+}
+
+Equipement::~Equipement() {
+
+}
+
+	    
 int Equipement::getAtt() {
 	return att;
 }

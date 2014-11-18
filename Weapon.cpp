@@ -2,8 +2,22 @@
 
 using namespace std;
 
-bool Weapon::isWeapon() const
+Weapon::Weapon() 
+{
+
+}
+
+Weapon::~Weapon() {
+
+}
+
+bool Weapon::isWeapon()
 {
 	return true;
 }
+
+bool Weapon::isEquipement()  {
+    return true;
+}
+
 

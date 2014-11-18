@@ -6,32 +6,36 @@ Item::Item() {
 
 }
 
-string Item::name() const
+string Item::getName()
 {
 	return name_;
 }
 
-string Item::description() const
+string Item::getDescription()
 {
 	return desc_;
 }
 
-int Item::value() const
+int Item::getValue()
 {
 	return value_;
 }
 
-bool Item::consumable() const
+bool Item::isConsumable()
 {
 	return consumable_;
 }
 
-bool Item::settable() const
+bool Item::isSettable()
 {
 	return settable_;
 }
 
-int Item::id() const
+int Item::getId()
 {
 	return id_;
+}
+
+bool isEquipement() {
+    return false;
 }

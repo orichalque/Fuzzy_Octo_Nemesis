@@ -1,25 +1,25 @@
 #include <cassert>
 #include <string>
 #include "Equipement.cpp"
-#include "Armor.hpp"
+#include "Shield.hpp"
 
 using namespace std;
 
-Armor::Armor() 
+Shield::Shield() 
 {
 
 }
 
-Armor::~Armor() {
+Shield::~Shield() {
 
 }
 
-bool Armor::isArmor()
+bool Shield::isShield()
 {
 	return true;
 }
 
-bool Armor::isEquipement()  {
+bool Shield::isEquipement()  {
     return true;
 }
 

@@ -1,5 +1,5 @@
 /*
-* Armor Class Definition for FuzzyOctoNemesis 
+* Helmet Class Definition for FuzzyOctoNemesis 
 *
 * C++ 11
 *
@@ -9,15 +9,15 @@
 * @version 1.0.0a
 */
 
-#ifndef ARMOR_HPP
-#define ARMOR_HPP
+#ifndef HELMET_HPP
+#define HELMET_HPP
 
-class Armor : public Equipement
+class HELMET : public Equipement
 {
 	public:
-	    Armor();
-	    ~Armor();
-		virtual bool isArmor();
+	    Helmet();
+	    ~Helmet();
+		virtual bool isHelmet();
 		virtual bool isEquipement();
 		
 };

@@ -8,8 +8,7 @@
 
 class MonsterFactory {
     protected:
-        std::shared_ptr<Monster> monster;
-    
+		    
     public:
         MonsterFactory();
         ~MonsterFactory();

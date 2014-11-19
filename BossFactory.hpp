@@ -1,12 +1,12 @@
 #ifndef __MONSTERFACTORYCONCRETE_HPP__
 #define __MONSTERFACTORYCONCRETE_HPP__
 
-class MonsterFactoryConcrete : public MonsterFactory {
+class BossFactory : public MonsterFactory {
     private:
     
     public:
-        MonsterFactoryConcrete();
-        ~MonsterFactoryConcrete();
+        BossFactory();
+        ~BossFactory();
         shared_ptr<Monster> create(int i);
 };
 

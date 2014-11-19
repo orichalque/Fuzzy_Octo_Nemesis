@@ -2,7 +2,6 @@
 #ifndef EQUIPEMENT_HPP
 #define EQUIPEMENT_HPP
 
-#include"Item.cpp"
 class Equipement : public Item {
 	protected :
 		int att;

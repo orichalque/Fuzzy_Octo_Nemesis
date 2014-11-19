@@ -72,14 +72,14 @@ void Screen::displayIntro(void) {
          mvwprintW(x, y + 1 , this -> win, "                       ");
          wrefresh(win);
          y--;
-         this_thread::sleep_for(chrono::milliseconds(200));
+         this_thread::sleep_for(chrono::milliseconds(150));
     }
     int ch(0);
     string s2 = "Press End";
     while (ch != KEY_END) {
         mvwprintW(COLS/2 - (0.5)*s2.length(), y + 2, this -> win, s2);
         wrefresh(win);
-        this_thread::sleep_for(chrono::milliseconds(1000));
+        this_thread::sleep_for(chrono::milliseconds(500));
         mvwprintW(COLS/2 - (0.5)*s2.length(), y + 2, this -> win, "           ");
         wrefresh(win);
         ch = getch();
@@ -127,6 +127,67 @@ void Screen::printW(std::string s) {
     char* s2;
 	s2 = (char*)s.c_str(); //most of ncurses methods don't allow string parameters, only char* ...
 	printw(s2);
+}
+
+shared_ptr<Character> Screen::chooseCharacter(void) {
+    /* Precondition : Screen already displayed, but not the maps */
+    string choose = "Choisissez votre personnage";
+    string key = "avec les touches directionnelles";
+    int x = 0.5*(COLS - choose.length());
+    int y = 2;
+    mvwprintW(x, y, win, choose);
+    x = 0.5*(COLS -key.length());
+    mvwprintW(x, y+1, win, key);
+    
+    mvwprintW(13, 10, win, "Guerrier");
+    mvwprintW(13, 12, win, "Un guerrier équilibré"  );
+    mvwprintW(13, 13, win, "déjà armé d'un couteau");
+    mvwprintW(13, 14, win, "et d'un bouclier");
+    mvwprintW(13, 16, win, "Appuyez sur <-- ");
+    
+    mvwprintW(45, 10, win, "Paladin");
+    mvwprintW(45, 12, win, "Un soldat en armure" ); 
+    mvwprintW(45, 13, win, "capable d'encaisser" );
+    mvwprintW(45, 14, win, "des tonnes de dégats" );
+    mvwprintW(45, 16, win, "Appuyez sur -->"); 
+    
+    mvwprintW(13, 30, win, "Voleur");
+    mvwprintW(13, 32, win, "Un rapide brigand"  );
+    mvwprintW(13, 33, win, "armé d'une dague affutée");
+    mvwprintW(13, 34, win, "et d'une bonne dexterité ");
+    mvwprintW(13, 36, win, "Appuyez sur ^ ");
+    
+    mvwprintW(45, 30, win, "Berserk");
+    mvwprintW(45, 32, win, "Un sanguinaire"  );
+    mvwprintW(45, 33, win, "assoiffé de combats, ");
+    mvwprintW(45, 34, win, "fort et endurant. ");
+    mvwprintW(45, 36, win, "Appuyez sur v ");
+    int button = getch();
+    
+    while (button != KEY_UP and button != KEY_DOWN and button != KEY_RIGHT and button != KEY_LEFT) {
+        mvwprintW(0.5*(COLS - 44), 40, win, "Choisissez avec les touches directionnelles!");
+        this_thread::sleep_for(chrono::milliseconds(1000));
+        mvwprintW(0.5*(COLS - 44), 40, win, "                                            ");
+        button = getch();
+    }
+    
+    if (button == KEY_UP) {
+         mvwprintW(0.5*(COLS - 7), 40, win, "Voleur choisi !");
+         this_thread::sleep_for(chrono::milliseconds(1000));
+         return make_shared<Voleur>();
+    } else if (button == KEY_DOWN) {
+         mvwprintW(0.5*(COLS - 7), 40, win, "Berserk choisi !");
+         this_thread::sleep_for(chrono::milliseconds(1000));
+         return make_shared<Berserk>();
+    } else if (button == KEY_RIGHT) {
+         mvwprintW(0.5*(COLS - 7), 40, win, "Paladin choisi !");
+         this_thread::sleep_for(chrono::milliseconds(1000));
+         return make_shared<Paladin>();
+    } else if (button == KEY_LEFT) {
+         mvwprintW(0.5*(COLS - 7), 40, win, "Guerrier choisi !");
+         this_thread::sleep_for(chrono::milliseconds(1000));
+         return make_shared<Guerrier>();
+    }
 }
 
 WINDOW* Screen::createWindow(int height, int width, int starty, int startx) {

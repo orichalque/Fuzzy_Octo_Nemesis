@@ -9,6 +9,7 @@ class Rectangle {
         int height;
         int xCenter;
         int yCenter;
+        bool empty;
      
     public:
         Rectangle(void);
@@ -28,3 +29,4 @@ class Rectangle {
 };
 
 #endif 
+

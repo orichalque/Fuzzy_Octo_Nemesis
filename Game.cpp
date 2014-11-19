@@ -1,16 +1,40 @@
-#include<cstdio>
-#include<cstdlib>
+#include<iostream>
+#include<cassert>
 #include<string>
 #include<memory>
-#include"Display/Screen.cpp"
-#include"MapGenerator2/Generator.cpp"
-//#include"Player.cpp"
+#include<vector>
+#include<ncurses.h>
+
+#include "Item.cpp"
+#include "Equipement.cpp"
+#include "Character.cpp"
+#include "Monster.cpp"
+#include "Shield.cpp"
+#include "Armor.cpp"
+#include "Weapon.cpp"
+#include "Helmet.cpp"
+#include "Characters.hpp"
+#include "Monsters.hpp"
+#include "Weapons.hpp"
+#include "Armors.hpp"
+#include "Helmets.hpp"
+#include "Shields.hpp"
+
+#include "Display/Screen.cpp"
+#include "MapGenerator2/Generator.cpp"
+
+#include "Factory.cpp"
+#include "MonsterFactory.cpp"
+#include "MonsterFactoryConcrete.cpp"
+#include "EquipementFactory.cpp"
+
 #include"Game.hpp"
 
 
 Game::Game() {
     generator = make_shared<Generator>();
     screen = make_shared<Screen>();
+    level = 1;
 }
 
 Game::~Game() {
@@ -26,6 +50,7 @@ void Game::launchGame() {
     system((char*)str.c_str());    
     screen -> init(); 
    // screen -> displayIntro(); 
+    character = (screen -> chooseCharacter());
     screen -> windowBuilding(generator -> getSize());
 }
 
@@ -35,6 +60,7 @@ void Game::generateMap() {
     generator -> createRoom();
     generator -> createHalls();
     generator -> buildMap();
+    generator -> placeCharacter(character);
 }
 
 void Game::displayMap() {

@@ -7,6 +7,7 @@ using namespace std;
 Rectangle::Rectangle() {
     x = y = width = height = 0;
     xCenter = yCenter = 0;
+
 }
 
 Rectangle::Rectangle(int x_, int y_, int width_, int height_) {
@@ -62,4 +63,5 @@ int Rectangle::getWidth() {
 int Rectangle::getHeight() {
     return height;
 }
+
 

@@ -1,11 +1,6 @@
 #ifndef MONSTERFACTORY_HPP
 #define MONSTERFACTORY_HPP
 
-#include<memory>
-#include"Monster.cpp"
-#include"Monsters.hpp"
-
-
 class MonsterFactory {
     protected:
 		    

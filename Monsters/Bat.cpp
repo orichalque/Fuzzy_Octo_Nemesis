@@ -7,5 +7,7 @@ class Bat : public Monster {
         Character::life_ = 23;
         Character::dext_ = 19;
         Character::desc_ = "Une chauve-souris sanguinaire !";
+        Character::symbol_ = "B";
+        Monster::lootList = {2, 15};
 	}
 };

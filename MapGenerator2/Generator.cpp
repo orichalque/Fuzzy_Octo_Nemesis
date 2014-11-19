@@ -211,13 +211,18 @@ void Generator::init() {
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */
 
-/*
-int main() {
-    system("resize -s 32 60"); // lines - rows
-    Generator g;
-    g.split();
-    g.createRoom();
-    g.createHalls();
-   	g.buildMap();
-   	vector< vector<char>> mat = g.getMap();
-}*/
+shared_ptr<Rectangle> Generator::placeCharacter(shared_ptr<Character> c) {
+    for (Leaf* l : leafs) {
+        if (l -> isJoined() == true and l -> isEmpty()) {
+            return make_shared<Rectangle>(l -> getRoom());
+        }
+    }   
+
+
+/* TO DO */
+
+
+
+
+}
+

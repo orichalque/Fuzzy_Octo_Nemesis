@@ -7,6 +7,8 @@ class Troll : public Monster {
 		Character::def_ = 15;
 		Character::life_ = 75;
 		Character::dext_ = 9;
+		Character::symbol_ = "T";
+		Monster::lootList = {3,11,16,21};
 	}
 //string _name, string _desc, int life_, int attack_, int def_, int dext_
 };

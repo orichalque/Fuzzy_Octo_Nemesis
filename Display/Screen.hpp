@@ -24,6 +24,7 @@ class Screen {
         WINDOW* createWindow(int height, int width, int starty, int startx);
         void destroyWindow(WINDOW* win);
         void displayIntro(void);
+        shared_ptr<Character> chooseCharacter(void);
         void windowBuilding(int size);
         void clearTxt();
         void clearMap();

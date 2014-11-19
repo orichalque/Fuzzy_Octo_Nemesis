@@ -21,7 +21,8 @@ class Character{ //Abstract Class
 		int x_; //X Axis of the character. Used for graphic display
 		int y_; //Y Axis of the character. Used for graphic display
 		std::string name_; //Name of the character. 
-		std::string desc_; //Short description of the character		
+		std::string desc_; //Short description of the character	
+		std::string symbol_; //Graphic representation	
 	
 	public:
 		Character();
@@ -51,6 +52,7 @@ class Character{ //Abstract Class
 		void substractLife(int damages);
 		void addLife(int heal);
 		void virtualPure(void);
+		
 		//Deplacement methods
 		void moveRight();
 		void moveLeft();

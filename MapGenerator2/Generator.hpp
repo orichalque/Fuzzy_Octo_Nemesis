@@ -20,8 +20,10 @@ class Generator {
         void buildMap();
         bool findLeaf(Rectangle* l);
         void init();
+        shared_ptr<Rectangle> placeCharacter(shared_ptr<Character> c);
         vector< vector<char> >  getMap();
     
 };
 
 #endif
+

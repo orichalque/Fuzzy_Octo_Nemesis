@@ -7,5 +7,7 @@ class Invincible : public Monster {
 		def_ = 100;
 		life_ = 1000;
 		dext_ = 50;
+		Character::symbol_ = "I";
+		Monster::lootList = {9, 14, 19, 24};
 	}
 };

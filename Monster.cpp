@@ -4,12 +4,11 @@ Monster::Monster() { }
 
 Monster::~Monster() { }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Getters~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*
-Item Monster::lootList(void) {
+
+vector<int> Monster::getLootList(void) {
 	return lootList;
 }
 
-*/
 int Monster::getNbLoot(void) {
 	return nbLoot;
 }

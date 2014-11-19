@@ -17,6 +17,7 @@ class Leaf {
         Leaf *left;
         Rectangle *room; //The room, inside the leaf
         bool linked;
+        bool empty;
 
     
     public:
@@ -44,3 +45,4 @@ int randomize(int min, int max, int seed);
 
 #endif
         
+

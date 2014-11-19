@@ -15,7 +15,7 @@
 
 class Monster : public Character {
 	protected:
-		//Item lootList; //array of item
+		std::vector<int> lootList; //array of item
 		int nbLoot; //number of item the monster will have
 		int lootPb; //loot probability of an item.
 		
@@ -25,7 +25,7 @@ class Monster : public Character {
 		~Monster();
 		
 		//getter
-		//Item lootList();
+		std::vector<int> getLootList();
 		int getNbLoot();
 		int getLootPb();		
 		

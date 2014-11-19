@@ -14,6 +14,7 @@ Leaf::Leaf() {
     left = NULL;
     room = NULL;
     linked = false;
+    empty = true;
 }
 
 Leaf::Leaf(int x_, int y_, int width_, int height_) {
@@ -157,3 +158,4 @@ int randomize(int min, int max, int seed) {
     }
     return min + i;
 }
+

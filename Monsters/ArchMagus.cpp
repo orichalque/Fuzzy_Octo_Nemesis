@@ -8,6 +8,8 @@ class ArchMagus : public Monster {
         Character::def_ = 23;
         Character::life_ = 99;
 		Character::dext_ = 27;	
+		Character::symbol_ = "A";
+		Monster::lootList = {6 ,13 };
 	}
 };
 

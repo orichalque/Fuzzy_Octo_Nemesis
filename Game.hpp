@@ -6,11 +6,15 @@
  */
 #ifndef GAME_CPP
 #define GAME_CPP
-
 class Game {
     private:
         shared_ptr<Generator> generator;
         shared_ptr<Screen> screen;
+        shared_ptr<Character> character;
+        shared_ptr<MonsterFactoryConcrete> monsterFactory;
+        shared_ptr<EquipementFactory> equipementFactory;
+        int level;
+
     
     public:
         Game();

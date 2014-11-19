@@ -12,15 +12,11 @@
 #ifndef __WEAPON_HPP__
 #define __WEAPON_HPP__
 
-#include <cassert>
-#include <string>
-#include"Equipement.cpp"
-
 class Weapon : public Equipement /* Abstract class */
 {
 	public:
 	    Weapon();
-	    virtual ~Weapon();
+	    ~Weapon();
 		virtual bool isWeapon();
 		virtual bool isEquipement(); 
 };

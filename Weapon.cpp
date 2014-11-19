@@ -2,8 +2,7 @@
 
 using namespace std;
 
-Weapon::Weapon() 
-{
+Weapon::Weapon() { 
 
 }
 

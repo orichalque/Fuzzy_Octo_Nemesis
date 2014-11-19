@@ -12,10 +12,8 @@
 #ifndef Shield_HPP
 #define Shield_HPP
 
-class Shield : public Equipement
-{
+class Shield : public Equipement {
 	public:
-	    Shield();
 	    ~Shield();
 		virtual bool isShield();
 		virtual bool isEquipement();

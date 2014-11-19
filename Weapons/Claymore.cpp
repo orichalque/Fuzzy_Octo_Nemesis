@@ -7,4 +7,6 @@ class Claymore : public Weapon {
             Equipement::def = 8;
             Equipement::dext = 2;
         }
+
+        
 };

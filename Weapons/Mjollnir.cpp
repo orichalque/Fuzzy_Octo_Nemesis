@@ -7,4 +7,5 @@ class Mjollnir : public Weapon {
             Equipement::def = 15;
             Equipement::dext = 9;
         }
+
 };

@@ -7,4 +7,6 @@ class Knife : public Weapon {
             Equipement::def = 0;
             Equipement::dext = 1;
         }
+        
+
 };

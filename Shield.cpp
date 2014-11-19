@@ -1,14 +1,7 @@
-#include <cassert>
-#include <string>
-#include "Equipement.cpp"
 #include "Shield.hpp"
 
 using namespace std;
 
-Shield::Shield() 
-{
-
-}
 
 Shield::~Shield() {
 

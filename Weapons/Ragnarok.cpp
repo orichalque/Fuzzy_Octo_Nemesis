@@ -7,4 +7,7 @@ class Ragnarok : public Weapon {
             Equipement::def = 18;
             Equipement::dext = 15;
         }
+        
+        
+
 };

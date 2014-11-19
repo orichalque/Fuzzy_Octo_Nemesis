@@ -7,4 +7,6 @@ class Excalibur : public Weapon {
             Equipement::def = 9;
             Equipement::dext = 9;
         }
+        
+
 };

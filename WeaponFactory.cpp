@@ -1,5 +1,5 @@
-#include"Factory.cpp"
-#include"WeaponFactory.hpp"
+#include "header.hpp"
+#include "WeaponFactory.hpp"
 
 
 WeaponFactory::WeaponFactory() {
@@ -40,4 +40,9 @@ shared_ptr<Equipement> WeaponFactory::create(int i) {
 			return make_shared<Ragnarok>();
 			break;	
 	};
+}
+
+int main() {
+	WeaponFactory f;
+	cout << f.create(9) -> getDescription() << endl;
 }

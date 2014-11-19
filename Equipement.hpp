@@ -1,4 +1,3 @@
-
 #ifndef EQUIPEMENT_HPP
 #define EQUIPEMENT_HPP
 
@@ -9,12 +8,11 @@ class Equipement : public Item {
 		int dext;
 	
 	public:
-	    Equipement();
 	    ~Equipement();
-		virtual bool isEquipement() = 0;
-		int getAtt();
-		int getDef();
-		int getDext();
+		virtual bool isEquipement();
+		virtual int getAtt();
+		virtual	int getDef();
+		virtual	int getDext();
 		
 };
 

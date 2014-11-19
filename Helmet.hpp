@@ -12,7 +12,7 @@
 #ifndef HELMET_HPP
 #define HELMET_HPP
 
-class HELMET : public Equipement
+class Helmet : public Equipement
 {
 	public:
 	    Helmet();

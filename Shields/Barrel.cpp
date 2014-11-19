@@ -1,3 +1,4 @@
+
 class Barrel : public Shield {
     public:
         Barrel() {

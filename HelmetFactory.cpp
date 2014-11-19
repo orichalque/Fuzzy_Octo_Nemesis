@@ -1,7 +1,3 @@
-#include<memory>
-#include "MonsterFactory.cpp"
-#include "Equipement.cpp"
-#include "Factory.cpp"
 #include "HelmetFactory.hpp"
 
 

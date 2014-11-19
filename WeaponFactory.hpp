@@ -9,6 +9,6 @@ class WeaponFactory : public Factory {
 		WeaponFactory();
 		~WeaponFactory();
 		shared_ptr<Equipement> create(int i);
-}
+};
 
 #endif

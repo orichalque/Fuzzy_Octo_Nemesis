@@ -18,14 +18,12 @@
 class Item /* Abstract class */
 {
 	public:
-		Item();
-		std::string getName();
-		std::string getDescription();
-		int getValue();
-		bool isConsumable();
-		bool isSettable();
-		int getId();
-		virtual bool isEquipement() = 0;
+		virtual std::string getName();
+		virtual std::string getDescription();
+		virtual int getValue();
+		virtual bool isConsumable();
+		virtual bool isSettable();
+		virtual bool isEquipement();
 
 	protected:
 		std::string name_;

@@ -7,4 +7,5 @@ class LongSword : public Weapon {
             Equipement::def = 6;
             Equipement::dext = 6;
         }
+        
 };

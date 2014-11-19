@@ -1,14 +1,13 @@
-#include"Equipement.hpp"
-
-Equipement::Equipement() {
-
-}
+#include "Equipement.hpp"
 
 Equipement::~Equipement() {
 
 }
 
-	    
+bool Equipement::isEquipement() {
+	return true;
+}	    
+
 int Equipement::getAtt() {
 	return att;
 }
@@ -20,3 +19,4 @@ int Equipement::getDef() {
 int Equipement::getDext() {
 	return dext;
 }
+

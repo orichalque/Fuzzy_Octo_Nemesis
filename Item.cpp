@@ -2,10 +2,6 @@
 
 using namespace std;
 
-Item::Item() {
-
-}
-
 string Item::getName()
 {
 	return name_;
@@ -31,11 +27,7 @@ bool Item::isSettable()
 	return settable_;
 }
 
-int Item::getId()
-{
-	return id_;
-}
-
-bool isEquipement() {
+bool Item::isEquipement() {
     return false;
 }
+

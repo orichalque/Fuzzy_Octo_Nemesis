@@ -1,6 +1,3 @@
-#include <cassert>
-#include <string>
-#include "Equipement.cpp"
 #include "Helmet.hpp"
 
 using namespace std;

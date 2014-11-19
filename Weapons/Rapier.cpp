@@ -7,4 +7,5 @@ class Rapier : public Weapon {
             Equipement::def = 7;
             Equipement::dext = 11;
         }
+        
 };

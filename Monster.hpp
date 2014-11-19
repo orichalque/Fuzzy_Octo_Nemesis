@@ -13,12 +13,6 @@
 #ifndef MONSTER_HPP
 #define MONSTER_HPP
 
-#include <iostream>
-#include <cstdlib> 
-#include <string>
-#include "Character.cpp"
-
-
 class Monster : public Character {
 	protected:
 		//Item lootList; //array of item

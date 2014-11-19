@@ -7,4 +7,5 @@ class Dagger : public Weapon {
             Equipement::def = 3;
             Equipement::dext = 4;
         }
+
 };

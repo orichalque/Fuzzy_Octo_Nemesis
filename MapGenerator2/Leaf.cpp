@@ -1,7 +1,6 @@
 #include<ctime>
 #include<iostream>
 #include<cstdlib>
-#include"Rectangle.cpp"
 #include"Leaf.hpp"
 
 
@@ -88,6 +87,14 @@ void Leaf::join() {
 
 bool Leaf::isJoined() {
     return linked;
+}
+
+bool Leaf::isEmpty() {
+    return empty;
+}
+
+void Leaf::setFull() {
+	empty = false;
 }
 
 int Leaf::getRoomSurface() {

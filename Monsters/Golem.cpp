@@ -7,7 +7,7 @@ class Golem : public Monster {
 		Character::def_ = 40;
 		Character::life_ = 150;
 		Character::dext_ = 19;
-		Character::symbol_ = "G";
+		Character::symbol_ = 'G';
 		Monster::lootList = {8, 13, 18, 23};
 	}
 };

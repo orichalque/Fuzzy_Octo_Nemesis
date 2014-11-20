@@ -22,7 +22,7 @@ class Character{ //Abstract Class
 		int y_; //Y Axis of the character. Used for graphic display
 		std::string name_; //Name of the character. 
 		std::string desc_; //Short description of the character	
-		std::string symbol_; //Graphic representation	
+		char symbol_; //Graphic representation	
 	
 	public:
 		Character();
@@ -35,6 +35,7 @@ class Character{ //Abstract Class
 		int dext();
 		int x();
 		int y();
+		char getSymbol();
 		std::string name();
 		std::string desc();
 		

@@ -7,7 +7,7 @@ class HellHound : public Monster {
 		Character::def_ = 25;
 		Character::life_ = 100;
 		Character::dext_ = 18;
-		Character::symbol_ = "H";
+		Character::symbol_ = 'H';
 		Monster::lootList = {7 , 12, 17, 22};
 	}
 //string _name, string _desc, int life_, int attack_, int def_, int dext_

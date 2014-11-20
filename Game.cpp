@@ -20,13 +20,17 @@
 #include "Helmets.hpp"
 #include "Shields.hpp"
 
-#include "Display/Screen.cpp"
-#include "MapGenerator2/Generator.cpp"
-
 #include "Factory.cpp"
 #include "MonsterFactory.cpp"
 #include "MonsterFactoryConcrete.cpp"
+#include "BossFactory.cpp"
 #include "EquipementFactory.cpp"
+
+#include "Display/Screen.cpp"
+#include "MapGenerator2/Rectangle.cpp"
+#include "MapGenerator2/Leaf.cpp"
+#include "MapGenerator2/Generator.cpp"
+
 
 #include"Game.hpp"
 
@@ -34,6 +38,9 @@
 Game::Game() {
     generator = make_shared<Generator>();
     screen = make_shared<Screen>();
+    monsterFactory = make_shared<MonsterFactoryConcrete>();
+    bossFactory = make_shared<BossFactory>();
+    equipementFactory = make_shared<EquipementFactory>();
     level = 1;
 }
 
@@ -49,7 +56,7 @@ void Game::launchGame() {
     //resizing the window with a bash script
     system((char*)str.c_str());    
     screen -> init(); 
-   // screen -> displayIntro(); 
+    screen -> displayIntro(); 
     character = (screen -> chooseCharacter());
     screen -> windowBuilding(generator -> getSize());
 }
@@ -61,6 +68,7 @@ void Game::generateMap() {
     generator -> createHalls();
     generator -> buildMap();
     generator -> placeCharacter(character);
+    generator -> placeBoss(level, bossFactory);
 }
 
 void Game::displayMap() {

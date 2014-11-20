@@ -3,7 +3,7 @@ class Sorcerer : public Monster {
 	Sorcerer() {
 		Character::desc_ = "Un Sorcier armé d\'un sceptre ensorcelé !";
 		Character::name_ = "Sorcier";
-		Character::symbol_ = "S";
+		Character::symbol_ = 'S';
 		Character::attack_ = 26;
 		Character::def_ = 5;
 		Character::life_ = 35;

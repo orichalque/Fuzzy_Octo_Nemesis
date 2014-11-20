@@ -1,5 +1,5 @@
-#ifndef __MONSTERFACTORYCONCRETE_HPP__
-#define __MONSTERFACTORYCONCRETE_HPP__
+#ifndef __BOSSFACTORY_HPP__
+#define __BOSSFACTORY_HPP__
 
 class BossFactory : public MonsterFactory {
     private:

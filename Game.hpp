@@ -12,6 +12,7 @@ class Game {
         shared_ptr<Screen> screen;
         shared_ptr<Character> character;
         shared_ptr<MonsterFactoryConcrete> monsterFactory;
+        shared_ptr<BossFactory> bossFactory;
         shared_ptr<EquipementFactory> equipementFactory;
         int level;
 

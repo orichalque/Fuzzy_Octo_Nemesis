@@ -45,6 +45,10 @@ string Character::desc(void) {
 	return desc_;
 }
 
+char Character::getSymbol(void) {
+	return symbol_;
+}
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Setters~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 void Character::setLife(int _life) {

@@ -4,7 +4,7 @@ class Gobelin : public Monster {
 	    Gobelin() {
 		    Character::desc_ = "Un gobelin verreux";
 		    Character::name_ = "Gobelin";
-		    Character::symbol_ = "G";
+		    Character::symbol_ = 'G';
 		    Character::attack_ = 12;
 		    Character::def_ = 5;
 		    Character::life_ = 35;

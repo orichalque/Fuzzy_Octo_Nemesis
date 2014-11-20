@@ -3,7 +3,7 @@ class Vampire : public Monster {
 	Vampire() {
 		Character::desc_ = "Un vampire assoiffé de sang";
 		Character::name_ = "Vampire";
-		Character::symbol_ = "V";
+		Character::symbol_ = 'V';
 		Character::attack_ = 36;
 		Character::def_ = 25;
 		Character::life_ = 86;

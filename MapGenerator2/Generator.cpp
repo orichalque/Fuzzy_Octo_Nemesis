@@ -1,6 +1,3 @@
-#include<vector>
-
-#include"Leaf.cpp"
 #include"Generator.hpp"
 
 using namespace std;
@@ -212,17 +209,27 @@ void Generator::init() {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */
 
 shared_ptr<Rectangle> Generator::placeCharacter(shared_ptr<Character> c) {
-    for (Leaf* l : leafs) {
+   for (Leaf* l : leafs) {
         if (l -> isJoined() == true and l -> isEmpty()) {
-            return make_shared<Rectangle>(l -> getRoom());
+        	l -> setFull();
+        	mat[l->getRoom() -> getYCenter()][l -> getRoom() -> getXCenter()] = '@';
+        	c -> setX(l->getRoom() -> getXCenter());
+        	c -> setY(l->getRoom() -> getYCenter());
+            return make_shared<Rectangle>(*(l -> getRoom()));
         }
-    }   
-
-
-/* TO DO */
-
-
-
-
+   }   
 }
 
+
+shared_ptr<Monster> Generator::placeBoss(int level, shared_ptr<BossFactory> mf) {
+	Leaf* l;
+	for (int i = leafs.size()-1; i != 0; i--) {
+		l = leafs.at(i);
+		if (l -> isJoined() == true and l -> isEmpty()) {
+        	l -> setFull();
+        	shared_ptr<Monster> boss = mf -> create(level);
+        	mat[l->getRoom() -> getYCenter()][l -> getRoom() -> getXCenter()] = boss -> getSymbol();
+      	  	return boss;
+      	}
+	}
+}	

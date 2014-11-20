@@ -3,7 +3,7 @@ class Ghoul : public Monster {
 	Ghoul() {
 		Character::desc_ = "Une goule en décomposition, dégueulasse";
 		Character::name_ = "Goule";
-		Character::symbol_ = "G";
+		Character::symbol_ = 'G';
 		Character::attack_ = 27;
 		Character::def_ = 34;
 		Character::life_ = 100;

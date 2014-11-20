@@ -32,6 +32,8 @@ class Leaf {
         int getRoomCenterX();
         int getRoomCenterY();
         bool isJoined();
+        bool isEmpty();
+		void setFull();
         
         bool split(vector<Leaf*> *leafs, int seed);
         bool createRoom(int seed);

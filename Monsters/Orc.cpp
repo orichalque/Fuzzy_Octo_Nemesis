@@ -3,7 +3,7 @@ class Orc : public Monster {
 	Orc() {
 		Character::desc_ = "Un orc à l'allure aggressive";
 		Character::name_ = "Orc";
-		Character::symbol_ = "O";
+		Character::symbol_ = 'O';
 		Character::attack_ = 18;
 		Character::def_ = 11;
 		Character::life_ = 45;

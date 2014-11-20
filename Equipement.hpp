@@ -13,6 +13,11 @@ class Equipement : public Item {
 		virtual int getAtt();
 		virtual	int getDef();
 		virtual	int getDext();
+		virtual bool isHelmet();
+		virtual bool isShield();
+		virtual bool isArmor();
+		virtual bool isWeapon();
+		
 		
 };
 

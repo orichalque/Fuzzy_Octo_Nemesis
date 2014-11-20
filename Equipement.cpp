@@ -20,3 +20,18 @@ int Equipement::getDext() {
 	return dext;
 }
 
+bool Equipement::isHelmet() {
+    return false;
+}
+
+bool Equipement::isShield(){
+    return false;
+}
+
+bool Equipement::isArmor(){
+    return false;
+}
+
+bool Equipement::isWeapon(){
+    return false;
+}

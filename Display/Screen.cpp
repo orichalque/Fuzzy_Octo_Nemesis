@@ -190,6 +190,40 @@ shared_ptr<Character> Screen::chooseCharacter(void) {
     }
 }
 
+void Screen::updateCharacterInfo(shared_ptr<Character> character) {
+    mvprintStat(7, 1, character -> name());
+    mvprintStat(1, 3, "Attaque: "+to_string(character -> getCombinedAtt()));
+    mvprintStat(1, 4, "Defense: "+to_string(character -> getCombinedDef()));
+    mvprintStat(1, 5, "Points de vie: "+to_string(character -> life()));
+    mvprintStat(1, 6, "Dextérité: "+to_string(character -> getCombinedDext()));
+    
+    
+    mvprintStat(7, 9, "Equipement");
+   
+  
+    string s = "";
+    if (character -> getShield() == NULL) {
+        s = "Bouclier: Aucun";
+    } else {
+        s = "Bouclier: "+character -> getShield() -> getName();
+    }
+    mvprintStat(1, 11, s);   
+    if (character -> getArmor() == NULL) {
+        s = "Armure: Aucune";
+    } else {
+        s = "Armure: "+character -> getArmor() -> getName();
+    }
+    mvprintStat(1, 12, s);   
+    if (character -> getHelmet() == NULL) {
+        s = "Casque: Aucun";
+    } else {
+        s = "Casque: "+character -> getHelmet() -> getName();
+    }
+    mvprintStat(1, 13, s);   
+    mvprintStat(1, 14, "Arme: "+character -> getWeapon() -> getName());
+    
+}
+        
 WINDOW* Screen::createWindow(int height, int width, int starty, int startx) {
 	WINDOW *local_win;
 	local_win = newwin(height, width, starty, startx);

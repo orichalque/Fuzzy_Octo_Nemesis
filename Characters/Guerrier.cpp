@@ -7,6 +7,9 @@ class Guerrier : public Character {
             Character::def_ = 10;
             Character::life_ = 75;
 	        Character::dext_ = 5;
+	        
+	        Character::weapon = make_shared<Dagger>();
+	        Character::armor = make_shared<LeatherArmor>();
         }
 };
 

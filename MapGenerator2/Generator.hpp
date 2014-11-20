@@ -21,9 +21,10 @@ class Generator {
         bool findLeaf(Rectangle* l);
         void init();
         shared_ptr<Rectangle> placeCharacter(shared_ptr<Character> c);
-        shared_ptr<Monster> placeBoss(int level, shared_ptr<BossFactory> f);
-        vector< shared_ptr<Monster> > placeMonsters(int level, shared_ptr<MonsterFactoryConcrete> mfc);
+        shared_ptr<Monster> placeBoss(int level, shared_ptr<BossFactory> bf);
+        vector< shared_ptr<Monster> > placeMonsters(int level, shared_ptr<MonsterFactoryConcrete> mfc, shared_ptr<BossFactory> bf);
         vector< vector<char> >  getMap();
+        void updateCharPosition(shared_ptr<Character> character);
     
 };
 

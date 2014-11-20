@@ -208,13 +208,37 @@ void Generator::init() {
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */
 
+void Generator::updateCharPosition(shared_ptr<Character> character ) {
+    mat[character -> x()][character -> y()] = '@';
+    if (character -> x() > 0) {
+        if (mat[character -> x()-1][character -> y()] == '@') {
+            mat[(character -> x())-1][character -> y()] = ' ';
+        }
+    }
+    if (character -> y() > 0) {
+        if (mat[character -> x()][character -> y()-1] == '@') {
+            mat[character -> x()][character -> y()-1] = ' ';
+        }
+    }
+    if (character -> x() < SIZE-1) {
+        if (mat[character -> x()+1][character -> y()] == '@') {
+            mat[character -> x()+1][character -> y()] = ' ';
+        }
+    }
+    if (character -> y() < SIZE-1) {
+        if (mat[character -> x()][character -> y()+1] == '@') {
+            mat[character -> x()][character -> y()+1] = ' ';
+        }
+    }
+}
+
 shared_ptr<Rectangle> Generator::placeCharacter(shared_ptr<Character> c) {
    for (Leaf* l : leafs) {
         if (l -> isJoined() and l -> isEmpty()) {
         	l -> setFull();
         	mat[l->getRoom() -> getYCenter()][l -> getRoom() -> getXCenter()] = '@';
-        	c -> setX(l->getRoom() -> getXCenter());
-        	c -> setY(l->getRoom() -> getYCenter());
+        	c -> setY(l->getRoom() -> getXCenter());
+        	c -> setX(l->getRoom() -> getYCenter());
             return make_shared<Rectangle>(*(l -> getRoom()));
         }
    }   
@@ -234,8 +258,9 @@ shared_ptr<Monster> Generator::placeBoss(int level, shared_ptr<BossFactory> mf) 
 	}
 }
 
-vector< shared_ptr<Monster> > Generator::placeMonsters(int level, shared_ptr<MonsterFactoryConcrete> mfc) {
+vector< shared_ptr<Monster> > Generator::placeMonsters(int level, shared_ptr<MonsterFactoryConcrete> mfc, shared_ptr<BossFactory> bf) {
 	vector< shared_ptr<Monster> > monsters;
+	monsters.push_back(placeBoss(level, bf));
 	int mobs_to_add[3];
 	int seed_for_random(0);
 	
@@ -249,13 +274,13 @@ vector< shared_ptr<Monster> > Generator::placeMonsters(int level, shared_ptr<Mon
 		srand (time(NULL) + seed_for_random);
 		++seed_for_random;
 		if (l -> isJoined() and l -> isEmpty()) {
-			monsters.push_back(mfc -> create(rand()%3));
+			monsters.push_back(mfc -> create(mobs_to_add[rand()%3]));
         	l -> setFull();
-        	mat[l->getRoom() -> getYCenter()][l -> getRoom() -> getXCenter()] = 'M';
-        	monsters.back()-1 -> setX(l->getRoom() -> getXCenter());
-        	monsters.back()-1 -> setY(l->getRoom() -> getYCenter());
+        	mat[l->getRoom() -> getYCenter()][l -> getRoom() -> getXCenter()] = monsters.back() -> getSymbol();
+        	monsters.back() -> setX(l->getRoom() -> getXCenter());
+        	monsters.back() -> setY(l->getRoom() -> getYCenter());
         }
-	}
+	} 
 	
 	return monsters;
 	

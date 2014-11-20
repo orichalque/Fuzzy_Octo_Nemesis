@@ -7,12 +7,16 @@
 
 #include "Item.cpp"
 #include "Equipement.cpp"
-#include "Character.cpp"
-#include "Monster.cpp"
 #include "Shield.cpp"
 #include "Armor.cpp"
 #include "Weapon.cpp"
 #include "Helmet.cpp"
+#include "Weapons.hpp"
+#include "Armors.hpp"
+#include "Helmets.hpp"
+#include "Shields.hpp"
+#include "Character.cpp"
+#include "Monster.cpp"
 #include "Characters.hpp"
 #include "Monsters.hpp"
 #include "Weapons.hpp"
@@ -56,9 +60,35 @@ void Game::launchGame() {
     //resizing the window with a bash script
     system((char*)str.c_str());    
     screen -> init(); 
-    screen -> displayIntro(); 
+    //screen -> displayIntro(); 
     character = (screen -> chooseCharacter());
     screen -> windowBuilding(generator -> getSize());
+}
+
+void Game::moveCharacter() {
+    int ch = getch();
+    if ((ch == KEY_UP) or (ch == KEY_DOWN) or (ch == KEY_RIGHT) or (ch == KEY_LEFT)) {
+        /* Update the model */
+        character -> updatePosition(ch, generator -> getSize(), generator -> getMap());        
+        /* Warn the view */ 
+        generator -> updateCharPosition(character);
+    }
+}
+
+void Game::equip(shared_ptr<Equipement> equipement) {
+    if (equipement -> isWeapon()) {
+        character -> setWeapon(equipement);
+    } else 
+    if (equipement -> isArmor()) {
+        character -> setArmor(equipement);
+    } else 
+    if (equipement -> isHelmet()) {
+        character -> setHelmet(equipement);
+    } else
+    if (equipement -> isShield()) {
+        character -> setShield(equipement);
+    }
+    screen -> updateCharacterInfo(character);
 }
 
 void Game::generateMap() {
@@ -68,8 +98,8 @@ void Game::generateMap() {
     generator -> createHalls();
     generator -> buildMap();
     generator -> placeCharacter(character);
-    generator -> placeBoss(level, bossFactory);
-    generator -> placeMonsters(level, monsterFactory);
+    generator -> placeMonsters(level, monsterFactory, bossFactory);
+    screen -> updateCharacterInfo(character);
 }
 
 void Game::displayMap() {
@@ -91,22 +121,23 @@ void Game::displayMap() {
         line = "";
         line = line + "#";
         for (int j = 0; j < generator -> getSize(); j++) {
-            line = line + map[i][j];
+            line = line + map[j][i];
         }
         line = line + "#";
         screen -> mvprintMap(7, i+2, line);    
     }
-    getch();
-    screen -> clearMap();
 }
 
 int main() {
     Game game;
     game.launchGame();
+    game.generateMap();
+    game.displayMap();
+    game.generateMap();
+    game.displayMap();
     while (true) {
-        game.generateMap();
+        game.moveCharacter();
         game.displayMap();
-        getch();
     }
             
     /* endwin(); */

@@ -69,6 +69,7 @@ void Game::generateMap() {
     generator -> buildMap();
     generator -> placeCharacter(character);
     generator -> placeBoss(level, bossFactory);
+    generator -> placeMonsters(level, monsterFactory);
 }
 
 void Game::displayMap() {
@@ -107,5 +108,6 @@ int main() {
         game.displayMap();
         getch();
     }
+            
     /* endwin(); */
 }

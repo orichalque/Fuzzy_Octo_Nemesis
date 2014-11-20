@@ -210,7 +210,7 @@ void Generator::init() {
 
 shared_ptr<Rectangle> Generator::placeCharacter(shared_ptr<Character> c) {
    for (Leaf* l : leafs) {
-        if (l -> isJoined() == true and l -> isEmpty()) {
+        if (l -> isJoined() and l -> isEmpty()) {
         	l -> setFull();
         	mat[l->getRoom() -> getYCenter()][l -> getRoom() -> getXCenter()] = '@';
         	c -> setX(l->getRoom() -> getXCenter());
@@ -225,11 +225,40 @@ shared_ptr<Monster> Generator::placeBoss(int level, shared_ptr<BossFactory> mf) 
 	Leaf* l;
 	for (int i = leafs.size()-1; i != 0; i--) {
 		l = leafs.at(i);
-		if (l -> isJoined() == true and l -> isEmpty()) {
+		if (l -> isJoined() and l -> isEmpty()) {
         	l -> setFull();
         	shared_ptr<Monster> boss = mf -> create(level);
         	mat[l->getRoom() -> getYCenter()][l -> getRoom() -> getXCenter()] = boss -> getSymbol();
       	  	return boss;
       	}
 	}
-}	
+}
+
+vector< shared_ptr<Monster> > Generator::placeMonsters(int level, shared_ptr<MonsterFactoryConcrete> mfc) {
+	vector< shared_ptr<Monster> > monsters;
+	int mobs_to_add[3];
+	int seed_for_random(0);
+	
+	/* get the 3 right monsters for the actual level */
+	
+	for (int i = -1; i < 2; ++i) {
+		mobs_to_add[i+1] = (2*level + (level-1)) +i;
+	}
+	
+	for (Leaf* l : leafs) {
+		srand (time(NULL) + seed_for_random);
+		++seed_for_random;
+		if (l -> isJoined() and l -> isEmpty()) {
+			monsters.push_back(mfc -> create(rand()%3));
+        	l -> setFull();
+        	mat[l->getRoom() -> getYCenter()][l -> getRoom() -> getXCenter()] = 'M';
+        	monsters.back()-1 -> setX(l->getRoom() -> getXCenter());
+        	monsters.back()-1 -> setY(l->getRoom() -> getYCenter());
+        }
+	}
+	
+	return monsters;
+	
+}
+
+	

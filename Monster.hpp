@@ -28,11 +28,6 @@ class Monster : public Character {
 		std::vector<int> getLootList();
 		int getNbLoot();
 		int getLootPb();		
-		
-		
-		//methods
-	//	Item loot(void); //Return an item from the dropList
-	
 };
 
 #endif 

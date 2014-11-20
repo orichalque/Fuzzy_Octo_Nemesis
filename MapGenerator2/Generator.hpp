@@ -22,6 +22,7 @@ class Generator {
         void init();
         shared_ptr<Rectangle> placeCharacter(shared_ptr<Character> c);
         shared_ptr<Monster> placeBoss(int level, shared_ptr<BossFactory> f);
+        vector< shared_ptr<Monster> > placeMonsters(int level, shared_ptr<MonsterFactoryConcrete> mfc);
         vector< vector<char> >  getMap();
     
 };

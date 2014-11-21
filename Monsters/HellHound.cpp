@@ -10,5 +10,9 @@ class HellHound : public Monster {
 		Character::symbol_ = 'H';
 		Monster::lootList = {7 , 12, 17, 22};
 	}
-//string _name, string _desc, int life_, int attack_, int def_, int dext_
+	
+	
+	bool isBoss() {
+		return true;
+	}
 };

@@ -34,44 +34,49 @@ class Character{ //Abstract Class
 		~Character();
 		
 		//Getters
-		int life();
-		int attack();
-		int def();
-		int dext();
-		int getCombinedAtt();
-		int getCombinedDef();
-		int getCombinedDext();
-		int x();
-		int y();
-		char getSymbol();
-		std::string name();
-		std::string desc();
-		shared_ptr<Equipement> getWeapon();
-		shared_ptr<Equipement> getShield();
-		shared_ptr<Equipement> getHelmet();
-		shared_ptr<Equipement> getArmor();
+		virtual int life();
+		virtual int attack();
+		virtual int def();
+		virtual int dext();
+		virtual int getCombinedAtt();
+		virtual int getCombinedDef();
+		virtual int getCombinedDext();
+		virtual int x();
+		virtual int y();
+		virtual char getSymbol();
+		virtual std::string name();
+		virtual std::string desc();
+		virtual shared_ptr<Equipement> getWeapon();
+		virtual shared_ptr<Equipement> getShield();
+		virtual shared_ptr<Equipement> getHelmet();
+		virtual shared_ptr<Equipement> getArmor();
 		
 		//Setters		
-		void setLife(int _life); 
-		void setAttack(int _attack);
-		void setDef(int _def);
-		void setDext(int _dext);
-		void setX(int _x);
-		void setY(int _y);
-		void setName(std::string _name);
-		void setDesc(std::string _desc);
+		virtual void setLife(int _life); 
+		virtual void setAttack(int _attack);
+		virtual void setDef(int _def);
+		virtual void setDext(int _dext);
+		virtual void setX(int _x);
+		virtual void setY(int _y);
+		virtual void setName(std::string _name);
+		virtual void setDesc(std::string _desc);
 		
-		void setWeapon(shared_ptr<Equipement> weap);
-        void setHelmet(shared_ptr<Equipement> helm);
-        void setArmor(shared_ptr<Equipement> arm);
-        void setShield(shared_ptr<Equipement> shie);
+		virtual void setWeapon(shared_ptr<Equipement> weap);
+        virtual void setHelmet(shared_ptr<Equipement> helm);
+        virtual void setArmor(shared_ptr<Equipement> arm);
+        virtual void setShield(shared_ptr<Equipement> shie);
 		
 		//Other Methods
-		void substractLife(int damages);
-		void addLife(int heal);
+		virtual void substractLife(int damages);
+		virtual void addLife(int heal);
+		
+		virtual bool hitFoe(shared_ptr<Character> mon);
+		virtual int attackFoe(shared_ptr<Character> mon);
+		virtual bool fleeFoe(shared_ptr<Character> mon);
+		virtual int defendFromFoe();
 		
 		//Deplacement methods
-		void updatePosition(int ch, int size, vector< vector<char> > map);
+		virtual void updatePosition(int ch, int size, vector< vector<char> > map);
 };
 
 #endif

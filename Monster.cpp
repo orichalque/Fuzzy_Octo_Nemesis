@@ -17,3 +17,7 @@ int Monster::getLootPb(void) {
 	return lootPb;
 }
 
+bool Monster::isBoss() {
+	return false;
+}
+

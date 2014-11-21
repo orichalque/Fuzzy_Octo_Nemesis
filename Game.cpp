@@ -27,6 +27,7 @@
 #include "Factory.cpp"
 #include "MonsterFactory.cpp"
 #include "MonsterFactoryConcrete.cpp"
+
 #include "BossFactory.cpp"
 #include "EquipementFactory.cpp"
 
@@ -37,6 +38,7 @@
 
 
 #include"Game.hpp"
+
 
 
 Game::Game() {
@@ -106,17 +108,13 @@ void Game::displayMap() {
     screen -> clearMap();
     vector< vector<char> > map = generator -> getMap();
     string line = "";
-    string vLine = "";
-    
+    string vLine = "";   
     for (int i = 0; i < (generator -> getSize() + 2); ++i) {
         vLine = vLine + "#";
-    }
-    
+    }   
     wattron(screen -> getWinMap(), COLOR_PAIR(1));
     screen -> mvprintMap(7,1,vLine);    
     screen -> mvprintMap(7,1+generator->getSize()+1,vLine);
-
-    
     for (int i = 0; i < generator -> getSize(); i++) {
         line = "";
         line = line + "#";
@@ -126,6 +124,26 @@ void Game::displayMap() {
         line = line + "#";
         screen -> mvprintMap(7, i+2, line);    
     }
+}
+
+int Game::fight(shared_ptr<Character> character, shared_ptr<Character> monster) {
+	bool fightEnd = false;
+	int choice;
+	while(!fightEnd) {
+		choice = screen -> chooseAction();
+		switch(choice){
+			case 1:
+			
+				break;
+			case 2:
+			
+				break;
+				
+			case 3:
+			
+				break;
+		};
+	}
 }
 
 int main() {

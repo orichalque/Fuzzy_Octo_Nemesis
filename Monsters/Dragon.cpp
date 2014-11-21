@@ -10,4 +10,8 @@ class Dragon : public Monster {
         Character::symbol_ = 'D';
         Monster::lootList = {9, 14, 19, 24};
 	}
+	
+	bool isBoss() {
+		return true;
+	}
 };

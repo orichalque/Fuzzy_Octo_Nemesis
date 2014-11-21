@@ -10,5 +10,9 @@ class Troll : public Monster {
 		Character::symbol_ = 'T';
 		Monster::lootList = {3,11,16,21};
 	}
+	
+	bool isBoss() {
+		return true;
+	}
 //string _name, string _desc, int life_, int attack_, int def_, int dext_
 };

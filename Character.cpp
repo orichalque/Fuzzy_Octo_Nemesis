@@ -170,19 +170,56 @@ void Character::setShield(shared_ptr<Equipement> shie) {
 /*~~~~~~~~~~~~~~~~~~~~~~~OthersMethods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*
-* Substract life after taking damage
-*/
+ * Substract life after taking damage
+ */
 void Character::substractLife(int damages) {
 	assert(damages >= 0);
 	life_ = life_ - damages;
 }
 
 /*
-* Obtain life after regenerating
-*/
+ * Obtain life after regenerating
+ */
 void Character::addLife(int heal) {
 	assert(heal >= 0);
 	life_ = life_ + heal;
+}
+
+
+
+/*
+ * Define if an attack hits the ennemi
+ */
+bool Character::hitFoe(shared_ptr<Character> monster) {
+	int dif = 100*(dext_ / monster -> dext());	 
+	return (rand()%100 < dif);
+}
+
+/*
+ * Attack the opposite monster
+ */
+int Character::attackFoe(shared_ptr<Character> monster) {
+	int degats = getCombinedAtt() - (monster -> def());
+	if (degats<0) {
+		degats = 0;
+	}
+	monster -> setLife((monster -> life() - degats));
+	return degats;
+}
+ 
+/*
+ * Defend from the opposite monster
+ */
+int Character::defendFromFoe() {
+	return (1.5 * getCombinedDef());
+}
+
+/*
+ * Try to run away from the fight !
+ */
+bool Character::fleeFoe(shared_ptr<Character> monster) {
+	int dif = 100*(dext_ / monster -> dext());	 
+	return (rand()%100 < (dif+5));
 }
 
 

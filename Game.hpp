@@ -7,6 +7,7 @@
 #ifndef GAME_CPP
 #define GAME_CPP
 class Game { /*Controler of the MVC*/
+
     private:
         shared_ptr<Generator> generator; //View with Screen
         shared_ptr<Screen> screen; //View with Screen
@@ -26,6 +27,10 @@ class Game { /*Controler of the MVC*/
         void generateMap();
         void moveCharacter();
         void equip(shared_ptr<Equipement> equipement);
+        int fight(shared_ptr<Character> character, shared_ptr<Character> monster);
+        enum fightState { VICTORY,	LOOSE,	RUN, BOSSWIN };
 };
 
-#endif
+#endif	
+
+		

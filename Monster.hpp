@@ -25,9 +25,10 @@ class Monster : public Character {
 		~Monster();
 		
 		//getter
-		std::vector<int> getLootList();
-		int getNbLoot();
-		int getLootPb();		
+		virtual std::vector<int> getLootList();
+		virtual int getNbLoot();
+		virtual int getLootPb();		
+		virtual	bool isBoss();
 };
 
 #endif 

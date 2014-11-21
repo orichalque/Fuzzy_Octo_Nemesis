@@ -10,4 +10,8 @@ class Golem : public Monster {
 		Character::symbol_ = 'G';
 		Monster::lootList = {8, 13, 18, 23};
 	}
+	
+	bool isBoss() {
+		return true;
+	}
 };

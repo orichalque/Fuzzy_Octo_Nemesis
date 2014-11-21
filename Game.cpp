@@ -202,7 +202,54 @@ int Game::fight(shared_ptr<Character> monster) {
 }
 
 int Game::loot(shared_ptr<Monster> monster) {
-	/* distribution du loot. */
+	screen -> clearTxt();
+	vector< shared_ptr<Equipement> > loots;
+    shared_ptr<Equipement> equipement;
+    int ch; int x(18);
+	for (int i : monster -> getLootList()) {
+	    loots.push_back(equipementFactory -> create(i));
+	}	
+	
+	while (not loots.empty()) {
+   	    screen -> clearTxt();
+	    equipement = loots.back();
+	    screen -> mvprintTxt(2, 2, "Vous ramassez l'équipement: "+ equipement -> getName()+" !") ;
+        screen -> getNewEquipement(equipement);
+        if (equipement -> isWeapon()) {
+            screen -> getMyEquipement(character -> getWeapon());
+            if (screen -> equip()) {
+                character -> setWeapon(equipement);
+            }
+        } else 
+        if (equipement -> isHelmet()) {
+            screen -> getMyEquipement(character -> getHelmet());
+             if (screen -> equip()) {
+                character -> setHelmet(equipement);
+            }
+        } else 
+        if (equipement -> isArmor()) {
+            screen -> getMyEquipement(character -> getArmor());
+             if (screen -> equip()) {
+                character -> setArmor(equipement);
+            }
+        } else 
+        if (equipement -> isShield()) {
+            screen -> getMyEquipement(character -> getShield());
+             if (screen -> equip()) {
+                character -> setShield(equipement);
+            }
+        }
+		screen -> updateCharacterInfo(character);
+    	this_thread::sleep_for(chrono::milliseconds(300));		
+	    loots.pop_back();
+	}
+	
+	screen -> mvprintTxt(2, 11, "Appuyez sur entrée") ;
+	while ((ch=getch())!=10) {
+	    
+	}
+	screen -> clearTxt();
+	//end looting back to map
 }
 
 int main() {
@@ -212,7 +259,8 @@ int main() {
     game.displayMap();
     game.generateMap();
     game.displayMap();
-    game.fight(make_shared<Troll>());
+//    game.fight(make_shared<Troll>());
+    game.loot(make_shared<HellHound>());
     while (true) {
         game.moveCharacter();
         game.displayMap();

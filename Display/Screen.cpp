@@ -89,9 +89,9 @@ void Screen::displayIntro(void) {
 
 void Screen::windowBuilding(int size) {
     //we assume that introduction has already been displayed
-	winStat = createWindow(size +5 , 25, 0, 0);
+	winStat = createWindow(size +5 , 27, 0, 0);
 	
-	winMap = createWindow(size+5, size+15, 0, 25);
+	winMap = createWindow(size+5, size+13, 0, 27);
 	
 	winTxt = createWindow(LINES - (size + 5), COLS, LINES - 13, 0);
 	getch();
@@ -190,7 +190,9 @@ shared_ptr<Character> Screen::chooseCharacter(void) {
     }
 }
 
+
 void Screen::updateCharacterInfo(shared_ptr<Character> character) {
+    clearStat();
     mvprintStat(7, 1, character -> name());
     mvprintStat(1, 3, "Attaque: "+to_string(character -> getCombinedAtt()));
     mvprintStat(1, 4, "Defense: "+to_string(character -> getCombinedDef()));
@@ -225,6 +227,27 @@ void Screen::updateMonsterInfo(shared_ptr<Character>monster) {
 	mvprintTxt(COLS -22, 10, "Vie du monstre: "+to_string(monster -> life()));   
 }
 
+void Screen::getMyEquipement(shared_ptr<Equipement> equipement) {
+    if (equipement == NULL) {
+        mvprintTxt(2, 4, "Equipé: Rien") ;
+        mvprintTxt(2, 5, "Attaque: 0"); 
+        mvprintTxt(2, 6, "Defense: 0"); 
+        mvprintTxt(2, 7, "Dexterité: 0"); 
+    } else {
+        mvprintTxt(2, 4, "Equipé: "+ equipement -> getName()) ;
+        mvprintTxt(2, 5, "Attaque: "+ to_string(equipement -> getAtt())); 
+        mvprintTxt(2, 6, "Defense: "+ to_string(equipement -> getDef())); 
+        mvprintTxt(2, 7, "Dexterité: "+ to_string(equipement -> getDext())); 
+    }
+}
+
+void Screen::getNewEquipement(shared_ptr<Equipement> equipement) {
+    mvprintTxt(40, 4, "Ramassé: "+ equipement -> getName()) ;
+    mvprintTxt(40, 5, "Attaque: "+ to_string(equipement -> getAtt())); 
+    mvprintTxt(40, 6, "Defense: "+ to_string(equipement -> getDef())); 
+    mvprintTxt(40, 7, "Dexterité: "+ to_string(equipement -> getDext())); 
+}
+        
 int Screen::chooseAction() {
 	enum choices:int { ATTACK = 1, DEFENSE=2, RUN=3};
 	mvprintTxt(2, 9, "Choisissez votre action");
@@ -260,6 +283,34 @@ int Screen::chooseAction() {
 		return RUN;
 	}
 	return ATTACK;
+}
+
+bool Screen::equip() { 
+    int ch; int x(18);
+    mvprintTxt(2, 9, "Equiper ?") ;
+    mvprintTxt(x, 9, ">") ;
+    mvprintTxt(20, 9, "Oui") ;
+    mvprintTxt(30, 9, "Non") ;
+    ch = getch();
+    while (ch != 10) {
+        if (ch == KEY_RIGHT and x == 18) {
+            mvprintTxt(18, 9, " ") ;
+            x += 10;
+        }
+           
+        if (ch == KEY_LEFT and x == 28) {
+            mvprintTxt(28, 9, " ") ;
+            x -= 10;
+        }
+        mvprintTxt(x, 9, ">") ;
+        ch = getch();
+    }
+        
+    if (x == 18) {
+        return true;        
+    } else {
+        return false;
+    }
 }
         
 WINDOW* Screen::createWindow(int height, int width, int starty, int startx) {

@@ -28,6 +28,9 @@ class Screen {
         int chooseAction(void);
         void updateCharacterInfo(shared_ptr<Character> character);
         void updateMonsterInfo(shared_ptr<Character>monster);
+        void getMyEquipement(shared_ptr<Equipement> equipement);
+        void getNewEquipement(shared_ptr<Equipement> equipement);
+        bool equip();
         void windowBuilding(int size);
         void clearTxt();
         void clearMap();

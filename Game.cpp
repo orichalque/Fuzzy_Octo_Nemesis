@@ -54,7 +54,6 @@ Game::~Game() {
     //All Hail for the SmartPointers !
 }
 
-
 void Game::launchGame() {
     int x = 40 + generator -> getSize();
     int y = 18 + generator -> getSize();
@@ -124,26 +123,86 @@ void Game::displayMap() {
         line = line + "#";
         screen -> mvprintMap(7, i+2, line);    
     }
+    screen -> mvprintMap(2, generator -> getSize() +3, "Level "+to_string(level));
 }
 
-int Game::fight(shared_ptr<Character> character, shared_ptr<Character> monster) {
+int Game::fight(shared_ptr<Character> monster) {
 	bool fightEnd = false;
 	int choice;
+	int defense = character -> def();
+	screen -> updateMonsterInfo(monster);
 	while(!fightEnd) {
+		screen -> mvprintTxt(2, 1, "Combat contre: "+monster -> name());
 		choice = screen -> chooseAction();
 		switch(choice){
-			case 1:
-			
+			case 1: //attack
+				screen -> mvprintTxt(2, 2, "Vous attaquez le monstre: "+monster -> name());
+				this_thread::sleep_for(chrono::milliseconds(500));
+				if (character -> hitFoe(monster)) {
+					screen -> mvprintTxt(2, 3, "L'attaque inflige");
+					screen -> mvprintTxt(22, 3, to_string(character -> attackFoe(monster)));
+					screen -> mvprintTxt(26, 3, "points de dégats à l'adversaire!");
+					
+					if (monster -> life() <= 0) {
+						fightEnd = true;
+						/* loot */
+					}
+				} else {
+					screen -> mvprintTxt(2, 3, "Mais l'attaque échoue! ");
+				}
 				break;
 			case 2:
-			
+				screen -> mvprintTxt(2, 2, "Vous vous protégez! ");
+				screen -> mvprintTxt(2, 3, "Défense améliorée pendant un tour." );
+				screen -> mvprintTxt(2, 4, "Vous récouvrez un peu de votre vitalité." );
+				character -> setDef(character -> defendFromFoe());
+				character -> heal();
 				break;
 				
 			case 3:
-			
+				screen -> mvprintTxt(2, 2, "Vous essayez de prendre la fuite, lâche ! ");
+				
+				if (character -> fleeFoe(monster)) {
+					screen -> mvprintTxt(2, 3, "Vous réussissez à vous enfuir ! ");
+					fightEnd = true;
+				} else {
+					screen -> mvprintTxt(2, 3, "L'ennemi vous rattrape!");
+				}
 				break;
 		};
+		
+		screen -> updateCharacterInfo(character);
+		screen -> updateMonsterInfo(monster);
+		this_thread::sleep_for(chrono::milliseconds(500));		
+		if (!fightEnd and character -> life() >= 0) {
+			screen -> mvprintTxt(2, 5, "Tour de l'ennemi") ;
+			screen -> mvprintTxt(2, 6, "L'ennemi vous attaque! ");
+			if (monster -> hitFoe(character)) {
+				screen -> mvprintTxt(2, 7, "Vous perdez "+ to_string(monster -> attackFoe(character))+ " points de vie!" );
+				screen -> updateCharacterInfo(character);
+				if (character -> life() <= 0) {
+					fightEnd = true;
+					/* SWITCH TO DEATH STATE */
+					screen -> clearTxt();
+					screen -> mvprintTxt(27, 2, "Vous êtes mort..." );
+					getch();
+				}
+			} else {
+				screen -> mvprintTxt(2, 7, "Mais son attaque échoue !" );
+			} 
+		} else {
+			screen -> mvprintTxt(2, 5, "Victoire !") ;
+			screen -> mvprintTxt(2, 6, "Vous récupérez un peu de santé. ");
+			/* SWITCH TO LOOT STATE */
+		}
+		character -> setDef(defense);
+		getch();
+		screen -> clearTxt();
 	}
+}
+
+int Game::loot(shared_ptr<Monster> monster) {
+	/* distribution du loot. */
 }
 
 int main() {
@@ -153,6 +212,7 @@ int main() {
     game.displayMap();
     game.generateMap();
     game.displayMap();
+    game.fight(make_shared<Troll>());
     while (true) {
         game.moveCharacter();
         game.displayMap();

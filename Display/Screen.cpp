@@ -196,11 +196,9 @@ void Screen::updateCharacterInfo(shared_ptr<Character> character) {
     mvprintStat(1, 4, "Defense: "+to_string(character -> getCombinedDef()));
     mvprintStat(1, 5, "Points de vie: "+to_string(character -> life()));
     mvprintStat(1, 6, "Dextérité: "+to_string(character -> getCombinedDext()));
-    
-    
+ 
     mvprintStat(7, 9, "Equipement");
-   
-  
+
     string s = "";
     if (character -> getShield() == NULL) {
         s = "Bouclier: Aucun";
@@ -221,7 +219,47 @@ void Screen::updateCharacterInfo(shared_ptr<Character> character) {
     }
     mvprintStat(1, 13, s);   
     mvprintStat(1, 14, "Arme: "+character -> getWeapon() -> getName());
-    
+}
+
+void Screen::updateMonsterInfo(shared_ptr<Character>monster) {
+	mvprintTxt(COLS -22, 10, "Vie du monstre: "+to_string(monster -> life()));   
+}
+
+int Screen::chooseAction() {
+	enum choices:int { ATTACK = 1, DEFENSE=2, RUN=3};
+	mvprintTxt(2, 9, "Choisissez votre action");
+	mvprintTxt(4, 10, "Attaquer");
+	mvprintTxt(16, 10, "Défendre");
+	mvprintTxt(29, 10, "Fuir");
+	mvprintTxt(2, 10, ">");
+	int ch = getch();
+	int x(2);
+	while (ch != 10) {
+		if (ch == KEY_RIGHT and x < 26) {
+			mvprintTxt(x, 10, " ");
+			mvprintTxt(x+12, 10, ">");
+			x +=12;
+		}
+		
+		if (ch == KEY_LEFT and x > 2) {
+			mvprintTxt(x, 10, " ");
+			mvprintTxt(x-12, 10, ">");
+			x -=12;
+		}
+		ch = getch();
+	}
+	
+	if (x == 2) {
+		 mvprintTxt(x, 10, " "); 
+		 return ATTACK;
+	} else if (x == 14) {
+		mvprintTxt(x, 10, " "); 
+		return DEFENSE;
+	} else if (x == 26) {
+		mvprintTxt(x, 10, " "); 
+		return RUN;
+	}
+	return ATTACK;
 }
         
 WINDOW* Screen::createWindow(int height, int width, int starty, int startx) {

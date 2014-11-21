@@ -6,6 +6,7 @@ class Guerrier : public Character {
             Character::attack_ = 12;
             Character::def_ = 10;
             Character::life_ = 75;
+            Character::maxLife_ = 75;
 	        Character::dext_ = 5;
 	        
 	        Character::weapon = make_shared<Dagger>();

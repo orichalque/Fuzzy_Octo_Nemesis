@@ -6,6 +6,7 @@ class Voleur : public Character {
             Character::attack_ = 9;
             Character::def_ = 7;
             Character::life_ = 70;
+            Character::maxLife_ = 70;
 	        Character::dext_ = 10;
 	        
 	        Character::weapon = make_shared<Dagger>();

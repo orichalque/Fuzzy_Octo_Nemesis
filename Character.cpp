@@ -178,21 +178,33 @@ void Character::substractLife(int damages) {
 }
 
 /*
- * Obtain life after regenerating
+ * Obtain life after regenerating *Not implemented in the game yet*
  */
 void Character::addLife(int heal) {
 	assert(heal >= 0);
 	life_ = life_ + heal;
 }
 
+void Character::heal() {
+	int heal = 0.05*maxLife_;
+	((life_+heal) <= maxLife_) ? addLife(heal) : addLife(maxLife_ - life_);
+	
+}
 
 
 /*
  * Define if an attack hits the ennemi
  */
 bool Character::hitFoe(shared_ptr<Character> monster) {
-	int dif = 100*(dext_ / monster -> dext());	 
-	return (rand()%100 < dif);
+	srand(time(NULL));
+	int value(0);
+	if (getCombinedDext() >= monster -> dext()) {
+		value = 80;
+	} else {
+		value = 100*(getCombinedDext() / monster -> dext());
+	}
+	
+	return (rand()%100 < value);
 }
 
 /*
@@ -203,7 +215,7 @@ int Character::attackFoe(shared_ptr<Character> monster) {
 	if (degats<0) {
 		degats = 0;
 	}
-	monster -> setLife((monster -> life() - degats));
+	monster -> substractLife(degats);
 	return degats;
 }
  
@@ -211,7 +223,7 @@ int Character::attackFoe(shared_ptr<Character> monster) {
  * Defend from the opposite monster
  */
 int Character::defendFromFoe() {
-	return (1.5 * getCombinedDef());
+	return (1.20 * getCombinedDef());
 }
 
 /*

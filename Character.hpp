@@ -15,6 +15,7 @@
 class Character{ //Abstract Class 
 	protected:
 		int life_; //Life Points of the character 
+		int maxLife_;
 		int attack_; //Attack points of the character
 		int def_; //Defense points of the character
 		int dext_; //Dexterity of the Character
@@ -69,6 +70,7 @@ class Character{ //Abstract Class
 		//Other Methods
 		virtual void substractLife(int damages);
 		virtual void addLife(int heal);
+		virtual void heal();
 		
 		virtual bool hitFoe(shared_ptr<Character> mon);
 		virtual int attackFoe(shared_ptr<Character> mon);

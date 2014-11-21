@@ -27,7 +27,8 @@ class Game { /*Controler of the MVC*/
         void generateMap();
         void moveCharacter();
         void equip(shared_ptr<Equipement> equipement);
-        int fight(shared_ptr<Character> character, shared_ptr<Character> monster);
+        int fight(shared_ptr<Character> monster);
+        int loot(shared_ptr<Monster> monster);
         enum fightState { VICTORY,	LOOSE,	RUN, BOSSWIN };
 };
 

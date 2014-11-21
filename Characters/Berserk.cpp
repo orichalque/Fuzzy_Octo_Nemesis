@@ -6,6 +6,7 @@ class Berserk : public Character {
             Character::attack_ = 17;
             Character::def_ = 6;
             Character::life_ = 125;
+            Character::maxLife_ = 125;
 	        Character::dext_ = 5;
 	        
 	        Character::weapon = make_shared<ShortSword>();

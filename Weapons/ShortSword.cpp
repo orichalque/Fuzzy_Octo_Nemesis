@@ -5,7 +5,7 @@ class ShortSword : public Weapon {
 		    Item::desc_ = "Une épée courte à la lame bien affutée. ";
             Equipement::att = 18;
             Equipement::def = 6;
-            Equipement::dext = 6;
+            Equipement::dext = 3;
         }
         
 };

@@ -6,6 +6,7 @@ class Paladin : public Character {
             Character::attack_ = 10;
             Character::def_ = 14;
             Character::life_ = 75;
+            Character::maxLife_ = 75;
 	        Character::dext_ = 5;
 	        
 	        Character::weapon = make_shared<Knife>();

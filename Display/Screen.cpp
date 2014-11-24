@@ -143,47 +143,80 @@ shared_ptr<Character> Screen::chooseCharacter(void) {
     mvwprintW(13, 12, win, "Un guerrier équilibré"  );
     mvwprintW(13, 13, win, "déjà armé d'un couteau");
     mvwprintW(13, 14, win, "et d'un bouclier");
-    mvwprintW(13, 16, win, "Appuyez sur <-- ");
     
     mvwprintW(45, 10, win, "Paladin");
     mvwprintW(45, 12, win, "Un soldat en armure" ); 
     mvwprintW(45, 13, win, "capable d'encaisser" );
     mvwprintW(45, 14, win, "des tonnes de dégats" );
-    mvwprintW(45, 16, win, "Appuyez sur -->"); 
     
     mvwprintW(13, 30, win, "Voleur");
     mvwprintW(13, 32, win, "Un rapide brigand"  );
     mvwprintW(13, 33, win, "armé d'une dague affutée");
     mvwprintW(13, 34, win, "et d'une bonne dexterité ");
-    mvwprintW(13, 36, win, "Appuyez sur ^ ");
     
     mvwprintW(45, 30, win, "Berserk");
     mvwprintW(45, 32, win, "Un sanguinaire"  );
     mvwprintW(45, 33, win, "assoiffé de combats, ");
     mvwprintW(45, 34, win, "fort et endurant. ");
-    mvwprintW(45, 36, win, "Appuyez sur v ");
+    
+	x = 10 ;
+    y = 10 ;
+    mvwprintW(x, y,win, "->");
     int button = getch();
     
-    while (button != KEY_UP and button != KEY_DOWN and button != KEY_RIGHT and button != KEY_LEFT) {
-        mvwprintW(0.5*(COLS - 44), 40, win, "Choisissez avec les touches directionnelles!");
-        this_thread::sleep_for(chrono::milliseconds(1000));
-        mvwprintW(0.5*(COLS - 44), 40, win, "                                            ");
-        button = getch();
+    while (button != 10) {
+    	mvwprintW(x, y,win, "->");
+    	switch(button) {
+    		case (KEY_UP):
+    			if (y==30)  {
+    				mvwprintW(x, y,win, "  ");
+    				y = 10;
+    			}
+    			break;
+    		case (KEY_DOWN):
+    			if (y==10) {
+    				mvwprintW(x, y, win,"  ");
+    				y = 30;
+    			}
+    			break;
+    		case (KEY_LEFT):
+    			if (x==42)  {
+    				mvwprintW(x, y,win, "  ");
+    				x = 10;
+    			}
+    			break;
+    		case (KEY_RIGHT):
+    			if (x==10) {
+    				mvwprintW(x, y, win,"  ");
+    				x = 42;
+    			}
+    			break;
+    	};
+    	mvwprintW(x, y, win,"->");
+    	
+    	if (button != KEY_UP and button != KEY_DOWN and button != KEY_RIGHT and button != KEY_LEFT) {
+		    mvwprintW(0.5*(COLS - 44), 40, win, "Choisissez avec les touches directionnelles!");
+		    this_thread::sleep_for(chrono::milliseconds(1000));
+		    mvwprintW(0.5*(COLS - 44), 40, win, "                                            ");
+  		}
+  		
+    	button = getch();
     }
+
     
-    if (button == KEY_UP) {
+    if (x == 10 and y == 30) {
          mvwprintW(0.5*(COLS - 7), 40, win, "Voleur choisi !");
          this_thread::sleep_for(chrono::milliseconds(1000));
          return make_shared<Voleur>();
-    } else if (button == KEY_DOWN) {
+    } else if (x == 42 and y == 30) {
          mvwprintW(0.5*(COLS - 7), 40, win, "Berserk choisi !");
          this_thread::sleep_for(chrono::milliseconds(1000));
          return make_shared<Berserk>();
-    } else if (button == KEY_RIGHT) {
+    } else if (x == 42 and y == 10) {
          mvwprintW(0.5*(COLS - 7), 40, win, "Paladin choisi !");
          this_thread::sleep_for(chrono::milliseconds(1000));
          return make_shared<Paladin>();
-    } else if (button == KEY_LEFT) {
+    } else if (x == 10 and y == 10) {
          mvwprintW(0.5*(COLS - 7), 40, win, "Guerrier choisi !");
          this_thread::sleep_for(chrono::milliseconds(1000));
          return make_shared<Guerrier>();

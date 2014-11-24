@@ -207,7 +207,9 @@ int Game::loot(shared_ptr<Monster> monster) {
     shared_ptr<Equipement> equipement;
     int ch; int x(18);
 	for (int i : monster -> getLootList()) {
-	    loots.push_back(equipementFactory -> create(i));
+		if (monster -> getLootPb() >= rand()%100) {
+			loots.push_back(equipementFactory -> create(i));
+		}
 	}	
 	
 	while (not loots.empty()) {

@@ -1,6 +1,9 @@
 #include "Monster.hpp"
 
-Monster::Monster() { }
+Monster::Monster() { 
+	srand (time(NULL));
+	lootPb = rand()%40 + 40; //~40% to 80% loot
+}
 
 Monster::~Monster() { }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Getters~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

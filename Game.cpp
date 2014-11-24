@@ -38,18 +38,16 @@
 
 #include "Game.hpp"
 #include "GameState.cpp"
+#include "LootState.cpp"
 #include "FightState.cpp"
 #include "MoveState.cpp"
-
-
-
-
 
 
 Game::Game() 
 {
     _fightState = make_shared<FightState>(this);
     _moveState = make_shared<MoveState>(this);
+    _lootState = make_shared<LootState>(this);
     generator = make_shared<Generator>();
     screen = make_shared<Screen>();
     monsterFactory = make_shared<MonsterFactoryConcrete>();
@@ -88,10 +86,19 @@ shared_ptr<GameState> Game::getMoveState() {
     return _moveState;
 }
 
+shared_ptr<GameState> Game::getLootState() {
+    return _lootState;
+}
+
 int Game::getLevel() {
     return level;
 }
 
+shared_ptr<EquipementFactory> Game::getEquipementFactory() {
+    return equipementFactory;
+}
+        
+        
 void Game::setState(shared_ptr<GameState> s) {
     _currentState = s;
 }
@@ -153,7 +160,7 @@ void Game::generateMap() {
     generator -> createHalls();
     generator -> buildMap();
     generator -> placeCharacter(character);
-    generator -> placeMonsters(level, monsterFactory, bossFactory);
+    monsters = generator -> placeMonsters(level, monsterFactory, bossFactory);
     screen -> updateCharacterInfo(character);
 }
 
@@ -180,133 +187,8 @@ void Game::displayMap() {
     screen -> mvprintMap(2, generator -> getSize() +3, "Level "+to_string(level));
 }
 
-int Game::fight(shared_ptr<Character> monster) {
-	bool fightEnd = false;
-	int choice;
-	int defense = character -> def();
-	screen -> updateMonsterInfo(monster);
-	while(!fightEnd) {
-		screen -> mvprintTxt(2, 1, "Combat contre: "+monster -> name());
-		choice = screen -> chooseAction();
-		switch(choice){
-			case 1: //attack
-				screen -> mvprintTxt(2, 2, "Vous attaquez le monstre: "+monster -> name());
-				this_thread::sleep_for(chrono::milliseconds(500));
-				if (character -> hitFoe(monster)) {
-					screen -> mvprintTxt(2, 3, "L'attaque inflige");
-					screen -> mvprintTxt(22, 3, to_string(character -> attackFoe(monster)));
-					screen -> mvprintTxt(26, 3, "points de dégats à l'adversaire!");
-					
-					if (monster -> life() <= 0) {
-						fightEnd = true;
-						/* loot */
-					}
-				} else {
-					screen -> mvprintTxt(2, 3, "Mais l'attaque échoue! ");
-				}
-				break;
-			case 2:
-				screen -> mvprintTxt(2, 2, "Vous vous protégez! ");
-				screen -> mvprintTxt(2, 3, "Défense améliorée pendant un tour." );
-				screen -> mvprintTxt(2, 4, "Vous récouvrez un peu de votre vitalité." );
-				character -> setDef(character -> defendFromFoe());
-				character -> heal();
-				break;
-				
-			case 3:
-				screen -> mvprintTxt(2, 2, "Vous essayez de prendre la fuite, lâche ! ");
-				
-				if (character -> fleeFoe(monster)) {
-					screen -> mvprintTxt(2, 3, "Vous réussissez à vous enfuir ! ");
-					fightEnd = true;
-				} else {
-					screen -> mvprintTxt(2, 3, "L'ennemi vous rattrape!");
-				}
-				break;
-		};
-		
-		screen -> updateCharacterInfo(character);
-		screen -> updateMonsterInfo(monster);
-		this_thread::sleep_for(chrono::milliseconds(500));		
-		if (!fightEnd and character -> life() >= 0) {
-			screen -> mvprintTxt(2, 5, "Tour de l'ennemi") ;
-			screen -> mvprintTxt(2, 6, "L'ennemi vous attaque! ");
-			if (monster -> hitFoe(character)) {
-				screen -> mvprintTxt(2, 7, "Vous perdez "+ to_string(monster -> attackFoe(character))+ " points de vie!" );
-				screen -> updateCharacterInfo(character);
-				if (character -> life() <= 0) {
-					fightEnd = true;
-					/* SWITCH TO DEATH STATE */
-					screen -> clearTxt();
-					screen -> mvprintTxt(27, 2, "Vous êtes mort..." );
-					getch();
-				}
-			} else {
-				screen -> mvprintTxt(2, 7, "Mais son attaque échoue !" );
-			} 
-		} else {
-			screen -> mvprintTxt(2, 5, "Victoire !") ;
-			screen -> mvprintTxt(2, 6, "Vous récupérez un peu de santé. ");
-			/* SWITCH TO LOOT STATE */
-		}
-		character -> setDef(defense);
-		getch();
-		screen -> clearTxt();
-	}
-}
 
-int Game::loot(shared_ptr<Monster> monster) {
-	screen -> clearTxt();
-	vector< shared_ptr<Equipement> > loots;
-    shared_ptr<Equipement> equipement;
-    int ch; int x(18);
-	for (int i : monster -> getLootList()) {
-		if (monster -> getLootPb() >= rand()%100) {
-			loots.push_back(equipementFactory -> create(i));
-		}
-	}	
-	
-	while (not loots.empty()) {
-   	    screen -> clearTxt();
-	    equipement = loots.back();
-	    screen -> mvprintTxt(2, 2, "Vous ramassez l'équipement: "+ equipement -> getName()+" !") ;
-        screen -> getNewEquipement(equipement);
-        if (equipement -> isWeapon()) {
-            screen -> getMyEquipement(character -> getWeapon());
-            if (screen -> equip()) {
-                character -> setWeapon(equipement);
-            }
-        } else 
-        if (equipement -> isHelmet()) {
-            screen -> getMyEquipement(character -> getHelmet());
-             if (screen -> equip()) {
-                character -> setHelmet(equipement);
-            }
-        } else 
-        if (equipement -> isArmor()) {
-            screen -> getMyEquipement(character -> getArmor());
-             if (screen -> equip()) {
-                character -> setArmor(equipement);
-            }
-        } else 
-        if (equipement -> isShield()) {
-            screen -> getMyEquipement(character -> getShield());
-             if (screen -> equip()) {
-                character -> setShield(equipement);
-            }
-        }
-		screen -> updateCharacterInfo(character);
-    	this_thread::sleep_for(chrono::milliseconds(300));		
-	    loots.pop_back();
-	}
-	
-	screen -> mvprintTxt(45, 9, "Appuyez sur entrée") ;
-	while ((ch=getch())!=10) {
-	    
-	}
-	screen -> clearTxt();
-	//end looting back to map
-}
+
 
 int main() {
     Game game;
@@ -319,6 +201,10 @@ int main() {
         game.action();
         game.displayMap();
     }
-            
+    /* to do */
+    /*
+    - Modifier la method display map pour la mettre dans la classe generator. Les mobs sont pas placés dynamiquement -> pas de combats après une fuite.
+    - bug avec les méthodes de random à la con
+    - ajouter des fonctions spéciales quand on tue le boss. Empecher la fuite contre le boss.         
     /* endwin(); */
 }

@@ -6,9 +6,11 @@ FightState::FightState(Game* game) : GameState(game)
 void FightState::action(shared_ptr<Monster> monster)
 {   
     bool fightEnd = false;
+    bool flee = false;
 	int choice;
 	int defense = _game -> getCharacter() -> def();
 	_game -> getScreen() -> updateMonsterInfo(monster);
+
 	while(!fightEnd) {
 		_game -> getScreen() -> mvprintTxt(2, 1, "Combat contre: "+monster -> name());
 		choice = _game -> getScreen() -> chooseAction();
@@ -23,7 +25,7 @@ void FightState::action(shared_ptr<Monster> monster)
 					
 					if (monster -> life() <= 0) {
 						fightEnd = true;
-						/* loot */
+						//loot 
 					}
 				} else {
 					_game -> getScreen() -> mvprintTxt(2, 3, "Mais l'attaque échoue! ");
@@ -39,10 +41,11 @@ void FightState::action(shared_ptr<Monster> monster)
 				
 			case 3:
 				_game -> getScreen() -> mvprintTxt(2, 2, "Vous essayez de prendre la fuite, lâche ! ");
-				
 				if (_game -> getCharacter() -> fleeFoe(monster)) {
 					_game -> getScreen() -> mvprintTxt(2, 3, "Vous réussissez à vous enfuir ! ");
+					_game -> getMonstersList() -> push_back(monster);
 					fightEnd = true;
+					flee = true;
 				} else {
 					_game -> getScreen() -> mvprintTxt(2, 3, "L'ennemi vous rattrape!");
 				}
@@ -52,15 +55,18 @@ void FightState::action(shared_ptr<Monster> monster)
 		_game -> getScreen() -> updateCharacterInfo(_game -> getCharacter());
 		_game -> getScreen() -> updateMonsterInfo(monster);
 		this_thread::sleep_for(chrono::milliseconds(500));		
+		
 		if (!fightEnd and _game -> getCharacter() -> life() >= 0) {
 			_game -> getScreen() -> mvprintTxt(2, 5, "Tour de l'ennemi") ;
 			_game -> getScreen() -> mvprintTxt(2, 6, "L'ennemi vous attaque! ");
+			this_thread::sleep_for(chrono::milliseconds(500));
 			if (monster -> hitFoe(_game -> getCharacter())) {
 				_game -> getScreen() -> mvprintTxt(2, 7, "Vous perdez "+ to_string(monster -> attackFoe(_game -> getCharacter()))+ " points de vie!" );
 				_game -> getScreen() -> updateCharacterInfo(_game -> getCharacter());
 				if (_game -> getCharacter() -> life() <= 0) {
 					fightEnd = true;
-					/* SWITCH TO DEATH STATE */
+					// SWITCH TO DEATH STATE 
+					//	game->setState(game->getDeadState);
 					_game -> getScreen() -> clearTxt();
 					_game -> getScreen() -> mvprintTxt(27, 2, "Vous êtes mort..." );
 					getch();
@@ -68,22 +74,22 @@ void FightState::action(shared_ptr<Monster> monster)
 			} else {
 				_game -> getScreen() -> mvprintTxt(2, 7, "Mais son attaque échoue !" );
 			} 
-		} else {
+    		this_thread::sleep_for(chrono::milliseconds(500));
+		} else if (flee == false) {
 			_game -> getScreen() -> mvprintTxt(2, 5, "Victoire !") ;
 			_game -> getScreen() -> mvprintTxt(2, 6, "Vous récupérez un peu de santé. ");
-
-			_game -> setState(_game -> getMoveState());
-			
+			_game -> setState(_game -> getLootState());
 			/* AJOUTER LOOT STATE ICI */
 			/* AJOUTER LOOT STATE ICI */
 			/* AJOUTER LOOT STATE ICI */
 			/* AJOUTER LOOT STATE ICI */
+		} else {
+		    _game -> setState(_game -> getMoveState());
 		}
 		_game -> getCharacter() -> setDef(defense);
-		getch();
-		_game -> getScreen() -> clearTxt();
+	    _game -> getScreen() -> clearTxt();
 	}
+	
+    _game -> action(monster);
 
-//	game->setState(game->getLootState);
-//	game->setState(game->getDeadState);
 }

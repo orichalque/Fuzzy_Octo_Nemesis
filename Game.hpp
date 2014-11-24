@@ -10,6 +10,7 @@
 class GameState;
 class MoveState;
 class FightState;
+class LootState;
 
 
 class Game { /*Controler of the MVC*/
@@ -29,8 +30,8 @@ class Game { /*Controler of the MVC*/
         
         // States
         shared_ptr<FightState> _fightState;
-        shared_ptr<MoveState> _moveState;/*
-        LootState _lootState;
+        shared_ptr<MoveState> _moveState;
+        shared_ptr<LootState> _lootState;/*
         WonLevelState _wonState;
         DeadState _deadState;
         PauseState _pauseState;*/
@@ -46,6 +47,7 @@ class Game { /*Controler of the MVC*/
         shared_ptr<Character> getCharacter() const;
         shared_ptr<Screen> getScreen() const;
         vector < shared_ptr<Monster> >* getMonstersList();
+        shared_ptr<EquipementFactory> getEquipementFactory();
         void launchGame();
         void displayMap();
         void generateMap();
@@ -61,6 +63,7 @@ class Game { /*Controler of the MVC*/
         // States getters-setters
         shared_ptr<GameState> getFightState();
         shared_ptr<GameState> getMoveState();
+        shared_ptr<GameState> getLootState();
         
         //LootState getLootState() const;
         //WonLevelState getWonLevelState() const;

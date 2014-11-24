@@ -6,6 +6,7 @@ class MoveState : public GameState
     public:
         MoveState(Game* game);
         void action();
+        void action(shared_ptr<Monster> mon);
 };
 
 #endif

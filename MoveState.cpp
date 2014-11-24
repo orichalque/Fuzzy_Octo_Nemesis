@@ -13,16 +13,22 @@ void MoveState::action()
         
         /* Warn the view */ 
         cell = _game -> getGenerator() -> updateCharPosition(_game -> getCharacter());
-        
+        shared_ptr<Monster> m;
         if (cell != ' ' and cell != '#' and cell != '@') {
             shared_ptr<Monster> mons = NULL;
-            for (shared_ptr<Monster> m : * _game -> getMonstersList()) {
+            for (int i = 0; i < _game -> getMonstersList() -> size(); ++i) {
+                m = _game -> getMonstersList() -> at(i);
                 if (m -> getSymbol() == cell and mons == NULL) {
                     mons = m;
+                    _game -> getMonstersList() -> erase(_game -> getMonstersList()-> begin() + i);
                 }
             }
             _game -> setState(_game -> getFightState());
             _game -> action(mons);
         }
     }
+}
+
+void MoveState::action(shared_ptr<Monster> mon) {
+    action();
 }

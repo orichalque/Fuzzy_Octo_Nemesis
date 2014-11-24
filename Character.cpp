@@ -196,7 +196,7 @@ void Character::heal() {
  * Define if an attack hits the ennemi
  */
 bool Character::hitFoe(shared_ptr<Character> monster) {
-	srand(time(NULL));
+	//srand(time(NULL)+monster -> life());
 	int value(0);
 	if (getCombinedDext() >= monster -> dext()) {
 		value = 80;

@@ -116,10 +116,7 @@ void Generator::createHalls() {
                     /* Nearest room is at the bottom */
                    halls.push_back(new Rectangle(itR -> getXCenter(), thisR -> getYCenter(), 1, abs ( itR -> getYCenter() - thisR -> getYCenter())));
                     
-                } else {
-                    /* Same level, only the horizontal hall is necessary */
-                    /* Empty IF */
-                }
+                } 
             } else if (thisR -> getXCenter() > itR -> getXCenter()) {
                 /* the Nearest room is on the right side */
                     halls.push_back(new Rectangle(thisR -> getXCenter(), thisR -> getYCenter(), abs ( thisR -> getXCenter() - itR -> getXCenter()), 1));
@@ -130,10 +127,7 @@ void Generator::createHalls() {
                 } else if (thisR -> getYCenter() < itR -> getYCenter()) {
                     /* Nearest room is at the bottom */
                    halls.push_back(new Rectangle(itR -> getXCenter(), thisR -> getYCenter(), 1, abs ( itR -> getYCenter() - thisR -> getYCenter())));
-                } else {
-                    /* Same level, only the horizontal hall is necessary */
-                    /* Empty IF */
-                }
+                } 
             } else {
             /* Rooms are at the same level */
             /* Only vertical lines are necessary */
@@ -279,7 +273,7 @@ vector< shared_ptr<Monster> > Generator::placeMonsters(int level, shared_ptr<Mon
 		++seed_for_random;
 		if (l -> isJoined() and l -> isEmpty()) {
 			monsters.push_back(mfc -> create(mobs_to_add[rand()%3]));
-        	l -> setFull();
+        	//l -> setFull();
         	mat[l->getRoom() -> getYCenter()][l -> getRoom() -> getXCenter()] = monsters.back() -> getSymbol();
         	monsters.back() -> setX(l->getRoom() -> getXCenter());
         	monsters.back() -> setY(l->getRoom() -> getYCenter());

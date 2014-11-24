@@ -246,7 +246,7 @@ int Game::loot(shared_ptr<Monster> monster) {
 	    loots.pop_back();
 	}
 	
-	screen -> mvprintTxt(2, 11, "Appuyez sur entrée") ;
+	screen -> mvprintTxt(45, 9, "Appuyez sur entrée") ;
 	while ((ch=getch())!=10) {
 	    
 	}

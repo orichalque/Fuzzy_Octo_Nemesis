@@ -208,7 +208,8 @@ void Generator::init() {
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */
 
-void Generator::updateCharPosition(shared_ptr<Character> character ) {
+char Generator::updateCharPosition(shared_ptr<Character> character ) {
+    char cell = mat[character -> x()][character -> y()];
     mat[character -> x()][character -> y()] = '@';
     if (character -> x() > 0) {
         if (mat[character -> x()-1][character -> y()] == '@') {
@@ -230,16 +231,19 @@ void Generator::updateCharPosition(shared_ptr<Character> character ) {
             mat[character -> x()][character -> y()+1] = ' ';
         }
     }
+    return cell;
 }
 
-shared_ptr<Rectangle> Generator::placeCharacter(shared_ptr<Character> c) {
+char Generator::placeCharacter(shared_ptr<Character> c) {
+   char cellBeforeMove;
    for (Leaf* l : leafs) {
         if (l -> isJoined() and l -> isEmpty()) {
         	l -> setFull();
+        	cellBeforeMove = mat[l->getRoom() -> getYCenter()][l -> getRoom() -> getXCenter()];
         	mat[l->getRoom() -> getYCenter()][l -> getRoom() -> getXCenter()] = '@';
         	c -> setY(l->getRoom() -> getXCenter());
         	c -> setX(l->getRoom() -> getYCenter());
-            return make_shared<Rectangle>(*(l -> getRoom()));
+            return cellBeforeMove;
         }
    }   
 }

@@ -36,23 +36,77 @@
 #include "MapGenerator2/Leaf.cpp"
 #include "MapGenerator2/Generator.cpp"
 
+#include "Game.hpp"
+#include "GameState.cpp"
+#include "FightState.cpp"
+#include "MoveState.cpp"
 
-#include"Game.hpp"
 
 
 
-Game::Game() {
+
+
+Game::Game() 
+{
+    _fightState = make_shared<FightState>(this);
+    _moveState = make_shared<MoveState>(this);
     generator = make_shared<Generator>();
     screen = make_shared<Screen>();
     monsterFactory = make_shared<MonsterFactoryConcrete>();
     bossFactory = make_shared<BossFactory>();
     equipementFactory = make_shared<EquipementFactory>();
     level = 1;
+    _currentState = _moveState;
+
 }
 
 Game::~Game() {
     //All Hail for the SmartPointers !
 }
+
+
+shared_ptr<Generator> Game::getGenerator() const
+{
+    return generator;
+}
+
+shared_ptr<Character> Game::getCharacter() const
+{
+    return character;
+}
+
+shared_ptr<Screen> Game::getScreen() const
+{
+    return screen;
+}
+
+shared_ptr<GameState> Game::getFightState() {
+    return _fightState;
+}
+
+shared_ptr<GameState> Game::getMoveState() {
+    return _moveState;
+}
+
+int Game::getLevel() {
+    return level;
+}
+
+void Game::setState(shared_ptr<GameState> s) {
+    _currentState = s;
+}
+
+void Game::action() {
+    _currentState -> action();
+}
+
+void Game::action(shared_ptr<Monster> mons) {
+    _currentState -> action(mons);
+}
+
+vector< shared_ptr<Monster> >* Game::getMonstersList() {
+    return &monsters;
+} 
 
 void Game::launchGame() {
     int x = 40 + generator -> getSize();
@@ -73,7 +127,7 @@ void Game::moveCharacter() {
         character -> updatePosition(ch, generator -> getSize(), generator -> getMap());        
         /* Warn the view */ 
         generator -> updateCharPosition(character);
-    }
+    } 
 }
 
 void Game::equip(shared_ptr<Equipement> equipement) {
@@ -259,10 +313,8 @@ int main() {
     game.displayMap();
     game.generateMap();
     game.displayMap();
-//    game.fight(make_shared<Troll>());
-    game.loot(make_shared<HellHound>());
-    while (true) {
-        game.moveCharacter();
+    while (game.getLevel()) {
+        game.action();
         game.displayMap();
     }
             

@@ -1,0 +1,22 @@
+digraph "Item"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Item\n|# name_\l# desc_\l# value_\l# id_\l# consumable_\l# settable_\l|+ getName()\l+ getDescription()\l+ getValue()\l+ isConsumable()\l+ isSettable()\l+ isEquipement()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{Consumable\n||+ isConsumable()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classConsumable.html"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{Apple\n||+ Apple()\l+ ~Apple()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classApple.html"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node4 [label="{Equipement\n|# att\l# def\l# dext\l|+ ~Equipement()\l+ isEquipement()\l+ getAtt()\l+ getDef()\l+ getDext()\l+ isHelmet()\l+ isShield()\l+ isArmor()\l+ isWeapon()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEquipement.html"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node5 [label="{Armor\n||+ Armor()\l+ ~Armor()\l+ isArmor()\l+ isEquipement()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classArmor.html"];
+  Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node6 [label="{Helmet\n||+ Helmet()\l+ ~Helmet()\l+ isHelmet()\l+ isEquipement()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classHelmet.html"];
+  Node4 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node7 [label="{Shield\n||+ ~Shield()\l+ isShield()\l+ isEquipement()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classShield.html"];
+  Node4 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node8 [label="{Weapon\n||+ Weapon()\l+ ~Weapon()\l+ isWeapon()\l+ isEquipement()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classWeapon.html"];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node9 [label="{Sword\n||+ Sword()\l+ ~Sword()\l+ isSword()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSword.html"];
+}

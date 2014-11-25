@@ -1,0 +1,223 @@
+\hypertarget{classGame}{\section{Game Class Reference}
+\label{classGame}\index{Game@{Game}}
+}
+
+
+{\ttfamily \#include $<$Game.\-hpp$>$}
+
+
+
+Collaboration diagram for Game\-:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGame_ad59df6562a58a614fda24622d3715b65}{Game} ()
+\item 
+\hyperlink{classGame_ae3d112ca6e0e55150d2fdbc704474530}{$\sim$\-Game} ()
+\item 
+shared\-\_\-ptr$<$ \hyperlink{classGame}{Game} $>$ \hyperlink{classGame_affaa9a4a7cc77fcc1fbd140e60f8907b}{get\-Shared\-Ptr\-This} ()
+\item 
+shared\-\_\-ptr$<$ Generator $>$ \hyperlink{classGame_a2a05d793c901ebdc60832d187b58d501}{get\-Generator} () const 
+\item 
+shared\-\_\-ptr$<$ \hyperlink{classCharacter}{Character} $>$ \hyperlink{classGame_acbabdf93244732c23a8fe1b482548fd5}{get\-Character} () const 
+\item 
+shared\-\_\-ptr$<$ Screen $>$ \hyperlink{classGame_a65eb691cddef147865580a8e0b76c579}{get\-Screen} () const 
+\item 
+vector$<$ shared\-\_\-ptr$<$ \hyperlink{classMonster}{Monster} $>$ $>$ $\ast$ \hyperlink{classGame_a68cfd228e261c182cfadf90463dc4727}{get\-Monsters\-List} ()
+\item 
+shared\-\_\-ptr$<$ \hyperlink{classEquipementFactory}{Equipement\-Factory} $>$ \hyperlink{classGame_a9e430bb75a7df9425b257d0018a97bb5}{get\-Equipement\-Factory} ()
+\item 
+void \hyperlink{classGame_aedb4cdc93c8ab85f2f7aff018ccd76ca}{launch\-Game} ()
+\item 
+void \hyperlink{classGame_a265b4a907a360afbb131334300968c9d}{display\-Map} ()
+\item 
+void \hyperlink{classGame_a124812c1a7b84f3aead51cb35a5146f8}{generate\-Map} ()
+\item 
+void \hyperlink{classGame_a8e92b564d2a037f0455b2f10ec9900f0}{move\-Character} ()
+\item 
+void \hyperlink{classGame_a9fd07ff4033e3d6fc2a9960e250581e6}{equip} (shared\-\_\-ptr$<$ \hyperlink{classEquipement}{Equipement} $>$ equipement)
+\item 
+int \hyperlink{classGame_a306fb013d1a8558d3053334dab286ea7}{fight} (shared\-\_\-ptr$<$ \hyperlink{classCharacter}{Character} $>$ monster)
+\item 
+int \hyperlink{classGame_a835ca9eac25454523e2fbd4d3ba6b042}{loot} (shared\-\_\-ptr$<$ \hyperlink{classMonster}{Monster} $>$ monster)
+\item 
+void \hyperlink{classGame_a2355400f456780bddd38229a664e8b99}{action} ()
+\item 
+void \hyperlink{classGame_aa68d983ff49b8b5235fc378a9bf03f4f}{action} (shared\-\_\-ptr$<$ \hyperlink{classMonster}{Monster} $>$ mons)
+\item 
+int \hyperlink{classGame_a53141ff044e4aa43f23d7dbed11272f6}{get\-Level} ()
+\item 
+shared\-\_\-ptr$<$ \hyperlink{classGameState}{Game\-State} $>$ \hyperlink{classGame_aed827cbeb1d04b1e5a3fb417c1ceba96}{get\-Fight\-State} ()
+\item 
+shared\-\_\-ptr$<$ \hyperlink{classGameState}{Game\-State} $>$ \hyperlink{classGame_a73f457fb36d780c9075cfa15499767a5}{get\-Move\-State} ()
+\item 
+shared\-\_\-ptr$<$ \hyperlink{classGameState}{Game\-State} $>$ \hyperlink{classGame_a243b312b1ec1fce3495cc6e254505cf7}{get\-Loot\-State} ()
+\item 
+void \hyperlink{classGame_a9aa1730ad9b8b9bf02bf591b65c9c2c7}{set\-State} (shared\-\_\-ptr$<$ \hyperlink{classGameState}{Game\-State} $>$ s)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGame_ad59df6562a58a614fda24622d3715b65}{\index{Game@{Game}!Game@{Game}}
+\index{Game@{Game}!Game@{Game}}
+\subsubsection[{Game}]{\setlength{\rightskip}{0pt plus 5cm}Game\-::\-Game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGame_ad59df6562a58a614fda24622d3715b65}
+\hypertarget{classGame_ae3d112ca6e0e55150d2fdbc704474530}{\index{Game@{Game}!$\sim$\-Game@{$\sim$\-Game}}
+\index{$\sim$\-Game@{$\sim$\-Game}!Game@{Game}}
+\subsubsection[{$\sim$\-Game}]{\setlength{\rightskip}{0pt plus 5cm}Game\-::$\sim$\-Game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGame_ae3d112ca6e0e55150d2fdbc704474530}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGame_a2355400f456780bddd38229a664e8b99}{\index{Game@{Game}!action@{action}}
+\index{action@{action}!Game@{Game}}
+\subsubsection[{action}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-::action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGame_a2355400f456780bddd38229a664e8b99}
+\hypertarget{classGame_aa68d983ff49b8b5235fc378a9bf03f4f}{\index{Game@{Game}!action@{action}}
+\index{action@{action}!Game@{Game}}
+\subsubsection[{action}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-::action (
+\begin{DoxyParamCaption}
+\item[{shared\-\_\-ptr$<$ {\bf Monster} $>$}]{mons}
+\end{DoxyParamCaption}
+)}}\label{classGame_aa68d983ff49b8b5235fc378a9bf03f4f}
+\hypertarget{classGame_a265b4a907a360afbb131334300968c9d}{\index{Game@{Game}!display\-Map@{display\-Map}}
+\index{display\-Map@{display\-Map}!Game@{Game}}
+\subsubsection[{display\-Map}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-::display\-Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGame_a265b4a907a360afbb131334300968c9d}
+\hypertarget{classGame_a9fd07ff4033e3d6fc2a9960e250581e6}{\index{Game@{Game}!equip@{equip}}
+\index{equip@{equip}!Game@{Game}}
+\subsubsection[{equip}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-::equip (
+\begin{DoxyParamCaption}
+\item[{shared\-\_\-ptr$<$ {\bf Equipement} $>$}]{equipement}
+\end{DoxyParamCaption}
+)}}\label{classGame_a9fd07ff4033e3d6fc2a9960e250581e6}
+\hypertarget{classGame_a306fb013d1a8558d3053334dab286ea7}{\index{Game@{Game}!fight@{fight}}
+\index{fight@{fight}!Game@{Game}}
+\subsubsection[{fight}]{\setlength{\rightskip}{0pt plus 5cm}int Game\-::fight (
+\begin{DoxyParamCaption}
+\item[{shared\-\_\-ptr$<$ {\bf Character} $>$}]{monster}
+\end{DoxyParamCaption}
+)}}\label{classGame_a306fb013d1a8558d3053334dab286ea7}
+\hypertarget{classGame_a124812c1a7b84f3aead51cb35a5146f8}{\index{Game@{Game}!generate\-Map@{generate\-Map}}
+\index{generate\-Map@{generate\-Map}!Game@{Game}}
+\subsubsection[{generate\-Map}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-::generate\-Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGame_a124812c1a7b84f3aead51cb35a5146f8}
+\hypertarget{classGame_acbabdf93244732c23a8fe1b482548fd5}{\index{Game@{Game}!get\-Character@{get\-Character}}
+\index{get\-Character@{get\-Character}!Game@{Game}}
+\subsubsection[{get\-Character}]{\setlength{\rightskip}{0pt plus 5cm}shared\-\_\-ptr$<$ {\bf Character} $>$ Game\-::get\-Character (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classGame_acbabdf93244732c23a8fe1b482548fd5}
+\hypertarget{classGame_a9e430bb75a7df9425b257d0018a97bb5}{\index{Game@{Game}!get\-Equipement\-Factory@{get\-Equipement\-Factory}}
+\index{get\-Equipement\-Factory@{get\-Equipement\-Factory}!Game@{Game}}
+\subsubsection[{get\-Equipement\-Factory}]{\setlength{\rightskip}{0pt plus 5cm}shared\-\_\-ptr$<$ {\bf Equipement\-Factory} $>$ Game\-::get\-Equipement\-Factory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGame_a9e430bb75a7df9425b257d0018a97bb5}
+\hypertarget{classGame_aed827cbeb1d04b1e5a3fb417c1ceba96}{\index{Game@{Game}!get\-Fight\-State@{get\-Fight\-State}}
+\index{get\-Fight\-State@{get\-Fight\-State}!Game@{Game}}
+\subsubsection[{get\-Fight\-State}]{\setlength{\rightskip}{0pt plus 5cm}shared\-\_\-ptr$<$ {\bf Game\-State} $>$ Game\-::get\-Fight\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGame_aed827cbeb1d04b1e5a3fb417c1ceba96}
+\hypertarget{classGame_a2a05d793c901ebdc60832d187b58d501}{\index{Game@{Game}!get\-Generator@{get\-Generator}}
+\index{get\-Generator@{get\-Generator}!Game@{Game}}
+\subsubsection[{get\-Generator}]{\setlength{\rightskip}{0pt plus 5cm}shared\-\_\-ptr$<$ Generator $>$ Game\-::get\-Generator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classGame_a2a05d793c901ebdc60832d187b58d501}
+\hypertarget{classGame_a53141ff044e4aa43f23d7dbed11272f6}{\index{Game@{Game}!get\-Level@{get\-Level}}
+\index{get\-Level@{get\-Level}!Game@{Game}}
+\subsubsection[{get\-Level}]{\setlength{\rightskip}{0pt plus 5cm}int Game\-::get\-Level (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGame_a53141ff044e4aa43f23d7dbed11272f6}
+\hypertarget{classGame_a243b312b1ec1fce3495cc6e254505cf7}{\index{Game@{Game}!get\-Loot\-State@{get\-Loot\-State}}
+\index{get\-Loot\-State@{get\-Loot\-State}!Game@{Game}}
+\subsubsection[{get\-Loot\-State}]{\setlength{\rightskip}{0pt plus 5cm}shared\-\_\-ptr$<$ {\bf Game\-State} $>$ Game\-::get\-Loot\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGame_a243b312b1ec1fce3495cc6e254505cf7}
+\hypertarget{classGame_a68cfd228e261c182cfadf90463dc4727}{\index{Game@{Game}!get\-Monsters\-List@{get\-Monsters\-List}}
+\index{get\-Monsters\-List@{get\-Monsters\-List}!Game@{Game}}
+\subsubsection[{get\-Monsters\-List}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ shared\-\_\-ptr$<$ {\bf Monster} $>$ $>$ $\ast$ Game\-::get\-Monsters\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGame_a68cfd228e261c182cfadf90463dc4727}
+\hypertarget{classGame_a73f457fb36d780c9075cfa15499767a5}{\index{Game@{Game}!get\-Move\-State@{get\-Move\-State}}
+\index{get\-Move\-State@{get\-Move\-State}!Game@{Game}}
+\subsubsection[{get\-Move\-State}]{\setlength{\rightskip}{0pt plus 5cm}shared\-\_\-ptr$<$ {\bf Game\-State} $>$ Game\-::get\-Move\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGame_a73f457fb36d780c9075cfa15499767a5}
+\hypertarget{classGame_a65eb691cddef147865580a8e0b76c579}{\index{Game@{Game}!get\-Screen@{get\-Screen}}
+\index{get\-Screen@{get\-Screen}!Game@{Game}}
+\subsubsection[{get\-Screen}]{\setlength{\rightskip}{0pt plus 5cm}shared\-\_\-ptr$<$ Screen $>$ Game\-::get\-Screen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classGame_a65eb691cddef147865580a8e0b76c579}
+\hypertarget{classGame_affaa9a4a7cc77fcc1fbd140e60f8907b}{\index{Game@{Game}!get\-Shared\-Ptr\-This@{get\-Shared\-Ptr\-This}}
+\index{get\-Shared\-Ptr\-This@{get\-Shared\-Ptr\-This}!Game@{Game}}
+\subsubsection[{get\-Shared\-Ptr\-This}]{\setlength{\rightskip}{0pt plus 5cm}shared\-\_\-ptr$<${\bf Game}$>$ Game\-::get\-Shared\-Ptr\-This (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGame_affaa9a4a7cc77fcc1fbd140e60f8907b}
+\hypertarget{classGame_aedb4cdc93c8ab85f2f7aff018ccd76ca}{\index{Game@{Game}!launch\-Game@{launch\-Game}}
+\index{launch\-Game@{launch\-Game}!Game@{Game}}
+\subsubsection[{launch\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-::launch\-Game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGame_aedb4cdc93c8ab85f2f7aff018ccd76ca}
+\hypertarget{classGame_a835ca9eac25454523e2fbd4d3ba6b042}{\index{Game@{Game}!loot@{loot}}
+\index{loot@{loot}!Game@{Game}}
+\subsubsection[{loot}]{\setlength{\rightskip}{0pt plus 5cm}int Game\-::loot (
+\begin{DoxyParamCaption}
+\item[{shared\-\_\-ptr$<$ {\bf Monster} $>$}]{monster}
+\end{DoxyParamCaption}
+)}}\label{classGame_a835ca9eac25454523e2fbd4d3ba6b042}
+\hypertarget{classGame_a8e92b564d2a037f0455b2f10ec9900f0}{\index{Game@{Game}!move\-Character@{move\-Character}}
+\index{move\-Character@{move\-Character}!Game@{Game}}
+\subsubsection[{move\-Character}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-::move\-Character (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGame_a8e92b564d2a037f0455b2f10ec9900f0}
+\hypertarget{classGame_a9aa1730ad9b8b9bf02bf591b65c9c2c7}{\index{Game@{Game}!set\-State@{set\-State}}
+\index{set\-State@{set\-State}!Game@{Game}}
+\subsubsection[{set\-State}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-::set\-State (
+\begin{DoxyParamCaption}
+\item[{shared\-\_\-ptr$<$ {\bf Game\-State} $>$}]{s}
+\end{DoxyParamCaption}
+)}}\label{classGame_a9aa1730ad9b8b9bf02bf591b65c9c2c7}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Game_8hpp}{Game.\-hpp}\item 
+\hyperlink{Game_8cpp}{Game.\-cpp}\end{DoxyCompactItemize}

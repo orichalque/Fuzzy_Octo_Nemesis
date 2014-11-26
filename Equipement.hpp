@@ -1,3 +1,14 @@
+/**
+ * \file Equipement.hpp
+ * \brief Equipement abstract class definition 
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Define the Equipement class, mother-class of all the equipement in the game
+ *
+ */
+
 #ifndef EQUIPEMENT_HPP
 #define EQUIPEMENT_HPP
 

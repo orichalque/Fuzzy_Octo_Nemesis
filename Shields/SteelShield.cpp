@@ -1,3 +1,14 @@
+/**
+ * \file SteelShield.cpp
+ * \brief Concrete equipement
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Steel shield equipement. High stats
+ *
+ */
+
 class SteelShield : public Shield {
     public:
         SteelShield() {

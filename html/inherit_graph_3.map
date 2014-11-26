@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_game_state.html" title="GameState" alt="" coords="5,81,93,108"/>
+<area shape="rect" id="node2" href="$class_end_game_state.html" title="EndGameState" alt="" coords="142,5,253,32"/>
+<area shape="rect" id="node3" href="$class_fight_state.html" title="FightState" alt="" coords="156,56,239,83"/>
+<area shape="rect" id="node4" href="$class_loot_state.html" title="LootState" alt="" coords="158,107,237,133"/>
+<area shape="rect" id="node5" href="$class_move_state.html" title="MoveState" alt="" coords="155,157,240,184"/>
+</map>

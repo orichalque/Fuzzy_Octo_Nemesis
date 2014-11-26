@@ -1,0 +1,9 @@
+<map id="Armor" name="Armor">
+<area shape="rect" id="node4" href="$class_iron_armor.html" title="{IronArmor\n||+ IronArmor()\l}" alt="" coords="5,720,104,797"/>
+<area shape="rect" id="node5" href="$class_leather_armor.html" title="{LeatherArmor\n||+ LeatherArmor()\l}" alt="" coords="128,720,248,797"/>
+<area shape="rect" id="node6" href="$class_mithril_armor.html" title="{MithrilArmor\n||+ MithrilArmor()\l}" alt="" coords="272,720,383,797"/>
+<area shape="rect" id="node7" href="$class_steel_armor.html" title="{SteelArmor\n||+ SteelArmor()\l}" alt="" coords="408,720,515,797"/>
+<area shape="rect" id="node8" href="$class_wall.html" title="{Wall\n||+ Wall()\l}" alt="" coords="539,720,607,797"/>
+<area shape="rect" id="node2" href="$class_equipement.html" title="{Equipement\n|# att\l# def\l# dext\l|+ ~Equipement()\l+ isEquipement()\l+ getAtt()\l+ getDef()\l+ getDext()\l+ isHelmet()\l+ isShield()\l+ isArmor()\l+ isWeapon()\l}" alt="" coords="267,277,388,501"/>
+<area shape="rect" id="node3" href="$class_item.html" title="{Item\n|# name_\l# desc_\l# value_\l# id_\l# consumable_\l# settable_\l|+ getName()\l+ getDescription()\l+ getValue()\l+ isConsumable()\l+ isSettable()\l+ isEquipement()\l}" alt="" coords="265,5,391,229"/>
+</map>

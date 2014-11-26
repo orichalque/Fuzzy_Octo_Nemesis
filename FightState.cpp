@@ -5,6 +5,7 @@ FightState::FightState(Game* game) : GameState(game)
 
 void FightState::action(shared_ptr<Monster> monster)
 {   
+	bool endGame = false;
     bool fightEnd = false;
     bool flee = false;
 	int choice;
@@ -25,9 +26,10 @@ void FightState::action(shared_ptr<Monster> monster)
 					
 					if (monster -> life() <= 0) {
 						fightEnd = true;
-						//loot 
+						//loot if enemy's dead
 					}
 				} else {
+					//Miss
 					_game -> getScreen() -> mvprintTxt(2, 3, "Mais l'attaque échoue! ");
 				}
 				break;
@@ -41,13 +43,17 @@ void FightState::action(shared_ptr<Monster> monster)
 				
 			case 3:
 				_game -> getScreen() -> mvprintTxt(2, 2, "Vous essayez de prendre la fuite, lâche ! ");
-				if (_game -> getCharacter() -> fleeFoe(monster)) {
-					_game -> getScreen() -> mvprintTxt(2, 3, "Vous réussissez à vous enfuir ! ");
-					_game -> getMonstersList() -> push_back(monster);
-					fightEnd = true;
-					flee = true;
+				if (monster -> isBoss()) {
+					_game -> getScreen() -> mvprintTxt(2, 3, "Vous ne pouvez fuir contre un boss ! ");
 				} else {
-					_game -> getScreen() -> mvprintTxt(2, 3, "L'ennemi vous rattrape!");
+					if (_game -> getCharacter() -> fleeFoe(monster)) {
+						_game -> getScreen() -> mvprintTxt(2, 3, "Vous réussissez à vous enfuir ! ");
+						_game -> getMonstersList() -> push_back(monster);
+						fightEnd = true;
+						flee = true;
+					} else {
+						_game -> getScreen() -> mvprintTxt(2, 3, "L'ennemi vous rattrape!");
+					}
 				}
 				break;
 		};
@@ -57,39 +63,56 @@ void FightState::action(shared_ptr<Monster> monster)
 		this_thread::sleep_for(chrono::milliseconds(500));		
 		
 		if (!fightEnd and _game -> getCharacter() -> life() >= 0) {
+			/* Enemi's turn */
 			_game -> getScreen() -> mvprintTxt(2, 5, "Tour de l'ennemi") ;
 			_game -> getScreen() -> mvprintTxt(2, 6, "L'ennemi vous attaque! ");
 			this_thread::sleep_for(chrono::milliseconds(500));
 			if (monster -> hitFoe(_game -> getCharacter())) {
+				/* Damages on the Character */
 				_game -> getScreen() -> mvprintTxt(2, 7, "Vous perdez "+ to_string(monster -> attackFoe(_game -> getCharacter()))+ " points de vie!" );
 				_game -> getScreen() -> updateCharacterInfo(_game -> getCharacter());
 				if (_game -> getCharacter() -> life() <= 0) {
+					/* Death of the Character */
 					fightEnd = true;
-					// SWITCH TO DEATH STATE 
-					//	game->setState(game->getDeadState);
+					_game->setState(_game->getEndGameState());
 					_game -> getScreen() -> clearTxt();
 					_game -> getScreen() -> mvprintTxt(27, 2, "Vous êtes mort..." );
-					getch();
+					endGame = true;
 				}
 			} else {
+				/* The monster miss its attack */
 				_game -> getScreen() -> mvprintTxt(2, 7, "Mais son attaque échoue !" );
 			} 
     		this_thread::sleep_for(chrono::milliseconds(500));
 		} else if (flee == false) {
+			/* The fight is over and the player didn't ran away */
 			_game -> getScreen() -> mvprintTxt(2, 5, "Victoire !") ;
 			_game -> getScreen() -> mvprintTxt(2, 6, "Vous récupérez un peu de santé. ");
-			_game -> setState(_game -> getLootState());
-			/* AJOUTER LOOT STATE ICI */
-			/* AJOUTER LOOT STATE ICI */
-			/* AJOUTER LOOT STATE ICI */
-			/* AJOUTER LOOT STATE ICI */
+			if (monster -> isBoss() and !monster -> isFinalBoss()) {
+				/* He defeated a normal boss -> New level */
+				_game -> setLevel(_game -> getLevel() + 1);
+				_game -> generateMap();
+			}
+			if (monster -> isFinalBoss()) {
+				/* He defeated the final boss -> The game is over */
+				_game -> setState(_game -> getEndGameState());
+				endGame = true;
+			} else {
+				/* If its not the final boss : Loot distribution */
+				_game -> setState(_game -> getLootState());
+			}
 		} else {
+			/* The fight is over because the player ran away */
 		    _game -> setState(_game -> getMoveState());
 		}
-		_game -> getCharacter() -> setDef(defense);
-	    _game -> getScreen() -> clearTxt();
+		_game -> getCharacter() -> setDef(defense); //Defense reinitialisation. Avoid infinite defense after protecting itself
+	    _game -> getScreen() -> clearTxt(); //Text Window clearence
 	}
 	
-    _game -> action(monster);
+	if (endGame) {
+		_game -> action((_game -> getCharacter() -> life() > 0 )); //The game is over. The condition tell if the player is dead or not
+	} else {	
+    	_game -> action(monster); //Game continue, on the map or in the loot screen. Depending of player's actions
+    }
 
 }

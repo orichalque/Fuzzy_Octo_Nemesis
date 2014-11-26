@@ -1,4 +1,14 @@
-class HellHound : public Monster {
+/**
+ * \file HellHound.cpp
+ * \brief Concrete monster
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Boss for FuzzyOctoNemesis. Can be found in the dungeon
+ *
+ */
+ class HellHound : public Monster {
     public: 
 	HellHound() {
 		Character::desc_ = "Un monstrueux chien avec des yeux enflammés";

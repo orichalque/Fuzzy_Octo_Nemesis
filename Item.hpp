@@ -1,13 +1,13 @@
-/*
-* Item Class Definition for FuzzyOctoNemesis 
-*
-* C++ 11
-*
-* OPEN SOURCE @ https://github.com/orichalque/Fuzzy_Octo_Nemesis
-* @author BEZIERS LA FOSSE Thibault 
-* @author MERLET Corentin
-* @version 1.0.0a
-*/
+/**
+ * \file Item.hpp
+ * \brief Abstract mother-class defining the items
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Define all the basic methods used by equipement and consummable classes
+ *
+ */
 
 #ifndef __ITEM_HPP__
 #define __ITEM_HPP__

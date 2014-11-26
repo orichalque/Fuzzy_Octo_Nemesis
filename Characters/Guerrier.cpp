@@ -1,3 +1,13 @@
+/**
+ * \file Guerrier.hpp
+ * \brief Concrete character
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Guerrier character class. Middle attack and Middle defense
+ *
+ */
 class Guerrier : public Character {
     public:
         Guerrier() {

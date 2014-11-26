@@ -1,3 +1,14 @@
+/**
+ * \file MithrilHelm.cpp
+ * \brief Concrete equipement
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * MithrilHelm equipement. High Stats
+ *
+ */
+ 
 class MithrilHelm : public Helmet {
     public:
         MithrilHelm() {

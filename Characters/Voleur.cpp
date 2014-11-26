@@ -1,3 +1,13 @@
+/**
+ * \file Voleur.hpp
+ * \brief Concrete character
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Voleur character class. High dexterity, low stats
+ *
+ */
 class Voleur : public Character {
     public:
         Voleur() {

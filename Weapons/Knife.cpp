@@ -1,4 +1,14 @@
-class Knife : public Weapon {
+/**
+ * \file Dagger.cpp
+ * \brief Concrete weapon
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Knife weapon equipement. low stats
+ *
+ */
+ class Knife : public Weapon {
     public:
         Knife() {
             Item::name_ = "Couteau";

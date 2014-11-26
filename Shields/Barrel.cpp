@@ -1,4 +1,14 @@
-
+/**
+ * \file Barrel.cpp
+ * \brief Concrete equipement
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Barrel equipement. Low stats
+ *
+ */
+ 
 class Barrel : public Shield {
     public:
         Barrel() {

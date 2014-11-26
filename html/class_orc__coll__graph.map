@@ -1,0 +1,4 @@
+<map id="Orc" name="Orc">
+<area shape="rect" id="node2" href="$class_monster.html" title="{Monster\n|# lootList\l# nbLoot\l# lootPb\l|+ Monster()\l+ ~Monster()\l+ getLootList()\l+ getNbLoot()\l+ getLootPb()\l+ isBoss()\l+ isFinalBoss()\l}" alt="" coords="23,469,133,664"/>
+<area shape="rect" id="node3" href="$class_character.html" title="{Character\n|# life_\l# maxLife_\l# attack_\l# def_\l# dext_\l# x_\l# y_\l# name_\l# desc_\l# symbol_\l# weapon\l# armor\l# helmet\l# shield\l|+ Character()\l+ ~Character()\l+ life()\l+ attack()\l+ def()\l+ dext()\l+ maxLife()\l+ getCombinedAtt()\l+ getCombinedDef()\l+ getCombinedDext()\land 29 more...\l}" alt="" coords="5,6,152,421"/>
+</map>

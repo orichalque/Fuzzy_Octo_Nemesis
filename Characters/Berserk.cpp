@@ -1,3 +1,13 @@
+/**
+ * \file Berserk.hpp
+ * \brief Concrete character
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Berserk character class. High Attack and low defense
+ *
+ */
 class Berserk : public Character {
     public: 
         Berserk() {

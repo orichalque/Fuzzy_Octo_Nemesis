@@ -1,7 +1,4 @@
-#include<chrono>
-#include<thread>
-#include<ncurses.h>
-#include<string>
+
 
 #include"Screen.hpp"
 
@@ -75,8 +72,8 @@ void Screen::displayIntro(void) {
          this_thread::sleep_for(chrono::milliseconds(150));
     }
     int ch(0);
-    string s2 = "Press End";
-    while (ch != KEY_END) {
+    string s2 = "Press Enter";
+    while (ch != 10) {
         mvwprintW(COLS/2 - (0.5)*s2.length(), y + 2, this -> win, s2);
         wrefresh(win);
         this_thread::sleep_for(chrono::milliseconds(500));
@@ -93,7 +90,7 @@ void Screen::windowBuilding(int size) {
 	
 	winMap = createWindow(size+5, size+13, 0, 27);
 	
-	winTxt = createWindow(LINES - (size + 5), COLS, LINES - 13, 0);
+	winTxt = createWindow(LINES - (size + 5), COLS, LINES - 14, 0);
 	getch();
 }
 
@@ -344,6 +341,54 @@ bool Screen::equip() {
     } else {
         return false;
     }
+}
+ 
+void Screen::endGameScreen(string s, shared_ptr<Character> character) {
+	init();
+	int x(COLS/2 - (0.5)*s.length());
+    int y(LINES - 5); //Bottom of the window. -3 is meant to avoid erasing the borders of the window.
+	while (y > 1) {
+		mvwprintW(x, y, win, s);
+		mvwprintW(x, y + 1 , win, "                ");
+		wrefresh(win);
+		y--;
+		this_thread::sleep_for(chrono::milliseconds(150));
+	}
+	s = "Score : ";
+	int score = character -> getCombinedDef() + character -> getCombinedDef() + character -> maxLife() + character -> getCombinedDext();
+	s = s + to_string(score);
+	y = LINES - 5;
+	x = (COLS/2 - (0.5)*s.length());
+	this_thread::sleep_for(chrono::milliseconds(1000));
+	while (y > 2) {
+	     mvwprintW(x, y, win, s);
+	     mvwprintW(x, y + 1 , win, "                ");
+	     wrefresh(win);
+	     y--;
+	     this_thread::sleep_for(chrono::milliseconds(150));
+	}
+	
+	this_thread::sleep_for(chrono::milliseconds(1000));
+	s = "Félicitations !";
+	y = LINES - 5;	
+	x = (COLS/2 - (0.5)*s.length());
+	while (y > 3) {
+	     mvwprintW(x, y, win, s);
+	     mvwprintW(x, y + 1 , win, "                ");
+	     wrefresh(win);					
+	     y--;
+	     this_thread::sleep_for(chrono::milliseconds(150));
+	}
+	string s2 = "Press Enter to exit";
+	int ch(0);
+	while (ch != 10) {
+	    mvwprintW(COLS/2 - (0.5)*s2.length(), y + 2, win, s2);
+	    wrefresh(win);
+	    this_thread::sleep_for(chrono::milliseconds(1000));
+	    mvwprintW(COLS/2 - (0.5)*s2.length(), y + 2, win, "                       ");
+	    wrefresh(win);
+	    ch = getch();
+	}
 }
         
 WINDOW* Screen::createWindow(int height, int width, int starty, int startx) {

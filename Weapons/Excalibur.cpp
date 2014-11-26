@@ -1,4 +1,14 @@
-class Excalibur : public Weapon {
+/**
+ * \file Excalibur.cpp
+ * \brief Concrete weapon
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Excalibur weapon equipement. high stats
+ *
+ */
+ class Excalibur : public Weapon {
     public:
         Excalibur() {
             Item::name_ = "Excalibur";

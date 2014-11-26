@@ -44,6 +44,7 @@ void LootState::action(shared_ptr<Monster> monster)
                 _game -> getCharacter() -> setShield(equipement);
             }
         }
+        
 		_game -> getScreen() -> updateCharacterInfo(_game -> getCharacter());
     	this_thread::sleep_for(chrono::milliseconds(300));		
 	    loots.pop_back();

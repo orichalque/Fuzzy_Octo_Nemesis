@@ -1,14 +1,13 @@
-/*
-* Monster abstract Class Definition for FuzzyOctoNemesis
-* Will be able to drop item with a certain probability 
-*
-* C++ 11
-*
-* OPEN SOURCE @ https://github.com/orichalque/Fuzzy_Octo_Nemesis
-* @author BEZIERS LA FOSSE Thibault 
-* @author MERLET Corentin
-* @version 1.0.0a
-*/
+/**
+ * \file Monster.hpp
+ * \brief Define the monsters for F.O.Nemesis
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Monster abstract Class Definition for FuzzyOctoNemesis, can fight and drop item with random probability
+ *
+ */
 
 #ifndef MONSTER_HPP
 #define MONSTER_HPP
@@ -29,6 +28,7 @@ class Monster : public Character {
 		virtual int getNbLoot();
 		virtual int getLootPb();		
 		virtual	bool isBoss();
+		virtual bool isFinalBoss();
 };
 
 #endif 

@@ -1,3 +1,14 @@
+/**
+ * \file Troll.cpp
+ * \brief Concrete monster
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Boss for FuzzyOctoNemesis. Can be found in the dungeon
+ *
+ */
+ 
 class Troll : public Monster {
     public: 
 	Troll() {

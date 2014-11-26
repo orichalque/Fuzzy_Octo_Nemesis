@@ -29,6 +29,10 @@ int Character::dext(void) {
 	return dext_;
 }
 
+int Character::maxLife(void) {
+	return maxLife_;
+}
+
 
 int Character::getCombinedAtt(void) {
     int x = attack_;

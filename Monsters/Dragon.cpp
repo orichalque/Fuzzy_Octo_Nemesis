@@ -1,4 +1,15 @@
-class Dragon : public Monster {
+/**
+ * \file Dragon.cpp
+ * \brief Concrete monster
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Boss for FuzzyOctoNemesis. Can be found in the dungeon
+ *
+ */
+ 
+ class Dragon : public Monster {
     public: 
 	Dragon() {
 		Character::desc_ = "Un lézard vert de 15 mètres crachant du feu";

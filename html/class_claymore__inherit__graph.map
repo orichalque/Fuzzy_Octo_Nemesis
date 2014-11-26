@@ -1,0 +1,5 @@
+<map id="Claymore" name="Claymore">
+<area shape="rect" id="node2" href="$class_weapon.html" title="{Weapon\n||+ Weapon()\l+ ~Weapon()\l+ isWeapon()\l+ isEquipement()\l}" alt="" coords="7,550,128,671"/>
+<area shape="rect" id="node3" href="$class_equipement.html" title="{Equipement\n|# att\l# def\l# dext\l|+ ~Equipement()\l+ isEquipement()\l+ getAtt()\l+ getDef()\l+ getDext()\l+ isHelmet()\l+ isShield()\l+ isArmor()\l+ isWeapon()\l}" alt="" coords="7,277,128,501"/>
+<area shape="rect" id="node4" href="$class_item.html" title="{Item\n|# name_\l# desc_\l# value_\l# id_\l# consumable_\l# settable_\l|+ getName()\l+ getDescription()\l+ getValue()\l+ isConsumable()\l+ isSettable()\l+ isEquipement()\l}" alt="" coords="5,5,131,229"/>
+</map>

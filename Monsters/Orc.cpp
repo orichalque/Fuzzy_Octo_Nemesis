@@ -1,4 +1,14 @@
-class Orc : public Monster {
+/**
+ * \file Orc.cpp
+ * \brief Concrete monster
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Monster for FuzzyOctoNemesis. Can be found in the dungeon
+ *
+ */
+ class Orc : public Monster {
     public: 
 	Orc() {
 		Character::desc_ = "Un orc à l'allure aggressive";
@@ -10,5 +20,4 @@ class Orc : public Monster {
 		Character::dext_ = 6;
 		Monster::lootList = {2, 20};
 	}
-//string _name, string _desc, int life_, int attack_, int def_, int dext_
 };

@@ -1,3 +1,0 @@
-Warrior::Warrior() {
-	Character(
-}

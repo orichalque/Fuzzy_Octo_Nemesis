@@ -68,6 +68,23 @@ int Character::getCombinedDef(void) {
 	return x;
 }
 
+int Character::getEquipementDef(void) {
+	int x (0);
+    if (weapon != NULL) {
+        x += weapon -> getDef();
+    }
+    if (shield != NULL) {
+        x += shield -> getDef();
+    }
+    if (armor != NULL) {
+        x += armor -> getDef();
+    }
+    if (helmet != NULL) {
+        x += helmet -> getDef();
+    } 
+	return x;
+}
+
 int Character::getCombinedDext(void) {
 	int x = dext_;
     if (weapon != NULL) {
@@ -227,7 +244,7 @@ int Character::attackFoe(shared_ptr<Character> monster) {
  * Defend from the opposite monster
  */
 int Character::defendFromFoe() {
-	return (1.20 * getCombinedDef());
+	return (def_ * 1.5) ;
 }
 
 /*

@@ -43,6 +43,7 @@ class Character{ //Abstract Class
 		virtual int getCombinedAtt();
 		virtual int getCombinedDef();
 		virtual int getCombinedDext();
+		virtual int getEquipementDef();
 		virtual int x();
 		virtual int y();
 		virtual char getSymbol();

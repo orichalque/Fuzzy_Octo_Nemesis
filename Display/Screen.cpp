@@ -81,6 +81,8 @@ void Screen::displayIntro(void) {
         wrefresh(win);
         ch = getch();
     } 
+    win = createWindow(LINES, COLS, 0, 0); //Initialise Main Window
+    wrefresh(win);
 }
 
 

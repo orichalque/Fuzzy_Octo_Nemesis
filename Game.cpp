@@ -113,7 +113,7 @@ void Game::launchGame() {
     //resizing the window with a bash script
     system((char*)str.c_str());    
     screen -> init(); 
-    //screen -> displayIntro(); 
+    screen -> displayIntro(); 
     character = (screen -> chooseCharacter());
     screen -> windowBuilding(generator -> getSize());
 }

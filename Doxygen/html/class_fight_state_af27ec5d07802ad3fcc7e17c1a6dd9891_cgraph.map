@@ -1,0 +1,5 @@
+<map id="FightState::action" name="FightState::action">
+<area shape="rect" id="node2" href="$class_game.html#a9aa1730ad9b8b9bf02bf591b65c9c2c7" title="Game::setState" alt="" coords="208,5,323,32"/>
+<area shape="rect" id="node3" href="$class_game.html#ab13bfc3f0c9e08551a0f55daeab31840" title="Game::getEndGameState" alt="" coords="179,56,351,83"/>
+<area shape="rect" id="node4" href="$class_game_state.html#a785bc1e2437247cbd5ec0fe757a5aa4e" title="GameState::action" alt="" coords="200,107,331,133"/>
+</map>

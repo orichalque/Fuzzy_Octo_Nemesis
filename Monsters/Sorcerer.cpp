@@ -1,0 +1,23 @@
+/**
+ * \file Sorcerer.cpp
+ * \brief Concrete monster
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Monster for FuzzyOctoNemesis. Can be found in the dungeon
+ *
+ */
+ class Sorcerer : public Monster {
+    public: 
+	Sorcerer() {
+		Character::desc_ = "Un Sorcier armé d\'un sceptre ensorcelé !";
+		Character::name_ = "Sorcier";
+		Character::symbol_ = 'S';
+		Character::attack_ = 26;
+		Character::def_ = 5;
+		Character::life_ = 35;
+		Character::dext_ = 16;
+		Monster::lootList = {3 , 11};
+	}
+};

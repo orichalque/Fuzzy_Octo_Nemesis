@@ -1,13 +1,20 @@
 # I am a comment, and I want to say that the variable CC will be
 # the compiler to use.
-CC=g++ -std=c++11
+CC=g++
+FLAG=-std=c++11
 FILE=Game.cpp
 POSTFLAG=-lncurses
 NAME=FuzzyOctoNemesis
+LAUNCH=./FuzzyOctoNemesis
+RM=rm
 
 all: fuzzyoctonemesis
 
-fuzzyoctonemesis: Game.cpp
-	$(CC) $(FILE) $(POSTFLAG) -o $(NAME)
+fuzzyoctonemesis: 
+        $(CC) $(FLAG) $(FILE) $(POSTFLAG) -o $(NAME)
 
-
+run: 
+        ./FuzzyOctoNemesis
+        
+clean: 
+        $(RM) *~ 

@@ -1,3 +1,14 @@
+/**
+ * \file MonsterFactory.hpp
+ * \brief Monster Factory returning the monsters of F.O.N.
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Abstract mother-class of the 2 Monster Factories
+ *
+ */
+
 #ifndef MONSTERFACTORY_HPP
 #define MONSTERFACTORY_HPP
 

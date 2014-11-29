@@ -1,0 +1,8 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$class_game.html#aedb4cdc93c8ab85f2f7aff018ccd76ca" title="Game::launchGame" alt="" coords="105,5,244,32"/>
+<area shape="rect" id="node4" href="$class_game.html#a124812c1a7b84f3aead51cb35a5146f8" title="Game::generateMap" alt="" coords="105,56,245,83"/>
+<area shape="rect" id="node5" href="$class_game.html#a265b4a907a360afbb131334300968c9d" title="Game::displayMap" alt="" coords="109,107,240,133"/>
+<area shape="rect" id="node6" href="$class_game.html#a53141ff044e4aa43f23d7dbed11272f6" title="Game::getLevel" alt="" coords="117,157,232,184"/>
+<area shape="rect" id="node7" href="$class_game.html#a2355400f456780bddd38229a664e8b99" title="Game::action" alt="" coords="125,208,225,235"/>
+<area shape="rect" id="node3" href="$jquery_8js.html#a4c3eadaa5164016d2c340d495fc6e55e" title="x" alt="" coords="294,5,333,32"/>
+</map>

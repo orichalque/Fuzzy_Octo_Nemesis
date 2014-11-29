@@ -1,17 +1,7 @@
-______                   _____      _        _   _                          _     
-|  ___|                 |  _  |    | |      | \ | |                        (_)    
-| |_ _   _ _________   _| | | | ___| |_ ___ |  \| | ___ _ __ ___   ___  ___ _ ___ 
-|  _| | | |_  /_  / | | | | | |/ __| __/ _ \| . ` |/ _ \ '_ ` _ \ / _ \/ __| / __|
-| | | |_| |/ / / /| |_| \ \_/ / (__| || (_) | |\  |  __/ | | | | |  __/\__ \ \__ \
-\_|  \__,_/___/___|\__, |\___/ \___|\__\___/\_| \_/\___|_| |_| |_|\___||___/_|___/
-                    __/ |                                                         
-                   |___/                                                         
+RogueLike Project Game for Design Pattern class, University of Nantes, France
 
-Da best game evah
-by 2 modafakin students of Nantes universiteh
-u gotta be mad niggur bcz it rokx ya ass babeh
+Coded with C++11, Doxygen, and on github at 
+github.com/orichalque/Fuzzy_Octo_Nemesis
 
-lolz 
 
-Version 1.0.0a
-                   
+

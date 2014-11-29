@@ -11,10 +11,11 @@ class Screen {
     public:
         Screen();
         ~Screen();
+        
+        /*NCURSES METHODS */
         WINDOW* getWinStat(void);
         WINDOW* getWinTxt(void);
         WINDOW* getWinMap(void);
-        void init(void);
         void printW(std::string s);
         void mvwprintW(int x, int y, WINDOW* win, std::string s);
         void wprintW(WINDOW* win, std::string s);
@@ -23,18 +24,26 @@ class Screen {
         void mvprintTxt(int x, int y, std::string s);
         WINDOW* createWindow(int height, int width, int starty, int startx);
         void destroyWindow(WINDOW* win);
-        void displayIntro(void);
-        shared_ptr<Character> chooseCharacter(void);
-        int chooseAction(void);
-        void updateCharacterInfo(shared_ptr<Character> character);
-        void updateMonsterInfo(shared_ptr<Character>monster);
-        void getMyEquipement(shared_ptr<Equipement> equipement);
-        void getNewEquipement(shared_ptr<Equipement> equipement);
-        bool equip();
         void windowBuilding(int size);
         void clearTxt();
         void clearMap();
         void clearStat();
+        
+        /* Information display */
+        void init();
+        void updateCharacterInfo(shared_ptr<Character> character);
+        void updateMonsterInfo(shared_ptr<Character>monster);
+        void getMyEquipement(shared_ptr<Equipement> equipement);
+        void getNewEquipement(shared_ptr<Equipement> equipement);
+        
+        /* Visual stuff */
+        void displayIntro(void);
+        shared_ptr<Character> chooseCharacter(void);
+        int chooseAction(void); 
+        void endGameScreen(string s, shared_ptr<Character> character);
+        bool equip();
+        
+
 };
 
 #endif

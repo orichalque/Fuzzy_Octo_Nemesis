@@ -1,0 +1,318 @@
+\hypertarget{class_leaf}{\section{Leaf Class Reference}
+\label{class_leaf}\index{Leaf@{Leaf}}
+}
+
+
+{\ttfamily \#include $<$Leaf.\-hpp$>$}
+
+
+
+Collaboration diagram for Leaf\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{class_leaf__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_leaf_a9e1781bba1de942f8d16e2df63d28a1a}{Leaf} ()
+\item 
+\hyperlink{class_leaf_ae1b9acf4a0bcabee47fd01910da6a53c}{Leaf} (int x\-\_\-, int y\-\_\-, int width\-\_\-, int height\-\_\-)
+\item 
+\hyperlink{class_leaf_a6d5e8ddc0b73cebb1311d4ae6eba75b1}{$\sim$\-Leaf} ()
+\item 
+\hyperlink{class_leaf}{Leaf} $\ast$ \hyperlink{class_leaf_ae23d3effcddd5b89fcc38acf2d9d0a51}{get\-Right} ()
+\item 
+\hyperlink{class_leaf}{Leaf} $\ast$ \hyperlink{class_leaf_a5f3b44e3aa906a7d39532c8667a5dd6c}{get\-Left} ()
+\item 
+\hyperlink{class_rectangle}{Rectangle} $\ast$ \hyperlink{class_leaf_a77b23315342ec3ca2dac7ea166371efd}{get\-Room} ()
+\item 
+int \hyperlink{class_leaf_ac17d8fe78b86a520cf52824fd4652d01}{get\-Room\-Surface} ()
+\item 
+int \hyperlink{class_leaf_a2fad27d8faf34df105194bdcc287618f}{get\-Room\-Center\-X} ()
+\item 
+int \hyperlink{class_leaf_ac264de1599d40fe23817ead8989603ab}{get\-Room\-Center\-Y} ()
+\item 
+bool \hyperlink{class_leaf_afd99e74265e756a52d7860ae21bf646b}{is\-Joined} ()
+\item 
+bool \hyperlink{class_leaf_ad2ecb787c4bca3f2599f0cff40d12fc0}{is\-Empty} ()
+\item 
+void \hyperlink{class_leaf_a2a2dc54e0c51f6cdaec477f695a26891}{set\-Full} ()
+\item 
+bool \hyperlink{class_leaf_abc40b0dddc39d8328210ade87d4392e1}{split} (vector$<$ \hyperlink{class_leaf}{Leaf} $\ast$ $>$ $\ast$leafs, int seed)
+\item 
+bool \hyperlink{class_leaf_ac033860475ea37207cc0e369acf4b448}{create\-Room} (int seed)
+\item 
+void \hyperlink{class_leaf_a12ab73d05dd7b333c655592fb96cfb46}{get\-Info} ()
+\item 
+void \hyperlink{class_leaf_a0e30b28d5e17877f89c5a637426aa7af}{get\-Info\-Rec} ()
+\item 
+void \hyperlink{class_leaf_a97b94902aab06ff739e38a0236a23c5e}{join} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file Leaf.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_leaf_a9e1781bba1de942f8d16e2df63d28a1a}{\index{Leaf@{Leaf}!Leaf@{Leaf}}
+\index{Leaf@{Leaf}!Leaf@{Leaf}}
+\subsubsection[{Leaf}]{\setlength{\rightskip}{0pt plus 5cm}Leaf\-::\-Leaf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_leaf_a9e1781bba1de942f8d16e2df63d28a1a}
+
+
+Definition at line 7 of file Leaf.\-cpp.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{class_leaf_a9e1781bba1de942f8d16e2df63d28a1a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_leaf_ae1b9acf4a0bcabee47fd01910da6a53c}{\index{Leaf@{Leaf}!Leaf@{Leaf}}
+\index{Leaf@{Leaf}!Leaf@{Leaf}}
+\subsubsection[{Leaf}]{\setlength{\rightskip}{0pt plus 5cm}Leaf\-::\-Leaf (
+\begin{DoxyParamCaption}
+\item[{int}]{x\-\_\-, }
+\item[{int}]{y\-\_\-, }
+\item[{int}]{width\-\_\-, }
+\item[{int}]{height\-\_\-}
+\end{DoxyParamCaption}
+)}}\label{class_leaf_ae1b9acf4a0bcabee47fd01910da6a53c}
+
+
+Definition at line 19 of file Leaf.\-cpp.
+
+\hypertarget{class_leaf_a6d5e8ddc0b73cebb1311d4ae6eba75b1}{\index{Leaf@{Leaf}!$\sim$\-Leaf@{$\sim$\-Leaf}}
+\index{$\sim$\-Leaf@{$\sim$\-Leaf}!Leaf@{Leaf}}
+\subsubsection[{$\sim$\-Leaf}]{\setlength{\rightskip}{0pt plus 5cm}Leaf\-::$\sim$\-Leaf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_leaf_a6d5e8ddc0b73cebb1311d4ae6eba75b1}
+
+
+Definition at line 30 of file Leaf.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_leaf_ac033860475ea37207cc0e369acf4b448}{\index{Leaf@{Leaf}!create\-Room@{create\-Room}}
+\index{create\-Room@{create\-Room}!Leaf@{Leaf}}
+\subsubsection[{create\-Room}]{\setlength{\rightskip}{0pt plus 5cm}bool Leaf\-::create\-Room (
+\begin{DoxyParamCaption}
+\item[{int}]{seed}
+\end{DoxyParamCaption}
+)}}\label{class_leaf_ac033860475ea37207cc0e369acf4b448}
+
+
+Definition at line 120 of file Leaf.\-cpp.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{class_leaf_ac033860475ea37207cc0e369acf4b448_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_leaf_a12ab73d05dd7b333c655592fb96cfb46}{\index{Leaf@{Leaf}!get\-Info@{get\-Info}}
+\index{get\-Info@{get\-Info}!Leaf@{Leaf}}
+\subsubsection[{get\-Info}]{\setlength{\rightskip}{0pt plus 5cm}void Leaf\-::get\-Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_leaf_a12ab73d05dd7b333c655592fb96cfb46}
+
+
+Definition at line 151 of file Leaf.\-cpp.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{class_leaf_a12ab73d05dd7b333c655592fb96cfb46_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_leaf_a0e30b28d5e17877f89c5a637426aa7af}{\index{Leaf@{Leaf}!get\-Info\-Rec@{get\-Info\-Rec}}
+\index{get\-Info\-Rec@{get\-Info\-Rec}!Leaf@{Leaf}}
+\subsubsection[{get\-Info\-Rec}]{\setlength{\rightskip}{0pt plus 5cm}void Leaf\-::get\-Info\-Rec (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_leaf_a0e30b28d5e17877f89c5a637426aa7af}
+
+
+Definition at line 138 of file Leaf.\-cpp.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{class_leaf_a0e30b28d5e17877f89c5a637426aa7af_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_leaf_a5f3b44e3aa906a7d39532c8667a5dd6c}{\index{Leaf@{Leaf}!get\-Left@{get\-Left}}
+\index{get\-Left@{get\-Left}!Leaf@{Leaf}}
+\subsubsection[{get\-Left}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Leaf} $\ast$ Leaf\-::get\-Left (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_leaf_a5f3b44e3aa906a7d39532c8667a5dd6c}
+
+
+Definition at line 40 of file Leaf.\-cpp.
+
+\hypertarget{class_leaf_ae23d3effcddd5b89fcc38acf2d9d0a51}{\index{Leaf@{Leaf}!get\-Right@{get\-Right}}
+\index{get\-Right@{get\-Right}!Leaf@{Leaf}}
+\subsubsection[{get\-Right}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Leaf} $\ast$ Leaf\-::get\-Right (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_leaf_ae23d3effcddd5b89fcc38acf2d9d0a51}
+
+
+Definition at line 36 of file Leaf.\-cpp.
+
+\hypertarget{class_leaf_a77b23315342ec3ca2dac7ea166371efd}{\index{Leaf@{Leaf}!get\-Room@{get\-Room}}
+\index{get\-Room@{get\-Room}!Leaf@{Leaf}}
+\subsubsection[{get\-Room}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rectangle} $\ast$ Leaf\-::get\-Room (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_leaf_a77b23315342ec3ca2dac7ea166371efd}
+
+
+Definition at line 44 of file Leaf.\-cpp.
+
+\hypertarget{class_leaf_a2fad27d8faf34df105194bdcc287618f}{\index{Leaf@{Leaf}!get\-Room\-Center\-X@{get\-Room\-Center\-X}}
+\index{get\-Room\-Center\-X@{get\-Room\-Center\-X}!Leaf@{Leaf}}
+\subsubsection[{get\-Room\-Center\-X}]{\setlength{\rightskip}{0pt plus 5cm}int Leaf\-::get\-Room\-Center\-X (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_leaf_a2fad27d8faf34df105194bdcc287618f}
+
+
+Definition at line 104 of file Leaf.\-cpp.
+
+\hypertarget{class_leaf_ac264de1599d40fe23817ead8989603ab}{\index{Leaf@{Leaf}!get\-Room\-Center\-Y@{get\-Room\-Center\-Y}}
+\index{get\-Room\-Center\-Y@{get\-Room\-Center\-Y}!Leaf@{Leaf}}
+\subsubsection[{get\-Room\-Center\-Y}]{\setlength{\rightskip}{0pt plus 5cm}int Leaf\-::get\-Room\-Center\-Y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_leaf_ac264de1599d40fe23817ead8989603ab}
+
+
+Definition at line 112 of file Leaf.\-cpp.
+
+\hypertarget{class_leaf_ac17d8fe78b86a520cf52824fd4652d01}{\index{Leaf@{Leaf}!get\-Room\-Surface@{get\-Room\-Surface}}
+\index{get\-Room\-Surface@{get\-Room\-Surface}!Leaf@{Leaf}}
+\subsubsection[{get\-Room\-Surface}]{\setlength{\rightskip}{0pt plus 5cm}int Leaf\-::get\-Room\-Surface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_leaf_ac17d8fe78b86a520cf52824fd4652d01}
+
+
+Definition at line 100 of file Leaf.\-cpp.
+
+\hypertarget{class_leaf_ad2ecb787c4bca3f2599f0cff40d12fc0}{\index{Leaf@{Leaf}!is\-Empty@{is\-Empty}}
+\index{is\-Empty@{is\-Empty}!Leaf@{Leaf}}
+\subsubsection[{is\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}bool Leaf\-::is\-Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_leaf_ad2ecb787c4bca3f2599f0cff40d12fc0}
+
+
+Definition at line 92 of file Leaf.\-cpp.
+
+\hypertarget{class_leaf_afd99e74265e756a52d7860ae21bf646b}{\index{Leaf@{Leaf}!is\-Joined@{is\-Joined}}
+\index{is\-Joined@{is\-Joined}!Leaf@{Leaf}}
+\subsubsection[{is\-Joined}]{\setlength{\rightskip}{0pt plus 5cm}bool Leaf\-::is\-Joined (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_leaf_afd99e74265e756a52d7860ae21bf646b}
+
+
+Definition at line 88 of file Leaf.\-cpp.
+
+\hypertarget{class_leaf_a97b94902aab06ff739e38a0236a23c5e}{\index{Leaf@{Leaf}!join@{join}}
+\index{join@{join}!Leaf@{Leaf}}
+\subsubsection[{join}]{\setlength{\rightskip}{0pt plus 5cm}void Leaf\-::join (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_leaf_a97b94902aab06ff739e38a0236a23c5e}
+
+
+Definition at line 84 of file Leaf.\-cpp.
+
+\hypertarget{class_leaf_a2a2dc54e0c51f6cdaec477f695a26891}{\index{Leaf@{Leaf}!set\-Full@{set\-Full}}
+\index{set\-Full@{set\-Full}!Leaf@{Leaf}}
+\subsubsection[{set\-Full}]{\setlength{\rightskip}{0pt plus 5cm}void Leaf\-::set\-Full (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_leaf_a2a2dc54e0c51f6cdaec477f695a26891}
+
+
+Definition at line 96 of file Leaf.\-cpp.
+
+\hypertarget{class_leaf_abc40b0dddc39d8328210ade87d4392e1}{\index{Leaf@{Leaf}!split@{split}}
+\index{split@{split}!Leaf@{Leaf}}
+\subsubsection[{split}]{\setlength{\rightskip}{0pt plus 5cm}bool Leaf\-::split (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf Leaf} $\ast$ $>$ $\ast$}]{leafs, }
+\item[{int}]{seed}
+\end{DoxyParamCaption}
+)}}\label{class_leaf_abc40b0dddc39d8328210ade87d4392e1}
+
+
+Definition at line 53 of file Leaf.\-cpp.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{class_leaf_abc40b0dddc39d8328210ade87d4392e1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Map\-Generator2/\hyperlink{_leaf_8hpp}{Leaf.\-hpp}\item 
+Map\-Generator2/\hyperlink{_leaf_8cpp}{Leaf.\-cpp}\end{DoxyCompactItemize}

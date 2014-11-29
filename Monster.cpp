@@ -24,3 +24,7 @@ bool Monster::isBoss() {
 	return false;
 }
 
+bool Monster::isFinalBoss() {
+	return false;
+}
+

@@ -1,4 +1,14 @@
-class Sorcerer : public Monster {
+/**
+ * \file Sorcerer.cpp
+ * \brief Concrete monster
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Monster for FuzzyOctoNemesis. Can be found in the dungeon
+ *
+ */
+ class Sorcerer : public Monster {
     public: 
 	Sorcerer() {
 		Character::desc_ = "Un Sorcier armé d\'un sceptre ensorcelé !";
@@ -10,5 +20,4 @@ class Sorcerer : public Monster {
 		Character::dext_ = 16;
 		Monster::lootList = {3 , 11};
 	}
-//string _name, string _desc, int life_, int attack_, int def_, int dext_
 };

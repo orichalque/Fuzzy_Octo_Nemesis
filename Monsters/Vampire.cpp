@@ -1,4 +1,14 @@
-class Vampire : public Monster {
+/**
+ * \file Vampire.cpp
+ * \brief Concrete monster
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Monster for FuzzyOctoNemesis. Can be found in the dungeon
+ *
+ */
+ class Vampire : public Monster {
     public: 
 	Vampire() {
 		Character::desc_ = "Un vampire assoiffé de sang";

@@ -1,3 +1,14 @@
+/**
+ * \file ironHelm.hpp
+ * \brief Concrete equipement
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * ironHelm equipement. Low stats
+ *
+ */
+ 
 class IronHelm : public Helmet {
     public:
         IronHelm() {

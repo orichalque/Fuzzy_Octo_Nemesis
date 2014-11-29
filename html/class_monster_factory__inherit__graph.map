@@ -1,0 +1,4 @@
+<map id="MonsterFactory" name="MonsterFactory">
+<area shape="rect" id="node2" href="$class_boss_factory.html" title="{BossFactory\n||+ BossFactory()\l+ ~BossFactory()\l+ create()\l}" alt="" coords="5,160,128,267"/>
+<area shape="rect" id="node3" href="$class_monster_factory_concrete.html" title="{MonsterFactoryConcrete\n||+ MonsterFactoryConcrete()\l+ ~MonsterFactoryConcrete()\l+ create()\l}" alt="" coords="153,160,348,267"/>
+</map>

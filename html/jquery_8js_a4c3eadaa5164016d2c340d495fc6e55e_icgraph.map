@@ -1,0 +1,20 @@
+<map id="x" name="x">
+<area shape="rect" id="node2" href="$class_character.html#a2c1bc808a27d0082e3584a0d6f896028" title="Character::getCombinedAtt" alt="" coords="99,5,280,32"/>
+<area shape="rect" id="node3" href="$class_character.html#ad1d09ebc955dd15aaff631607916e633" title="Character::getCombinedDef" alt="" coords="97,56,282,83"/>
+<area shape="rect" id="node4" href="$class_character.html#aea6698aa522f5dc45f08010653b144eb" title="Character::getCombinedDext" alt="" coords="93,107,285,133"/>
+<area shape="rect" id="node5" href="$class_screen.html#a96dbbfbb850c951a6380169dc8ee3028" title="Screen::displayIntro" alt="" coords="120,157,259,184"/>
+<area shape="rect" id="node6" href="$class_screen.html#a4830273ee662309772f2e82696ae6506" title="Screen::chooseCharacter" alt="" coords="104,208,275,235"/>
+<area shape="rect" id="node7" href="$class_screen.html#a7e9512275656994209b20cdb57d1eb6b" title="Screen::chooseAction" alt="" coords="114,259,265,285"/>
+<area shape="rect" id="node8" href="$class_screen.html#a2f8615c1154b9e1b81ceb5bef77bb35b" title="Screen::equip" alt="" coords="138,309,241,336"/>
+<area shape="rect" id="node9" href="$class_screen.html#a63c96078515cc7020d920d58b0a79711" title="Screen::endGameScreen" alt="" coords="105,360,273,387"/>
+<area shape="rect" id="node10" href="$search_8js.html#a76d24aea0009f892f8ccc31d941c0a2b" title="getXPos" alt="" coords="153,411,225,437"/>
+<area shape="rect" id="node12" href="$class_game.html#aedb4cdc93c8ab85f2f7aff018ccd76ca" title="Game::launchGame" alt="" coords="120,461,259,488"/>
+<area shape="rect" id="node14" href="$class_loot_state.html#a35ac3a3825b8da2572f72c25e714cf44" title="LootState::action" alt="" coords="129,512,250,539"/>
+<area shape="rect" id="node15" href="$class_rectangle.html#a866760724f805218b903fb7b1e7f98f2" title="Rectangle::Rectangle" alt="" coords="115,563,263,589"/>
+<area shape="rect" id="node16" href="$class_rectangle.html#a5611b369fa23da80daea6629061c7758" title="Rectangle::displayInfo" alt="" coords="113,613,265,640"/>
+<area shape="rect" id="node17" href="$class_rectangle.html#a6a293d96bf13d01b78dfa9d2123e4926" title="Rectangle::getInfo" alt="" coords="125,664,254,691"/>
+<area shape="rect" id="node18" href="$class_rectangle.html#ae86cd7935f459ab5688426022c8d370b" title="Rectangle::getX" alt="" coords="131,715,247,741"/>
+<area shape="rect" id="node19" href="$class_rectangle.html#a444cd246f7ef29ba99e63886c2359aa8" title="Rectangle::getX2" alt="" coords="128,765,251,792"/>
+<area shape="rect" id="node11" href="$search_8js.html#a52066106482f8136aa9e0ec859e8188f" title="SearchBox" alt="" coords="334,411,421,437"/>
+<area shape="rect" id="node13" href="$_game_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="352,461,403,488"/>
+</map>

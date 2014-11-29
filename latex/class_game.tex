@@ -1,0 +1,465 @@
+\hypertarget{class_game}{\section{Game Class Reference}
+\label{class_game}\index{Game@{Game}}
+}
+
+
+{\ttfamily \#include $<$Game.\-hpp$>$}
+
+
+
+Collaboration diagram for Game\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{class_game__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_game_ad59df6562a58a614fda24622d3715b65}{Game} ()
+\item 
+\hyperlink{class_game_ae3d112ca6e0e55150d2fdbc704474530}{$\sim$\-Game} ()
+\item 
+shared\-\_\-ptr$<$ \hyperlink{class_game}{Game} $>$ \hyperlink{class_game_affaa9a4a7cc77fcc1fbd140e60f8907b}{get\-Shared\-Ptr\-This} ()
+\item 
+shared\-\_\-ptr$<$ \hyperlink{class_generator}{Generator} $>$ \hyperlink{class_game_a2a05d793c901ebdc60832d187b58d501}{get\-Generator} () const 
+\item 
+shared\-\_\-ptr$<$ \hyperlink{class_character}{Character} $>$ \hyperlink{class_game_acbabdf93244732c23a8fe1b482548fd5}{get\-Character} () const 
+\item 
+shared\-\_\-ptr$<$ \hyperlink{class_screen}{Screen} $>$ \hyperlink{class_game_a65eb691cddef147865580a8e0b76c579}{get\-Screen} () const 
+\item 
+vector$<$ shared\-\_\-ptr$<$ \hyperlink{class_monster}{Monster} $>$ $>$ $\ast$ \hyperlink{class_game_a68cfd228e261c182cfadf90463dc4727}{get\-Monsters\-List} ()
+\item 
+shared\-\_\-ptr$<$ \hyperlink{class_equipement_factory}{Equipement\-Factory} $>$ \hyperlink{class_game_a9e430bb75a7df9425b257d0018a97bb5}{get\-Equipement\-Factory} ()
+\item 
+void \hyperlink{class_game_aedb4cdc93c8ab85f2f7aff018ccd76ca}{launch\-Game} ()
+\item 
+void \hyperlink{class_game_a265b4a907a360afbb131334300968c9d}{display\-Map} ()
+\item 
+void \hyperlink{class_game_a124812c1a7b84f3aead51cb35a5146f8}{generate\-Map} ()
+\item 
+void \hyperlink{class_game_a8e92b564d2a037f0455b2f10ec9900f0}{move\-Character} ()
+\item 
+void \hyperlink{class_game_a9fd07ff4033e3d6fc2a9960e250581e6}{equip} (shared\-\_\-ptr$<$ \hyperlink{class_equipement}{Equipement} $>$ equipement)
+\item 
+int \hyperlink{class_game_a306fb013d1a8558d3053334dab286ea7}{fight} (shared\-\_\-ptr$<$ \hyperlink{class_character}{Character} $>$ monster)
+\item 
+int \hyperlink{class_game_a835ca9eac25454523e2fbd4d3ba6b042}{loot} (shared\-\_\-ptr$<$ \hyperlink{class_monster}{Monster} $>$ monster)
+\item 
+void \hyperlink{class_game_a2355400f456780bddd38229a664e8b99}{action} ()
+\item 
+void \hyperlink{class_game_aa68d983ff49b8b5235fc378a9bf03f4f}{action} (shared\-\_\-ptr$<$ \hyperlink{class_monster}{Monster} $>$ mons)
+\item 
+void \hyperlink{class_game_a64a1de2e0b4bb9099af1fa3299d22e8d}{action} (bool \hyperlink{jquery_8js_a2fa551895933fae935a0a6b87282241d}{b})
+\item 
+int \hyperlink{class_game_a53141ff044e4aa43f23d7dbed11272f6}{get\-Level} ()
+\item 
+shared\-\_\-ptr$<$ \hyperlink{class_game_state}{Game\-State} $>$ \hyperlink{class_game_aed827cbeb1d04b1e5a3fb417c1ceba96}{get\-Fight\-State} ()
+\item 
+shared\-\_\-ptr$<$ \hyperlink{class_game_state}{Game\-State} $>$ \hyperlink{class_game_a73f457fb36d780c9075cfa15499767a5}{get\-Move\-State} ()
+\item 
+shared\-\_\-ptr$<$ \hyperlink{class_game_state}{Game\-State} $>$ \hyperlink{class_game_a243b312b1ec1fce3495cc6e254505cf7}{get\-Loot\-State} ()
+\item 
+shared\-\_\-ptr$<$ \hyperlink{class_game_state}{Game\-State} $>$ \hyperlink{class_game_ab13bfc3f0c9e08551a0f55daeab31840}{get\-End\-Game\-State} ()
+\item 
+void \hyperlink{class_game_ab2fc71103cf572ed77dc4a30f31f9d5e}{set\-Level} (int new\-Level)
+\item 
+void \hyperlink{class_game_a9aa1730ad9b8b9bf02bf591b65c9c2c7}{set\-State} (shared\-\_\-ptr$<$ \hyperlink{class_game_state}{Game\-State} $>$ s)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file Game.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_game_ad59df6562a58a614fda24622d3715b65}{\index{Game@{Game}!Game@{Game}}
+\index{Game@{Game}!Game@{Game}}
+\subsubsection[{Game}]{\setlength{\rightskip}{0pt plus 5cm}Game\-::\-Game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_game_ad59df6562a58a614fda24622d3715b65}
+
+
+Definition at line 24 of file Game.\-cpp.
+
+\hypertarget{class_game_ae3d112ca6e0e55150d2fdbc704474530}{\index{Game@{Game}!$\sim$\-Game@{$\sim$\-Game}}
+\index{$\sim$\-Game@{$\sim$\-Game}!Game@{Game}}
+\subsubsection[{$\sim$\-Game}]{\setlength{\rightskip}{0pt plus 5cm}Game\-::$\sim$\-Game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_game_ae3d112ca6e0e55150d2fdbc704474530}
+
+
+Definition at line 41 of file Game.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_game_a2355400f456780bddd38229a664e8b99}{\index{Game@{Game}!action@{action}}
+\index{action@{action}!Game@{Game}}
+\subsubsection[{action}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-::action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_game_a2355400f456780bddd38229a664e8b99}
+
+
+Definition at line 93 of file Game.\-cpp.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{class_game_a2355400f456780bddd38229a664e8b99_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_game_aa68d983ff49b8b5235fc378a9bf03f4f}{\index{Game@{Game}!action@{action}}
+\index{action@{action}!Game@{Game}}
+\subsubsection[{action}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-::action (
+\begin{DoxyParamCaption}
+\item[{shared\-\_\-ptr$<$ {\bf Monster} $>$}]{mons}
+\end{DoxyParamCaption}
+)}}\label{class_game_aa68d983ff49b8b5235fc378a9bf03f4f}
+
+
+Definition at line 97 of file Game.\-cpp.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{class_game_aa68d983ff49b8b5235fc378a9bf03f4f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_game_a64a1de2e0b4bb9099af1fa3299d22e8d}{\index{Game@{Game}!action@{action}}
+\index{action@{action}!Game@{Game}}
+\subsubsection[{action}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-::action (
+\begin{DoxyParamCaption}
+\item[{bool}]{b}
+\end{DoxyParamCaption}
+)}}\label{class_game_a64a1de2e0b4bb9099af1fa3299d22e8d}
+
+
+Definition at line 101 of file Game.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{class_game_a64a1de2e0b4bb9099af1fa3299d22e8d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_game_a265b4a907a360afbb131334300968c9d}{\index{Game@{Game}!display\-Map@{display\-Map}}
+\index{display\-Map@{display\-Map}!Game@{Game}}
+\subsubsection[{display\-Map}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-::display\-Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_game_a265b4a907a360afbb131334300968c9d}
+
+
+Definition at line 158 of file Game.\-cpp.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{class_game_a265b4a907a360afbb131334300968c9d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_game_a9fd07ff4033e3d6fc2a9960e250581e6}{\index{Game@{Game}!equip@{equip}}
+\index{equip@{equip}!Game@{Game}}
+\subsubsection[{equip}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-::equip (
+\begin{DoxyParamCaption}
+\item[{shared\-\_\-ptr$<$ {\bf Equipement} $>$}]{equipement}
+\end{DoxyParamCaption}
+)}}\label{class_game_a9fd07ff4033e3d6fc2a9960e250581e6}
+
+
+Definition at line 131 of file Game.\-cpp.
+
+\hypertarget{class_game_a306fb013d1a8558d3053334dab286ea7}{\index{Game@{Game}!fight@{fight}}
+\index{fight@{fight}!Game@{Game}}
+\subsubsection[{fight}]{\setlength{\rightskip}{0pt plus 5cm}int Game\-::fight (
+\begin{DoxyParamCaption}
+\item[{shared\-\_\-ptr$<$ {\bf Character} $>$}]{monster}
+\end{DoxyParamCaption}
+)}}\label{class_game_a306fb013d1a8558d3053334dab286ea7}
+\hypertarget{class_game_a124812c1a7b84f3aead51cb35a5146f8}{\index{Game@{Game}!generate\-Map@{generate\-Map}}
+\index{generate\-Map@{generate\-Map}!Game@{Game}}
+\subsubsection[{generate\-Map}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-::generate\-Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_game_a124812c1a7b84f3aead51cb35a5146f8}
+
+
+Definition at line 147 of file Game.\-cpp.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{class_game_a124812c1a7b84f3aead51cb35a5146f8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_game_acbabdf93244732c23a8fe1b482548fd5}{\index{Game@{Game}!get\-Character@{get\-Character}}
+\index{get\-Character@{get\-Character}!Game@{Game}}
+\subsubsection[{get\-Character}]{\setlength{\rightskip}{0pt plus 5cm}shared\-\_\-ptr$<$ {\bf Character} $>$ Game\-::get\-Character (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_game_acbabdf93244732c23a8fe1b482548fd5}
+
+
+Definition at line 51 of file Game.\-cpp.
+
+\hypertarget{class_game_ab13bfc3f0c9e08551a0f55daeab31840}{\index{Game@{Game}!get\-End\-Game\-State@{get\-End\-Game\-State}}
+\index{get\-End\-Game\-State@{get\-End\-Game\-State}!Game@{Game}}
+\subsubsection[{get\-End\-Game\-State}]{\setlength{\rightskip}{0pt plus 5cm}shared\-\_\-ptr$<$ {\bf Game\-State} $>$ Game\-::get\-End\-Game\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_game_ab13bfc3f0c9e08551a0f55daeab31840}
+
+
+Definition at line 73 of file Game.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_game_ab13bfc3f0c9e08551a0f55daeab31840_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_game_a9e430bb75a7df9425b257d0018a97bb5}{\index{Game@{Game}!get\-Equipement\-Factory@{get\-Equipement\-Factory}}
+\index{get\-Equipement\-Factory@{get\-Equipement\-Factory}!Game@{Game}}
+\subsubsection[{get\-Equipement\-Factory}]{\setlength{\rightskip}{0pt plus 5cm}shared\-\_\-ptr$<$ {\bf Equipement\-Factory} $>$ Game\-::get\-Equipement\-Factory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_game_a9e430bb75a7df9425b257d0018a97bb5}
+
+
+Definition at line 81 of file Game.\-cpp.
+
+\hypertarget{class_game_aed827cbeb1d04b1e5a3fb417c1ceba96}{\index{Game@{Game}!get\-Fight\-State@{get\-Fight\-State}}
+\index{get\-Fight\-State@{get\-Fight\-State}!Game@{Game}}
+\subsubsection[{get\-Fight\-State}]{\setlength{\rightskip}{0pt plus 5cm}shared\-\_\-ptr$<$ {\bf Game\-State} $>$ Game\-::get\-Fight\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_game_aed827cbeb1d04b1e5a3fb417c1ceba96}
+
+
+Definition at line 61 of file Game.\-cpp.
+
+\hypertarget{class_game_a2a05d793c901ebdc60832d187b58d501}{\index{Game@{Game}!get\-Generator@{get\-Generator}}
+\index{get\-Generator@{get\-Generator}!Game@{Game}}
+\subsubsection[{get\-Generator}]{\setlength{\rightskip}{0pt plus 5cm}shared\-\_\-ptr$<$ {\bf Generator} $>$ Game\-::get\-Generator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_game_a2a05d793c901ebdc60832d187b58d501}
+
+
+Definition at line 46 of file Game.\-cpp.
+
+\hypertarget{class_game_a53141ff044e4aa43f23d7dbed11272f6}{\index{Game@{Game}!get\-Level@{get\-Level}}
+\index{get\-Level@{get\-Level}!Game@{Game}}
+\subsubsection[{get\-Level}]{\setlength{\rightskip}{0pt plus 5cm}int Game\-::get\-Level (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_game_a53141ff044e4aa43f23d7dbed11272f6}
+
+
+Definition at line 77 of file Game.\-cpp.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{class_game_a53141ff044e4aa43f23d7dbed11272f6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_game_a243b312b1ec1fce3495cc6e254505cf7}{\index{Game@{Game}!get\-Loot\-State@{get\-Loot\-State}}
+\index{get\-Loot\-State@{get\-Loot\-State}!Game@{Game}}
+\subsubsection[{get\-Loot\-State}]{\setlength{\rightskip}{0pt plus 5cm}shared\-\_\-ptr$<$ {\bf Game\-State} $>$ Game\-::get\-Loot\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_game_a243b312b1ec1fce3495cc6e254505cf7}
+
+
+Definition at line 69 of file Game.\-cpp.
+
+\hypertarget{class_game_a68cfd228e261c182cfadf90463dc4727}{\index{Game@{Game}!get\-Monsters\-List@{get\-Monsters\-List}}
+\index{get\-Monsters\-List@{get\-Monsters\-List}!Game@{Game}}
+\subsubsection[{get\-Monsters\-List}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ shared\-\_\-ptr$<$ {\bf Monster} $>$ $>$ $\ast$ Game\-::get\-Monsters\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_game_a68cfd228e261c182cfadf90463dc4727}
+
+
+Definition at line 105 of file Game.\-cpp.
+
+\hypertarget{class_game_a73f457fb36d780c9075cfa15499767a5}{\index{Game@{Game}!get\-Move\-State@{get\-Move\-State}}
+\index{get\-Move\-State@{get\-Move\-State}!Game@{Game}}
+\subsubsection[{get\-Move\-State}]{\setlength{\rightskip}{0pt plus 5cm}shared\-\_\-ptr$<$ {\bf Game\-State} $>$ Game\-::get\-Move\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_game_a73f457fb36d780c9075cfa15499767a5}
+
+
+Definition at line 65 of file Game.\-cpp.
+
+\hypertarget{class_game_a65eb691cddef147865580a8e0b76c579}{\index{Game@{Game}!get\-Screen@{get\-Screen}}
+\index{get\-Screen@{get\-Screen}!Game@{Game}}
+\subsubsection[{get\-Screen}]{\setlength{\rightskip}{0pt plus 5cm}shared\-\_\-ptr$<$ {\bf Screen} $>$ Game\-::get\-Screen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_game_a65eb691cddef147865580a8e0b76c579}
+
+
+Definition at line 56 of file Game.\-cpp.
+
+\hypertarget{class_game_affaa9a4a7cc77fcc1fbd140e60f8907b}{\index{Game@{Game}!get\-Shared\-Ptr\-This@{get\-Shared\-Ptr\-This}}
+\index{get\-Shared\-Ptr\-This@{get\-Shared\-Ptr\-This}!Game@{Game}}
+\subsubsection[{get\-Shared\-Ptr\-This}]{\setlength{\rightskip}{0pt plus 5cm}shared\-\_\-ptr$<${\bf Game}$>$ Game\-::get\-Shared\-Ptr\-This (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_game_affaa9a4a7cc77fcc1fbd140e60f8907b}
+\hypertarget{class_game_aedb4cdc93c8ab85f2f7aff018ccd76ca}{\index{Game@{Game}!launch\-Game@{launch\-Game}}
+\index{launch\-Game@{launch\-Game}!Game@{Game}}
+\subsubsection[{launch\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-::launch\-Game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_game_aedb4cdc93c8ab85f2f7aff018ccd76ca}
+
+
+Definition at line 109 of file Game.\-cpp.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{class_game_aedb4cdc93c8ab85f2f7aff018ccd76ca_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{class_game_aedb4cdc93c8ab85f2f7aff018ccd76ca_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_game_a835ca9eac25454523e2fbd4d3ba6b042}{\index{Game@{Game}!loot@{loot}}
+\index{loot@{loot}!Game@{Game}}
+\subsubsection[{loot}]{\setlength{\rightskip}{0pt plus 5cm}int Game\-::loot (
+\begin{DoxyParamCaption}
+\item[{shared\-\_\-ptr$<$ {\bf Monster} $>$}]{monster}
+\end{DoxyParamCaption}
+)}}\label{class_game_a835ca9eac25454523e2fbd4d3ba6b042}
+\hypertarget{class_game_a8e92b564d2a037f0455b2f10ec9900f0}{\index{Game@{Game}!move\-Character@{move\-Character}}
+\index{move\-Character@{move\-Character}!Game@{Game}}
+\subsubsection[{move\-Character}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-::move\-Character (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_game_a8e92b564d2a037f0455b2f10ec9900f0}
+
+
+Definition at line 121 of file Game.\-cpp.
+
+\hypertarget{class_game_ab2fc71103cf572ed77dc4a30f31f9d5e}{\index{Game@{Game}!set\-Level@{set\-Level}}
+\index{set\-Level@{set\-Level}!Game@{Game}}
+\subsubsection[{set\-Level}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-::set\-Level (
+\begin{DoxyParamCaption}
+\item[{int}]{new\-Level}
+\end{DoxyParamCaption}
+)}}\label{class_game_ab2fc71103cf572ed77dc4a30f31f9d5e}
+
+
+Definition at line 85 of file Game.\-cpp.
+
+\hypertarget{class_game_a9aa1730ad9b8b9bf02bf591b65c9c2c7}{\index{Game@{Game}!set\-State@{set\-State}}
+\index{set\-State@{set\-State}!Game@{Game}}
+\subsubsection[{set\-State}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-::set\-State (
+\begin{DoxyParamCaption}
+\item[{shared\-\_\-ptr$<$ {\bf Game\-State} $>$}]{s}
+\end{DoxyParamCaption}
+)}}\label{class_game_a9aa1730ad9b8b9bf02bf591b65c9c2c7}
+
+
+Definition at line 89 of file Game.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{class_game_a9aa1730ad9b8b9bf02bf591b65c9c2c7_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_game_8hpp}{Game.\-hpp}\item 
+\hyperlink{_game_8cpp}{Game.\-cpp}\end{DoxyCompactItemize}

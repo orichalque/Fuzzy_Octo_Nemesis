@@ -1,9 +1,14 @@
-/*
- *  Game class
- *  Main class, creating and managing the display, the map generator, and the game itself
- *  An awesome work though, thanks to you Thibault
- *  Ooow stop it you =3
+/**
+ * \file Game.hpp
+ * \brief client class for FuzzyOctoNemesis
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * RogueLike Project
+ *
  */
+
 #ifndef __GAME_CPP__
 #define __GAME_CPP__
 
@@ -11,6 +16,7 @@ class GameState;
 class MoveState;
 class FightState;
 class LootState;
+class EndGameState;
 
 
 class Game { /*Controler of the MVC*/
@@ -31,10 +37,8 @@ class Game { /*Controler of the MVC*/
         // States
         shared_ptr<FightState> _fightState;
         shared_ptr<MoveState> _moveState;
-        shared_ptr<LootState> _lootState;/*
-        WonLevelState _wonState;
-        DeadState _deadState;
-        PauseState _pauseState;*/
+        shared_ptr<LootState> _lootState;
+		shared_ptr<EndGameState> _endGameState;
         
         shared_ptr<GameState> _currentState;
     
@@ -57,6 +61,7 @@ class Game { /*Controler of the MVC*/
         int loot(shared_ptr<Monster> monster);
         void action();
         void action(shared_ptr<Monster> mons);
+        void action(bool b);
         int getLevel();
         
         
@@ -64,12 +69,14 @@ class Game { /*Controler of the MVC*/
         shared_ptr<GameState> getFightState();
         shared_ptr<GameState> getMoveState();
         shared_ptr<GameState> getLootState();
+        shared_ptr<GameState> getEndGameState();
         
         //LootState getLootState() const;
         //WonLevelState getWonLevelState() const;
         //DeadState getDeadState() const;
         //PauseState getPauseState() const;
         
+        void setLevel(int newLevel);
         void setState(shared_ptr<GameState> s);
 };
 

@@ -1,13 +1,13 @@
-/*
-* Weapon Class Definition for FuzzyOctoNemesis 
-*
-* C++ 11
-*
-* OPEN SOURCE @ https://github.com/orichalque/Fuzzy_Octo_Nemesis
-* @author BEZIERS LA FOSSE Thibault 
-* @author MERLET Corentin
-* @version 1.0.0a
-*/
+/**
+ * \file Weapon.hpp
+ * \brief Weapon abstract class
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Define the Weapon class, inherited by all the weapon equipements, used for fights
+ *
+ */
 
 #ifndef __WEAPON_HPP__
 #define __WEAPON_HPP__

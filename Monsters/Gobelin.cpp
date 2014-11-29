@@ -1,4 +1,14 @@
-
+/**
+ * \file Gobelin.cpp
+ * \brief Concrete monster
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Monster for FuzzyOctoNemesis. Can be found in the dungeon
+ *
+ */
+ 
 class Gobelin : public Monster {
     public: 
 	    Gobelin() {

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['game',['Game',['../classGame.html',1,'']]],
-  ['gamestate',['GameState',['../classGameState.html',1,'']]]
+  ['factory',['Factory',['../class_factory.html',1,'']]],
+  ['fantask',['Fantask',['../class_fantask.html',1,'']]],
+  ['fightstate',['FightState',['../class_fight_state.html',1,'']]]
 ];

@@ -1,13 +1,14 @@
-/*
-* Inventory Concrete class. Each item have an Id that corresponds to his 
-* position in the item pointer array
-* C++ 11
-*
-* OPEN SOURCE @ https://github.com/orichalque/Fuzzy_Octo_Nemesis
-* @author BEZIERS LA FOSSE Thibault 
-* @author MERLET Corentin
-* @version 1.0.0a
-*/
+/**
+ * \file Inventory.hpp
+ * \brief Define the Inventory of the Character
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Inventory class definition, containing a list of Item. Was in the main project but were abandoned by lack of time
+ * Maybe defined an other day.
+ *
+ */
 
 #ifndef INVENTORY_HPP
 #define INVENTORY_HPP

@@ -1,3 +1,14 @@
+/**
+ * \file MithrilArmor.hpp
+ * \brief Concrete armor 
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * MithrilArmor for equiping
+ *
+ */
+ 
 class MithrilArmor : public Armor {
     public:
         MithrilArmor() {

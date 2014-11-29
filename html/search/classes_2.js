@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['character',['Character',['../classCharacter.html',1,'']]],
-  ['consumable',['Consumable',['../classConsumable.html',1,'']]]
+  ['character',['Character',['../class_character.html',1,'']]],
+  ['claymore',['Claymore',['../class_claymore.html',1,'']]],
+  ['consumable',['Consumable',['../class_consumable.html',1,'']]]
 ];

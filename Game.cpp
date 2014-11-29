@@ -1,53 +1,33 @@
-#include<iostream>
-#include<cassert>
-#include<string>
-#include<memory>
-#include<vector>
-#include<ncurses.h>
+/*! \mainpage Auteur : Thibault BLF. Corentin M.
+*
+* \section intro_sec Introduction
+*
+* Fuzzy Octo Nemesis est nu jeu de rôle type RogueLike, adapté pour terminal UNIX.
+* L'objectif est de parcourir le donjon, tuer les monstres et atteindre le boss final.
+* Pour ce, l'utilisateur peut incarner 4 personnages différents avec chacun leurs attributs propres.
+* \section install_sec Execution
+* A FAIRE A FAIRE A FAIRE
+*
+* \section tools_subsec Compilation (nécessaire si l'exécution ne fonctionne pas)
+*
+* Entrer dans le terminal la commande suivante:
+* g++ -std=c++11 Game.cpp -lncurses
+*
+* \section copyright Copyright & License
+* OpenSource! Faites en ce que vous désirez. Ce projet est uniquement à but éducatif.
+* <BR><BR>
+*
+*/
 
-#include "Item.cpp"
-#include "Equipement.cpp"
-#include "Shield.cpp"
-#include "Armor.cpp"
-#include "Weapon.cpp"
-#include "Helmet.cpp"
-#include "Weapons.hpp"
-#include "Armors.hpp"
-#include "Helmets.hpp"
-#include "Shields.hpp"
-#include "Character.cpp"
-#include "Monster.cpp"
-#include "Characters.hpp"
-#include "Monsters.hpp"
-#include "Weapons.hpp"
-#include "Armors.hpp"
-#include "Helmets.hpp"
-#include "Shields.hpp"
-
-#include "Factory.cpp"
-#include "MonsterFactory.cpp"
-#include "MonsterFactoryConcrete.cpp"
-
-#include "BossFactory.cpp"
-#include "EquipementFactory.cpp"
-
-#include "Display/Screen.cpp"
-#include "MapGenerator2/Rectangle.cpp"
-#include "MapGenerator2/Leaf.cpp"
-#include "MapGenerator2/Generator.cpp"
-
-#include "Game.hpp"
-#include "GameState.cpp"
-#include "LootState.cpp"
-#include "FightState.cpp"
-#include "MoveState.cpp"
-
+#include"header.hpp"
 
 Game::Game() 
 {
     _fightState = make_shared<FightState>(this);
     _moveState = make_shared<MoveState>(this);
     _lootState = make_shared<LootState>(this);
+    _endGameState = make_shared<EndGameState>(this);
+    
     generator = make_shared<Generator>();
     screen = make_shared<Screen>();
     monsterFactory = make_shared<MonsterFactoryConcrete>();
@@ -90,6 +70,10 @@ shared_ptr<GameState> Game::getLootState() {
     return _lootState;
 }
 
+shared_ptr<GameState> Game::getEndGameState() {
+    return _endGameState;
+}
+
 int Game::getLevel() {
     return level;
 }
@@ -98,7 +82,10 @@ shared_ptr<EquipementFactory> Game::getEquipementFactory() {
     return equipementFactory;
 }
         
-        
+void Game::setLevel(int newLevel) {
+	level = newLevel;
+}
+                
 void Game::setState(shared_ptr<GameState> s) {
     _currentState = s;
 }
@@ -109,6 +96,10 @@ void Game::action() {
 
 void Game::action(shared_ptr<Monster> mons) {
     _currentState -> action(mons);
+}
+
+void Game::action(bool b) {
+    _currentState -> action(b);
 }
 
 vector< shared_ptr<Monster> >* Game::getMonstersList() {
@@ -122,7 +113,7 @@ void Game::launchGame() {
     //resizing the window with a bash script
     system((char*)str.c_str());    
     screen -> init(); 
-    //screen -> displayIntro(); 
+    screen -> displayIntro(); 
     character = (screen -> chooseCharacter());
     screen -> windowBuilding(generator -> getSize());
 }
@@ -197,14 +188,15 @@ int main() {
     game.displayMap();
     game.generateMap();
     game.displayMap();
+    
     while (game.getLevel()) {
         game.action();
         game.displayMap();
     }
+    endwin();
+	exit(1);
     /* to do */
     /*
     - Modifier la method display map pour la mettre dans la classe generator. Les mobs sont pas placés dynamiquement -> pas de combats après une fuite.
-    - bug avec les méthodes de random à la con
-    - ajouter des fonctions spéciales quand on tue le boss. Empecher la fuite contre le boss.         
     /* endwin(); */
 }

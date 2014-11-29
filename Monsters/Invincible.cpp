@@ -1,3 +1,14 @@
+/**
+ * \file Invincible.cpp
+ * \brief Concrete monster
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Final Boss for FuzzyOctoNemesis. Can be found in the dungeon
+ *
+ */
+
 class Invincible : public Monster {
     public: 
 	Invincible() {
@@ -12,6 +23,10 @@ class Invincible : public Monster {
 	}
 	
 	bool isBoss() {
+		return true;
+	}
+	
+	bool isFinalBoss() {
 		return true;
 	}
 };

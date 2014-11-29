@@ -1,4 +1,14 @@
-class Ghoul : public Monster {
+/**
+ * \file Ghoul.cpp
+ * \brief Concrete monster
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Monster for FuzzyOctoNemesis. Can be found in the dungeon
+ *
+ */
+ class Ghoul : public Monster {
     public: 
 	Ghoul() {
 		Character::desc_ = "Une goule en décomposition, dégueulasse";

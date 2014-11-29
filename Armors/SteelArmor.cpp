@@ -1,4 +1,14 @@
-class SteelArmor : public Armor {
+/**
+ * \file SteelArmor.hpp
+ * \brief Concrete armor 
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * SteelArmor for equiping
+ *
+ */
+ class SteelArmor : public Armor {
     public:
         SteelArmor() {
             Item::name_ = "Armure en acier";

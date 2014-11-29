@@ -1,4 +1,14 @@
-class Squeleton : public Monster {
+/**
+ * \file Squeleton.cpp
+ * \brief Concrete monster
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Monster for FuzzyOctoNemesis. Can be found in the dungeon
+ *
+ */
+ class Squeleton : public Monster {
     public: 
 	Squeleton() {
 		Character::desc_ = "Un Squelette avec une épée et un bouclier";
@@ -10,5 +20,4 @@ class Squeleton : public Monster {
 		Character::dext_ = 13;
 		Monster::lootList = {4, 21};
 	}
-//string _name, string _desc, int life_, int attack_, int def_, int dext_
 };

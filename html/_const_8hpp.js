@@ -1,0 +1,47 @@
+var _const_8hpp =
+[
+    [ "Bosses", "_const_8hpp.html#a571b8eb16445af41bf2410b919b86015", [
+      [ "troll", "_const_8hpp.html#a571b8eb16445af41bf2410b919b86015afe7bc3c0a361eacd86d2b0d74e7cb9dc", null ],
+      [ "hellhound", "_const_8hpp.html#a571b8eb16445af41bf2410b919b86015ac42376ef7a48717a30def254c9dfa285", null ],
+      [ "golem", "_const_8hpp.html#a571b8eb16445af41bf2410b919b86015a76dce0de26dd9014d9039b728915c81d", null ],
+      [ "dragon", "_const_8hpp.html#a571b8eb16445af41bf2410b919b86015a57dd964cfff90aab56dbfa5d7ae8394c", null ],
+      [ "invincible", "_const_8hpp.html#a571b8eb16445af41bf2410b919b86015a5e77ad744275844a0085a0b14c2cda66", null ]
+    ] ],
+    [ "Mobs", "_const_8hpp.html#a445e229e8b9daa80cea6f3c64ff47d53", [
+      [ "gobelin", "_const_8hpp.html#a445e229e8b9daa80cea6f3c64ff47d53a718ffed406f26f09f5881766538bdb16", null ],
+      [ "bat", "_const_8hpp.html#a445e229e8b9daa80cea6f3c64ff47d53af4a9edd1cb867cc6687248044e207cb1", null ],
+      [ "orc", "_const_8hpp.html#a445e229e8b9daa80cea6f3c64ff47d53a9a01e0b98d3737088111baf66f23b362", null ],
+      [ "kobold", "_const_8hpp.html#a445e229e8b9daa80cea6f3c64ff47d53a59ae6e8c5164e63707ec70cb6404f88b", null ],
+      [ "sorcerer", "_const_8hpp.html#a445e229e8b9daa80cea6f3c64ff47d53ab8200b487426d135e89bff25aa613870", null ],
+      [ "squeleton", "_const_8hpp.html#a445e229e8b9daa80cea6f3c64ff47d53af5f605b53e7eeaa26e6ff18d5e79d1ec", null ],
+      [ "fantask", "_const_8hpp.html#a445e229e8b9daa80cea6f3c64ff47d53a1c31d0393114a2cf6fcc4a4b25630972", null ],
+      [ "vampire", "_const_8hpp.html#a445e229e8b9daa80cea6f3c64ff47d53a216ad12a5ee4ecc2e2b7bf117984ba06", null ],
+      [ "ghoul", "_const_8hpp.html#a445e229e8b9daa80cea6f3c64ff47d53a31c72e00e9c544aafb0dca93ad38cc33", null ],
+      [ "zombie", "_const_8hpp.html#a445e229e8b9daa80cea6f3c64ff47d53aa08fec0576de6b3ea2dc94f0d5581ec7", null ],
+      [ "harpy", "_const_8hpp.html#a445e229e8b9daa80cea6f3c64ff47d53a23ee783aaa26350a039b6acc85270709", null ],
+      [ "archmagus", "_const_8hpp.html#a445e229e8b9daa80cea6f3c64ff47d53a3b48d11b70df1452ccf4eac690e1b415", null ],
+      [ "elemental", "_const_8hpp.html#a445e229e8b9daa80cea6f3c64ff47d53aa8229e81a4f31c671241c215f2fe23bd", null ],
+      [ "bully", "_const_8hpp.html#a445e229e8b9daa80cea6f3c64ff47d53af292406a5857db84f9cf861ae0f6e245", null ],
+      [ "eternal", "_const_8hpp.html#a445e229e8b9daa80cea6f3c64ff47d53a2e5037a10309aee1b604908c819f95b1", null ]
+    ] ],
+    [ "barrel", "_const_8hpp.html#a607f11aeb288f3c7cb6318980e6d82eb", null ],
+    [ "claymore", "_const_8hpp.html#acd9e25fb72f819bd4327306925196ee1", null ],
+    [ "dagger", "_const_8hpp.html#a8b871a0cf9d9d11b7c66536beef6e96e", null ],
+    [ "excalibur", "_const_8hpp.html#a9d305f2471c31946c750f9081f2efd77", null ],
+    [ "ironarmor", "_const_8hpp.html#a001ad5a3a415768d0e2c4d19a8751879", null ],
+    [ "ironhelm", "_const_8hpp.html#a86cd21793a6184361429cce8c56e7987", null ],
+    [ "ironshield", "_const_8hpp.html#a1b453b0e2d03477e1edca6b216c47666", null ],
+    [ "knife", "_const_8hpp.html#a2c31a4712f10672e075f16ba19dfd1d1", null ],
+    [ "leatherarmor", "_const_8hpp.html#ad6bfaaaa07e98b4c0c9dd8eb8b416c1f", null ],
+    [ "leatherhelm", "_const_8hpp.html#ac9b465e3684a832ff37278fc5ed3dd43", null ],
+    [ "longsword", "_const_8hpp.html#af330f445936feba212aaaeb7dd5d2dbc", null ],
+    [ "mithrilarmor", "_const_8hpp.html#af99716f8709dbc819b80dc0c6f16be66", null ],
+    [ "mithrilhelm", "_const_8hpp.html#a839d61ef9656b90541d8db11a0c7dca2", null ],
+    [ "mithrilshield", "_const_8hpp.html#a8be46785378f7b7b593e7e0dd562c599", null ],
+    [ "mjollnir", "_const_8hpp.html#ae5983f857057e70df08dd4bfacff365f", null ],
+    [ "rapier", "_const_8hpp.html#a67c98f32e1b727491266d59e6eaad573", null ],
+    [ "shortsword", "_const_8hpp.html#aec35a80f9dff9c23be5cbb8130547bbb", null ],
+    [ "steelarmor", "_const_8hpp.html#a97765680895d82fbc3e19fbb41266b11", null ],
+    [ "steelhelm", "_const_8hpp.html#a0a851d1d6ad03fa33d883a75386636ad", null ],
+    [ "steelshield", "_const_8hpp.html#a45d7b0d24e416d8b07edef3c788675b6", null ]
+];

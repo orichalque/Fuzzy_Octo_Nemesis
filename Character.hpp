@@ -1,13 +1,13 @@
-/*
-* Character abstract Class Definition for FuzzyOctoNemesis 
-*
-* C++ 11
-*
-* OPEN SOURCE @ https://github.com/orichalque/Fuzzy_Octo_Nemesis
-* @author BEZIERS LA FOSSE Thibault 
-* @author MERLET Corentin
-* @version 1.0.0a
-*/
+/**
+ * \file Character.hpp
+ * \brief Character class definition
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Define the playable character, Model for the MVC
+ *
+ */
 
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
@@ -39,9 +39,11 @@ class Character{ //Abstract Class
 		virtual int attack();
 		virtual int def();
 		virtual int dext();
+		virtual int maxLife();
 		virtual int getCombinedAtt();
 		virtual int getCombinedDef();
 		virtual int getCombinedDext();
+		virtual int getEquipementDef();
 		virtual int x();
 		virtual int y();
 		virtual char getSymbol();

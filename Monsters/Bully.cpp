@@ -1,4 +1,14 @@
-class Bully : public Monster {
+/**
+ * \file Bully.cpp
+ * \brief Concrete monster
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Monster for FuzzyOctoNemesis. Can be found in the dungeon
+ *
+ */
+ class Bully : public Monster {
     public: 
 	Bully() {
 		Character::desc_ = "Un orc en armure, il est enragé.";

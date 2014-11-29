@@ -1,3 +1,14 @@
+/**
+ * \file Paladin.hpp
+ * \brief Concrete character
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * Paladin character class. High defense
+ *
+ */
+ 
 class Paladin : public Character {
     public:
         Paladin() {

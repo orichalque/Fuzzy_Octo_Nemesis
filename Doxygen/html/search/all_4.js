@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['dagger',['Dagger',['../class_dagger.html',1,'Dagger'],['../class_dagger.html#a1ffac51ae9e47106365f2360ad729ae3',1,'Dagger::Dagger()'],['../_const_8hpp.html#a8b871a0cf9d9d11b7c66536beef6e96e',1,'dagger():&#160;Const.hpp']]],
+  ['dagger',['Dagger',['../class_dagger.html',1,'Dagger'],['../class_dagger.html#a1ffac51ae9e47106365f2360ad729ae3',1,'Dagger::Dagger()']]],
   ['dagger_2ecpp',['Dagger.cpp',['../_dagger_8cpp.html',1,'']]],
   ['def',['def',['../class_equipement.html#a752a20a1c7af822f8ad4415a446c6560',1,'Equipement::def()'],['../class_character.html#a974d3bf59cac8ae30c37fcf54f9ed629',1,'Character::def()']]],
   ['def_5f',['def_',['../class_character.html#af5403de4a39c8859b69335e60ea3d6ca',1,'Character']]],
   ['defendfromfoe',['defendFromFoe',['../class_character.html#a3ab7441a4186ff819f5abd5d3c362d33',1,'Character']]],
-  ['defending',['defending',['../class_player.html#aff7f08209821a79676bb7ac03d9f6d82',1,'Player']]],
   ['desc',['desc',['../class_character.html#aeb05a9fcf7e9da62329b8b5de6a7acc9',1,'Character']]],
   ['desc_5f',['desc_',['../class_character.html#af3efafb3ef9078df69d9cefb701b9b25',1,'Character::desc_()'],['../class_item.html#acf30d82ad77e65a0ff0b1f3f1efa8660',1,'Item::desc_()']]],
   ['destroywindow',['destroyWindow',['../class_screen.html#a940749b56f1a6588ae7463579bc5684c',1,'Screen']]],
@@ -15,8 +14,7 @@ var searchData=
   ['displayintro',['displayIntro',['../class_screen.html#a96dbbfbb850c951a6380169dc8ee3028',1,'Screen']]],
   ['displaymap',['displayMap',['../class_game.html#a265b4a907a360afbb131334300968c9d',1,'Game']]],
   ['distfromthis',['distFromThis',['../class_rectangle.html#a8ac164b422072b4b60de559a2f0521c7',1,'Rectangle']]],
-  ['dragon',['Dragon',['../class_dragon.html',1,'Dragon'],['../class_dragon.html#a7f1d59c9ff76eb1f6fe0d9500af058b5',1,'Dragon::Dragon()'],['../_const_8hpp.html#a571b8eb16445af41bf2410b919b86015a57dd964cfff90aab56dbfa5d7ae8394c',1,'dragon():&#160;Const.hpp']]],
+  ['dragon',['Dragon',['../class_dragon.html',1,'Dragon'],['../class_dragon.html#a7f1d59c9ff76eb1f6fe0d9500af058b5',1,'Dragon::Dragon()']]],
   ['dragon_2ecpp',['Dragon.cpp',['../_dragon_8cpp.html',1,'']]],
-  ['dropitem',['dropItem',['../class_inventory.html#a403825da8a0bf8d43dabaf4673e9d0f2',1,'Inventory::dropItem()'],['../class_player.html#ad707a3214b63d3b4d2ac9fa438f68e9e',1,'Player::dropItem()']]],
-  ['dynsections_2ejs',['dynsections.js',['../dynsections_8js.html',1,'']]]
+  ['dropitem',['dropItem',['../class_inventory.html#a403825da8a0bf8d43dabaf4673e9d0f2',1,'Inventory']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['troll_2ecpp',['Troll.cpp',['../_troll_8cpp.html',1,'']]]
+  ['vampire_2ecpp',['Vampire.cpp',['../_vampire_8cpp.html',1,'']]],
+  ['voleur_2ecpp',['Voleur.cpp',['../_voleur_8cpp.html',1,'']]]
 ];

@@ -1,4 +1,0 @@
-<map id="MoveState" name="MoveState">
-<area shape="rect" id="node2" href="$class_game_state.html" title="{GameState\n||+ GameState()\l+ action()\l+ action()\l+ action()\l}" alt="" coords="38,294,145,415"/>
-<area shape="rect" id="node3" href="$class_game.html" title="{Game\n||+ Game()\l+ ~Game()\l+ getSharedPtrThis()\l+ getGenerator()\l+ getCharacter()\l+ getScreen()\l+ getMonstersList()\l+ getEquipementFactory()\l+ launchGame()\l+ displayMap()\land 15 more...\l}" alt="" coords="5,5,179,229"/>
-</map>

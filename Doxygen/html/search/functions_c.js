@@ -1,6 +1,7 @@
 var searchData=
 [
   ['main',['main',['../_game_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'Game.cpp']]],
+  ['maxlife',['maxLife',['../class_character.html#aa6cba736434265e1008907f4e9c861f4',1,'Character']]],
   ['mithrilarmor',['MithrilArmor',['../class_mithril_armor.html#aa6c633fe16e7530394d4c9648a8deead',1,'MithrilArmor']]],
   ['mithrilhelm',['MithrilHelm',['../class_mithril_helm.html#aecf8765f84793ebb0b232c8eb75cf9a9',1,'MithrilHelm']]],
   ['mjollnir',['Mjollnir',['../class_mjollnir.html#a8f79d60c3e479251c38b5882cb25c7ea',1,'Mjollnir']]],

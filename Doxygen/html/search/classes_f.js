@@ -7,6 +7,5 @@ var searchData=
   ['squeleton',['Squeleton',['../class_squeleton.html',1,'']]],
   ['steelarmor',['SteelArmor',['../class_steel_armor.html',1,'']]],
   ['steelhelm',['SteelHelm',['../class_steel_helm.html',1,'']]],
-  ['steelshield',['SteelShield',['../class_steel_shield.html',1,'']]],
-  ['sword',['Sword',['../class_sword.html',1,'']]]
+  ['steelshield',['SteelShield',['../class_steel_shield.html',1,'']]]
 ];

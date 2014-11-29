@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['orc_2ecpp',['Orc.cpp',['../_orc_8cpp.html',1,'']]]
+  ['paladin_2ecpp',['Paladin.cpp',['../_paladin_8cpp.html',1,'']]]
 ];

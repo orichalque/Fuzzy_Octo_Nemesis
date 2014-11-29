@@ -1,6 +1,0 @@
-<map id="GameState" name="GameState">
-<area shape="rect" id="node2" href="$class_end_game_state.html" title="{EndGameState\n||+ EndGameState()\l+ action()\l}" alt="" coords="5,183,135,275"/>
-<area shape="rect" id="node3" href="$class_fight_state.html" title="{FightState\n||+ FightState()\l+ action()\l}" alt="" coords="161,183,263,275"/>
-<area shape="rect" id="node4" href="$class_loot_state.html" title="{LootState\n||+ LootState()\l+ action()\l}" alt="" coords="288,183,387,275"/>
-<area shape="rect" id="node5" href="$class_move_state.html" title="{MoveState\n||+ MoveState()\l+ action()\l+ action()\l}" alt="" coords="411,176,516,283"/>
-</map>

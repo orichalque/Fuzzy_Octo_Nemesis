@@ -6,7 +6,10 @@
 * L'objectif est de parcourir le donjon, tuer les monstres et atteindre le boss final.
 * Pour ce, l'utilisateur peut incarner 4 personnages différents avec chacun leurs attributs propres.
 * \section install_sec Execution
-* A FAIRE A FAIRE A FAIRE
+* make pour compiler
+* make run pour executer l'application
+* make clean pour nettoyer le répertoire
+*
 *
 * \section tools_subsec Compilation (nécessaire si l'exécution ne fonctionne pas)
 *

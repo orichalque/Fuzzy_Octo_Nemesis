@@ -1,3 +1,0 @@
-<map id="Berserk" name="Berserk">
-<area shape="rect" id="node2" href="$class_character.html" title="{Character\n|# life_\l# maxLife_\l# attack_\l# def_\l# dext_\l# x_\l# y_\l# name_\l# desc_\l# symbol_\l# weapon\l# armor\l# helmet\l# shield\l|+ Character()\l+ ~Character()\l+ life()\l+ attack()\l+ def()\l+ dext()\l+ maxLife()\l+ getCombinedAtt()\l+ getCombinedDef()\l+ getCombinedDext()\land 29 more...\l}" alt="" coords="5,6,152,421"/>
-</map>

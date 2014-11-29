@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>FuzzyOctoNemesis: MapGenerator2/Generator.hpp Source File</title>
+<title>Fuzzy Octo Nemesis: MapGenerator2/Generator.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="sikhism-40414_640.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">FuzzyOctoNemesis
+   <div id="projectname">Fuzzy Octo Nemesis
+   &#160;<span id="projectnumber">1.00</span>
    </div>
-   <div id="projectbrief">RogueLike project</div>
+   <div id="projectbrief">Rogue like project</div>
   </td>
  </tr>
  </tbody>
@@ -70,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -111,7 +113,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_generator.html#a2667292b3419f1b0dd908714b2d0c7be">buildMap</a>();</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_generator.html#a6385f97dd46088d54315c46f780b42eb">findLeaf</a>(<a class="code" href="class_rectangle.html">Rectangle</a>* l);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_generator.html#a505e05662a8c22273d20b4e1b3b8d8ca">init</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">char</span> <a class="code" href="class_generator.html#a60ec63cca05674ca3775d1b6167e9d98">placeCharacter</a>(shared_ptr&lt;Character&gt; <a class="code" href="jquery_8js.html#abce695e0af988ece0826d9ad59b8160d">c</a>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">char</span> <a class="code" href="class_generator.html#a60ec63cca05674ca3775d1b6167e9d98">placeCharacter</a>(shared_ptr&lt;Character&gt; c);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        shared_ptr&lt;Monster&gt; <a class="code" href="class_generator.html#af45c1dac52a0edb98863bec653efb64f">placeBoss</a>(<span class="keywordtype">int</span> level, shared_ptr&lt;BossFactory&gt; bf);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        vector&lt; shared_ptr&lt;Monster&gt; &gt; <a class="code" href="class_generator.html#af6d3e0363670ac80061ab7be12223c40">placeMonsters</a>(<span class="keywordtype">int</span> level, shared_ptr&lt;MonsterFactoryConcrete&gt; mfc, shared_ptr&lt;BossFactory&gt; bf);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        vector&lt; vector&lt;char&gt; &gt;  <a class="code" href="class_generator.html#a5782f728c4e6deb8ead28498a98bda2c">getMap</a>();</div>
@@ -128,7 +130,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_generator_html_a22e00e70154b0d4e7ee75749b1fb9fb6"><div class="ttname"><a href="class_generator.html#a22e00e70154b0d4e7ee75749b1fb9fb6">Generator::updateCharPosition</a></div><div class="ttdeci">char updateCharPosition(shared_ptr&lt; Character &gt; character)</div></div>
 <div class="ttc" id="class_generator_html_ad9c43244a97771d693cf155fbcbf64b8"><div class="ttname"><a href="class_generator.html#ad9c43244a97771d693cf155fbcbf64b8">Generator::createHalls</a></div><div class="ttdeci">void createHalls()</div></div>
 <div class="ttc" id="class_rectangle_html"><div class="ttname"><a href="class_rectangle.html">Rectangle</a></div><div class="ttdef"><b>Definition:</b> Rectangle.hpp:4</div></div>
-<div class="ttc" id="jquery_8js_html_abce695e0af988ece0826d9ad59b8160d"><div class="ttname"><a href="jquery_8js.html#abce695e0af988ece0826d9ad59b8160d">c</a></div><div class="ttdeci">var c</div><div class="ttdef"><b>Definition:</b> jquery.js:29</div></div>
 <div class="ttc" id="class_generator_html_af6d3e0363670ac80061ab7be12223c40"><div class="ttname"><a href="class_generator.html#af6d3e0363670ac80061ab7be12223c40">Generator::placeMonsters</a></div><div class="ttdeci">vector&lt; shared_ptr&lt; Monster &gt; &gt; placeMonsters(int level, shared_ptr&lt; MonsterFactoryConcrete &gt; mfc, shared_ptr&lt; BossFactory &gt; bf)</div></div>
 <div class="ttc" id="class_generator_html_a2667292b3419f1b0dd908714b2d0c7be"><div class="ttname"><a href="class_generator.html#a2667292b3419f1b0dd908714b2d0c7be">Generator::buildMap</a></div><div class="ttdeci">void buildMap()</div></div>
 <div class="ttc" id="class_generator_html"><div class="ttname"><a href="class_generator.html">Generator</a></div><div class="ttdef"><b>Definition:</b> Generator.hpp:5</div></div>
@@ -142,7 +143,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 25 2014 18:07:31 for FuzzyOctoNemesis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Nov 29 2014 14:24:15 for Fuzzy Octo Nemesis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

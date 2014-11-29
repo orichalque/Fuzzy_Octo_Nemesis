@@ -1,0 +1,4 @@
+<map id="MonsterFactory" name="MonsterFactory">
+<area shape="rect" id="node2" href="$class_boss_factory.html" title="BossFactory" alt="" coords="5,80,101,107"/>
+<area shape="rect" id="node3" href="$class_monster_factory_concrete.html" title="MonsterFactoryConcrete" alt="" coords="126,80,292,107"/>
+</map>

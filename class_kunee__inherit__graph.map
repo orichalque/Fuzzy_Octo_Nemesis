@@ -1,0 +1,5 @@
+<map id="Kunee" name="Kunee">
+<area shape="rect" id="node2" href="$class_helmet.html" title="Helmet" alt="" coords="19,155,83,181"/>
+<area shape="rect" id="node3" href="$class_equipement.html" title="Equipement" alt="" coords="5,80,96,107"/>
+<area shape="rect" id="node4" href="$class_item.html" title="Item" alt="" coords="27,5,75,32"/>
+</map>

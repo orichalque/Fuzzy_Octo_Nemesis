@@ -1,0 +1,22 @@
+<map id="Monsters.hpp" name="Monsters.hpp">
+<area shape="rect" id="node2" href="$_arch_magus_8cpp.html" title="Concrete monster. " alt="" coords="5,80,176,107"/>
+<area shape="rect" id="node3" href="$_bat_8cpp.html" title="Concrete monster. " alt="" coords="200,80,325,107"/>
+<area shape="rect" id="node4" href="$_bully_8cpp.html" title="Concrete monster. " alt="" coords="350,80,484,107"/>
+<area shape="rect" id="node5" href="$_dragon_8cpp.html" title="Concrete monster. " alt="" coords="509,80,656,107"/>
+<area shape="rect" id="node6" href="$_elemental_8cpp.html" title="Concrete monster. " alt="" coords="680,80,843,107"/>
+<area shape="rect" id="node7" href="$_eternal_8cpp.html" title="Concrete monster. " alt="" coords="867,80,1013,107"/>
+<area shape="rect" id="node8" href="$_fantask_8cpp.html" title="Concrete monster. " alt="" coords="1037,80,1189,107"/>
+<area shape="rect" id="node9" href="$_ghoul_8cpp.html" title="Concrete monster. " alt="" coords="1213,80,1352,107"/>
+<area shape="rect" id="node10" href="$_gobelin_8cpp.html" title="Concrete monster. " alt="" coords="1376,80,1524,107"/>
+<area shape="rect" id="node11" href="$_golem_8cpp.html" title="Concrete monster. " alt="" coords="1549,80,1691,107"/>
+<area shape="rect" id="node12" href="$_harpy_8cpp.html" title="Concrete monster. " alt="" coords="1715,80,1855,107"/>
+<area shape="rect" id="node13" href="$_hell_hound_8cpp.html" title="Concrete monster. " alt="" coords="1879,80,2045,107"/>
+<area shape="rect" id="node14" href="$_invincible_8cpp.html" title="Concrete monster. " alt="" coords="2071,80,2229,107"/>
+<area shape="rect" id="node15" href="$_kobold_8cpp.html" title="Concrete monster. " alt="" coords="2255,80,2400,107"/>
+<area shape="rect" id="node16" href="$_orc_8cpp.html" title="Concrete monster. " alt="" coords="2425,80,2551,107"/>
+<area shape="rect" id="node17" href="$_sorcerer_8cpp.html" title="Concrete monster. " alt="" coords="2576,80,2729,107"/>
+<area shape="rect" id="node18" href="$_squeleton_8cpp.html" title="Concrete monster. " alt="" coords="2755,80,2917,107"/>
+<area shape="rect" id="node19" href="$_troll_8cpp.html" title="Concrete monster. " alt="" coords="2941,80,3071,107"/>
+<area shape="rect" id="node20" href="$_vampire_8cpp.html" title="Concrete monster. " alt="" coords="3095,80,3248,107"/>
+<area shape="rect" id="node21" href="$_zombie_8cpp.html" title="Concrete monster. " alt="" coords="3273,80,3420,107"/>
+</map>

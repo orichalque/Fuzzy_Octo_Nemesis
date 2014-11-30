@@ -1,0 +1,9 @@
+<map id="Armor" name="Armor">
+<area shape="rect" id="node4" href="$class_iron_armor.html" title="Concrete armor for equiping. " alt="" coords="5,229,83,256"/>
+<area shape="rect" id="node5" href="$class_leather_armor.html" title="Concrete armor for equiping. " alt="" coords="107,229,207,256"/>
+<area shape="rect" id="node6" href="$class_mithril_armor.html" title="Concrete armor for equiping. " alt="" coords="231,229,323,256"/>
+<area shape="rect" id="node7" href="$class_steel_armor.html" title="Concrete armor for equiping. " alt="" coords="347,229,433,256"/>
+<area shape="rect" id="node8" href="$class_wall.html" title="Concrete armor for equiping. " alt="" coords="459,229,507,256"/>
+<area shape="rect" id="node2" href="$class_equipement.html" title="Equipement abstract class definition. " alt="" coords="232,80,323,107"/>
+<area shape="rect" id="node3" href="$class_item.html" title="Abstract mother&#45;class defining the items. " alt="" coords="253,5,301,32"/>
+</map>

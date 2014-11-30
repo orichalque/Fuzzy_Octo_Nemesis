@@ -1,6 +1,0 @@
-<map id="GameState" name="GameState">
-<area shape="rect" id="node2" href="$class_end_game_state.html" title="State ending the game. " alt="" coords="5,80,115,107"/>
-<area shape="rect" id="node3" href="$class_fight_state.html" title="State class for fightning. " alt="" coords="140,80,221,107"/>
-<area shape="rect" id="node4" href="$class_loot_state.html" title="State for looting the dead monsters. " alt="" coords="247,80,325,107"/>
-<area shape="rect" id="node5" href="$class_move_state.html" title="State class for moving. " alt="" coords="351,80,436,107"/>
-</map>

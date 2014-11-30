@@ -1,5 +1,6 @@
 /**
  * \file Helmet.hpp
+ * \class Helmet
  * \brief Helmet equipement class
  * \author Thibault BLF. Corentin M.
  * \version 1.00

@@ -1,5 +1,6 @@
 /**
  * \file Inventory.hpp
+ * \class Inventory
  * \brief Define the Inventory of the Character
  * \author Thibault BLF. Corentin M.
  * \version 1.00

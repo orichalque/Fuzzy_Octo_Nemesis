@@ -1,5 +1,6 @@
 /**
  * \file MoveState.hpp
+ * \class MoveState
  * \brief State class for moving 
  * \author Thibault BLF. Corentin M.
  * \version 1.00

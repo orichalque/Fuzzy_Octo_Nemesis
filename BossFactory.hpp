@@ -1,5 +1,6 @@
 /**
  * \file BossFactory.hpp
+ * \class BossFactory
  * \brief Factory returning bosses
  * \author Thibault BLF. Corentin M.
  * \version 1.00

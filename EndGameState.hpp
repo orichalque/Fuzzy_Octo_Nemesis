@@ -1,5 +1,6 @@
 /**
  * \file EndGameState.hpp
+ * \class EndGameState
  * \brief State ending the game.
  * \author Thibault BLF. Corentin M.
  * \version 1.00

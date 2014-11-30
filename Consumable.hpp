@@ -1,13 +1,14 @@
-/*
-* Consumable Class Definition for FuzzyOctoNemesis 
-*
-* C++ 11
-*
-* OPEN SOURCE @ https://github.com/orichalque/Fuzzy_Octo_Nemesis
-* @author BEZIERS LA FOSSE Thibault 
-* @author MERLET Corentin
-* @version 1.0.0a
-*/
+/**
+ * \file Consumable.hpp
+ * \class Consumable
+ * \brief Define the consumable items
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ * 
+ *
+ */
 
 #ifndef __CONSUMABLE_HPP__
 #define __CONSUMABLE_HPP__

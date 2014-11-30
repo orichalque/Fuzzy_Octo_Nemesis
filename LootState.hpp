@@ -1,5 +1,6 @@
 /**
  * \file LootState.hpp
+ * \class LootState
  * \brief State for looting the dead monsters
  * \author Thibault BLF. Corentin M.
  * \version 1.00

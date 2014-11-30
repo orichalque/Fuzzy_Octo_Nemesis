@@ -1,5 +1,6 @@
 /**
  * \file Factory.hpp
+ * \class Factory
  * \brief factory mother-class for FuzzyOctoNemesis
  * \author Thibault BLF. Corentin M.
  * \version 1.00

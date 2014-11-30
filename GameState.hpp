@@ -1,5 +1,6 @@
 /**
  * \file GameState.hpp
+ * \class GameState
  * \brief Mother-class of the States
  * \author Thibault BLF. Corentin M.
  * \version 1.00

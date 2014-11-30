@@ -1,5 +1,6 @@
 /**
  * \file Armor.hpp
+ * \class Armor
  * \brief Armor class for FuzzyOctoNemesis
  * \author Thibault BLF. Corentin M.
  * \version 1.00

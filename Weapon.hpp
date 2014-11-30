@@ -1,5 +1,6 @@
 /**
  * \file Weapon.hpp
+ * \class Weapon
  * \brief Weapon abstract class
  * \author Thibault BLF. Corentin M.
  * \version 1.00

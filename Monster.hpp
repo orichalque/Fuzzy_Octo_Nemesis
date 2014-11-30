@@ -1,5 +1,6 @@
 /**
  * \file Monster.hpp
+ * \class Monster
  * \brief Define the monsters for F.O.Nemesis
  * \author Thibault BLF. Corentin M.
  * \version 1.00

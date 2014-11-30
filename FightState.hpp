@@ -1,5 +1,6 @@
 /**
  * \file FightState.hpp
+ * \class FightState
  * \brief State class for fightning
  * \author Thibault BLF. Corentin M.
  * \version 1.00

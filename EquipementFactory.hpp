@@ -1,5 +1,6 @@
 /**
  * \file EquipementFactory.hpp
+ * \class EquipementFactory
  * \brief client class for FuzzyOctoNemesis
  * \author Thibault BLF. Corentin M.
  * \version 1.00

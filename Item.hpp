@@ -1,5 +1,6 @@
 /**
  * \file Item.hpp
+ \class Item
  * \brief Abstract mother-class defining the items
  * \author Thibault BLF. Corentin M.
  * \version 1.00

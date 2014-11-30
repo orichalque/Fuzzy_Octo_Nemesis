@@ -1,5 +1,6 @@
 /**
  * \file Equipement.hpp
+ * \class Equipement
  * \brief Equipement abstract class definition 
  * \author Thibault BLF. Corentin M.
  * \version 1.00

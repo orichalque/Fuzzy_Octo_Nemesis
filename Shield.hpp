@@ -1,5 +1,6 @@
 /**
  * \file Shield.hpp
+ * \class Shield
  * \brief Shield equipement class. 
  * \author Thibault BLF. Corentin M.
  * \version 1.00

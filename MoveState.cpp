@@ -53,7 +53,7 @@ void MoveState::action()
  * \param shared_ptr<Monster> mon
  * \return void
  *
- * Si jamais on fuit en combat, on appelle la méthode action(shared_ptr<Monster>), mais on ne veut pas répartir le butin, juste retourner a l'écran de déplacements. D'où ce subterfuge
+ * Si jamais on fuit en combat, on appelle la méthode action(shared_ptr<Monster>), mais on ne veut pas répartir le butin, \n juste retourner a l'écran de déplacements. D'où ce subterfuge
  */ 
 void MoveState::action(shared_ptr<Monster> mon) {
     action();

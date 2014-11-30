@@ -1,5 +1,6 @@
 /**
  * \file MonsterFactoryConcrete.hpp
+ * \class MonsterFactoryConcrete
  * \brief Monster Factory returning the monsters of F.O.N.
  * \author Thibault BLF. Corentin M.
  * \version 1.00

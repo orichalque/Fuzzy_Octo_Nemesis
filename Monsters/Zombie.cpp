@@ -8,8 +8,19 @@
  * Monster for FuzzyOctoNemesis. Can be found in the dungeon
  *
  */
+ 
+/**
+* \class Zombie
+* \brief Define a concrete Monster
+*/   
  class Zombie : public Monster {
     public: 
+    /**
+    * \fn Zombie()
+    * \brief Instancie un monstre concret avec ses attributs définis
+    * \param void 
+    * \return void
+    */       
 	Zombie() {
 		Character::desc_ = "Un zombie ... Il danse ?!";
 		Character::name_ = "Zombie";

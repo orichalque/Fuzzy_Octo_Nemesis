@@ -1,14 +1,23 @@
-#ifndef GENERATOR_HPP
-#define GENERATOR_HPP
+/**
+ * \file Generator.hpp
+ * \class Generator
+ * \brief Class definition for manipulating the matrix
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ */
 
-
+#ifndef __GENERATOR_HPP__
+#define __GENERATOR_HPP__
+ 
 class Generator {
     private:
-        int static const SIZE = 32; //we assume using a square map.
-        std::vector<Leaf*> leafs; //vector avec toutes les feuilles terminales
-        std::vector<Rectangle*> halls;
-        Leaf* root;  
-        std::vector< std::vector<char> > mat;
+        int static const SIZE = 32; /*!< Size of the square map */
+        std::vector<Leaf*> leafs; /*!< vector with all the terminal leafs */
+        std::vector<Rectangle*> halls; /*!< vector with all the halls of the map */
+        Leaf* root;  /*!< root of the BSP tree */
+        std::vector< std::vector<char> > mat; /*!< Matrix width the map in it */
                  
     public:
         Generator();

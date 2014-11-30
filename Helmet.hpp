@@ -18,7 +18,6 @@ class Helmet : public Equipement
 	    Helmet();
 	    ~Helmet();
 		virtual bool isHelmet();
-		virtual bool isEquipement();
 		
 };
 

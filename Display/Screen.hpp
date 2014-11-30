@@ -1,12 +1,21 @@
-#ifndef SCREEN_HPP
-#define SCREEN_HPP
+/**
+ * \file Screen.hpp
+ * \class Screen
+ * \brief Class definition for manipulating interface with Ncurses
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ */
+#ifndef __SCREEN_HPP__
+#define __SCREEN_HPP__
 
 class Screen {
     private:
-        WINDOW* winStat; //For Stats display
-        WINDOW* winTxt; //For text instructions display
-        WINDOW* winMap; //For map display
-        WINDOW* win; // for multiple and temporary displays, as the introduction
+        WINDOW* winStat; /*!< For Stats display */
+        WINDOW* winTxt; /*!< For text instructions display*/
+        WINDOW* winMap; /*!< For map display*/
+        WINDOW* win; /*!< for multiple and temporary displays, as the introduction*/
         
     public:
         Screen();

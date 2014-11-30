@@ -8,8 +8,18 @@
  * Monster for FuzzyOctoNemesis. Can be found in the dungeon
  *
  */
+/**
+* \class Fantask
+* \brief Define a concrete Monster
+*/ 
  class Fantask : public Monster {
     public: 
+    /**
+    * \fn Fantask()
+    * \brief Instancie un monstre concret avec ses attributs définis
+    * \param void 
+    * \return void
+    */    
 	Fantask() {
 		Character::desc_ = "Un fantassin squelette, caché derrière un immense bouclier";
 		Character::name_ = "Fantassin Squelette";

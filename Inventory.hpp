@@ -10,18 +10,16 @@
  *
  */
 
-#ifndef INVENTORY_HPP
-#define INVENTORY_HPP
+#ifndef __INVENTORY_HPP__
+#define __INVENTORY_HPP__
 
-#include<cstddef>
-#include<iostream>
 #include"Item.hpp"
 class Inventory {
 	private:
-		static const int NMAX = 50;
-		int itemNb; //Number of item in the bag
-		Item *items[NMAX]; //Array of 50 ptrs, for 50 differents items
-		int amount[NMAX]; //Number of item of 1 kind
+		static const int NMAX = 50; /*!< Max item amount in the inventory */
+		int itemNb; /*!< number of item in the bag */
+		Item *items[NMAX];  /*!< Array of 50 ptrs, for 50 differents items */
+		int amount[NMAX];  /*!< Number of item of 1 kind */
 		
 	public: 
 		Inventory();

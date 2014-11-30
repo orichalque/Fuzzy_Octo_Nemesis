@@ -8,9 +8,18 @@
  * Monster for FuzzyOctoNemesis. Can be found in the dungeon
  *
  */
- 
+ /**
+* \class Gobelin
+* \brief Define a concrete Monster
+*/ 
 class Gobelin : public Monster {
     public: 
+    /**
+    * \fn Gobelin()
+    * \brief Instancie un monstre concret avec ses attributs définis
+    * \param void 
+    * \return void
+    */    
 	    Gobelin() {
 		    Character::desc_ = "Un gobelin verreux";
 		    Character::name_ = "Gobelin";

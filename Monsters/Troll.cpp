@@ -8,9 +8,19 @@
  * Boss for FuzzyOctoNemesis. Can be found in the dungeon
  *
  */
- 
+
+/**
+* \class Troll
+* \brief Define a concrete Boss
+*/   
 class Troll : public Monster {
     public: 
+    /**
+    * \fn Troll()
+    * \brief Instancie un monstre concret avec ses attributs définis
+    * \param void 
+    * \return void
+    */       
 	Troll() {
 		Character::desc_ = "Un immense troll à l\'imposante massue.";
 		Character::name_ = "Troll";

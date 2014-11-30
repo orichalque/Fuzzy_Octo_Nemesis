@@ -1,9 +1,13 @@
-
-
 #include"Screen.hpp"
 
 using namespace std;
 
+/**
+ * \fn Screen::Screen()
+ * \brief Instancie l'écran
+ * \param void
+ * \return void
+ */
 Screen::Screen() {
 	win = NULL;
 	winTxt = NULL;
@@ -11,6 +15,12 @@ Screen::Screen() {
 	winStat = NULL;
 }
 
+/**
+ * \fn Screen::~Screen()
+ * \brief Désalloue l'objet Screen
+ * \param void 
+ * \return void 
+ */
 Screen::~Screen() {
 	if ((win != NULL) || (winTxt != NULL) || (winMap != NULL) || (winStat != NULL)) {
 	    endwin();
@@ -18,37 +28,79 @@ Screen::~Screen() {
 	}
 }
 
+/**
+ * \fn WINDOW* Screen::getWinStat(void)
+ * \brief retourne la fenetre où sont affichées les statistiques
+ * \param void 
+ * \return WINDOW*
+ */
 WINDOW* Screen::getWinStat(void) {
     
     return winStat;
 }
 
+/**
+ * \fn WINDOW* Screen::getWinTxt(void)
+ * \brief retourne la fenetre où sont affichées les informations textuelles 
+ * \param void 
+ * \return WINDOW*
+ */
 WINDOW* Screen::getWinTxt(void) {
     return winTxt;
 } 
-        
+
+/**
+ * \fn WINDOW* Screen::getWinMap(void)
+ * \brief retourne la fenetre ou est affichée la map
+ * \param void 
+ * \return WINDOW*
+ */        
 WINDOW* Screen::getWinMap(void) {
     return winMap;
 }       
 
+/**
+ * \fn void Screen::clearTxt()
+ * \brief Efface la fenetre de texte
+ * \param void 
+ * \return void
+ */
 void Screen::clearTxt() {
     wclear(winTxt);
     wborder(winTxt, '|', '|', '-', '-', '+', '+', '+', '+');
     wrefresh(winTxt);
 }
-    
+
+/**
+ * \fn void Screen::clearMap() 
+ * \brief Efface la fenetre de la carte
+ * \param void 
+ * \return void 
+ */    
 void Screen::clearMap() {
     wclear(winMap);
     wborder(winMap, '|', '|', '-', '-', '+', '+', '+', '+');
     wrefresh(winMap);
 }
 
+/**
+ * \fn void Screen::clearStat()
+ * \brief Efface la fenetre des statistiques 
+ * \param void 
+ * \return void 
+ */
 void Screen::clearStat() {
     wclear(winStat);
     wborder(winStat, '|', '|', '-', '-', '+', '+', '+', '+');
     wrefresh(winStat);
 }
-        
+
+/**
+ * \fn void Screen::init(void)
+ * \brief Initialise Ncurses et l'écran initial
+ * \param void 
+ * \return void 
+ */        
 void Screen::init(void) {
     initscr();
     refresh();
@@ -59,7 +111,15 @@ void Screen::init(void) {
     win = createWindow(LINES, COLS, 0, 0); //Initialise Main Window
     wrefresh(win);
 }      
-  
+
+/**
+ * \fn void Screen::displayIntro(void) 
+ * \brief Affiche l'introduction
+ * \param void 
+ * \return void 
+
+ */   
+
 void Screen::displayIntro(void) {
     string s = "FUZZY OCTO NEMESIS";
     int x(COLS/2 - (0.5)*s.length());
@@ -85,7 +145,12 @@ void Screen::displayIntro(void) {
     wrefresh(win);
 }
 
-
+/**
+ * \fn void Screen::windowBuilding(int size)
+ * \brief Crée l'affichage de jeu en fonction de la taille de la map
+ * \param int 
+ * \return void
+ */
 void Screen::windowBuilding(int size) {
     //we assume that introduction has already been displayed
 	winStat = createWindow(size +5 , 27, 0, 0);
@@ -96,6 +161,12 @@ void Screen::windowBuilding(int size) {
 	getch();
 }
 
+/**
+ * \fn void Screen::wprintW(WINDOW* win, string s)
+ * \brief affiche une chaine de caracteres dans la fenetre en entrée
+ * \param WINDOW* win, string s
+ * \return void
+ */
 void Screen::wprintW(WINDOW* win, string s) {
     char* s2;
 	s2 = (char*)s.c_str();
@@ -103,18 +174,42 @@ void Screen::wprintW(WINDOW* win, string s) {
 	wrefresh(win);
 }
 
+/**
+ * \fn void Screen::mvprintStat(int x, int y, string s)
+ * \brief affiche la chaine de caracteres en (X,Y) dans la fenetre stat
+ * \param int x, int y, string s
+ * \return void
+ */
 void Screen::mvprintStat(int x, int y, string s) {
     mvwprintW(x, y, winStat, s);
 }
 
+/**
+ * \fn void Screen::mvprintMap(int x, int y, string s)
+ * \brief affiche la chaine de caracteres en (X,Y) dans la fenetre map
+ * \param int x, int y, string s
+ * \return void
+ */
 void Screen::mvprintMap(int x, int y, string s) {
     mvwprintW(x, y, winMap, s);
 }
 
+/**
+ * \fn void Screen::mvprintTxt(int x, int y, string s) 
+ * \brief affiche la chaine de caracteres en (X,Y) dans la fenetre texte
+ * \param int x, int y, string s
+ * \return void
+ */
 void Screen::mvprintTxt(int x, int y, string s) {
     mvwprintW(x, y, winTxt, s);
 }
 
+/**
+ * \fn void Screen::mvwprintW(int x, int y, WINDOW* win, string s)
+ * \brief affiche la chaine de caracteres en (X,Y) dans la fenetre en entrée
+ * \param int x, int y, WINDOW* win, string s
+ * \return void
+ */
 void Screen::mvwprintW(int x, int y, WINDOW* win, string s) {
     char* s2;
 	s2 = (char*)s.c_str();
@@ -122,12 +217,24 @@ void Screen::mvwprintW(int x, int y, WINDOW* win, string s) {
 	wrefresh(win);
 }
 
+/**
+ * \fn void Screen::printW(std::string s)
+ * \brief affichage la string sur l'écran
+ * \param string s
+ * \return void
+ */
 void Screen::printW(std::string s) {
     char* s2;
 	s2 = (char*)s.c_str(); //most of ncurses methods don't allow string parameters, only char* ...
 	printw(s2);
 }
 
+/** 
+ * \fn shared_ptr<Character> Screen::chooseCharacter(void)
+ * \brief Lance la séléction des personnages
+ * \param void 
+ * \return shared_ptr<Character>
+ */
 shared_ptr<Character> Screen::chooseCharacter(void) {
     /* Precondition : Screen already displayed, but not the maps */
     string choose = "Choisissez votre personnage";
@@ -222,7 +329,12 @@ shared_ptr<Character> Screen::chooseCharacter(void) {
     }
 }
 
-
+/**
+ * \fn void Screen::updateCharacterInfo(shared_ptr<Character> character)
+ * \brief Affichage les informations du personnage dans la fenetre adéquate
+ * \param shared_ptr<Character> character
+ * \return void
+ */
 void Screen::updateCharacterInfo(shared_ptr<Character> character) {
     clearStat();
     mvprintStat(7, 1, character -> name());
@@ -255,10 +367,22 @@ void Screen::updateCharacterInfo(shared_ptr<Character> character) {
     mvprintStat(1, 14, "Arme: "+character -> getWeapon() -> getName());
 }
 
+/**
+ * \fn void Screen::updateMonsterInfo(shared_ptr<Character>monster)
+ * \brief Affiche la vie du monstre pendant le combat
+ * \param shared_ptr<Character> monster
+ * \return void
+ */
 void Screen::updateMonsterInfo(shared_ptr<Character>monster) {
 	mvprintTxt(COLS -22, 10, "Vie du monstre: "+to_string(monster -> life()));   
 }
 
+/**
+ * \fn void Screen::getMyEquipement(shared_ptr<Equipement> equipement)
+ * \brief affiche les statistiques de l'équipement actuel
+ * \param shared_ptr<Equipement> equipement
+ * \return void
+ */
 void Screen::getMyEquipement(shared_ptr<Equipement> equipement) {
     if (equipement == NULL) {
         mvprintTxt(2, 4, "Equipé: Rien") ;
@@ -273,13 +397,25 @@ void Screen::getMyEquipement(shared_ptr<Equipement> equipement) {
     }
 }
 
+/**
+ * \fn void Screen::getNewEquipement(shared_ptr<Equipement> equipement)
+ * \brief Affiches les infos d'un nouvel équipement 
+ * \param shared_ptr<Equipement> equipement
+ * \return void
+ */
 void Screen::getNewEquipement(shared_ptr<Equipement> equipement) {
     mvprintTxt(40, 4, "Ramassé: "+ equipement -> getName()) ;
     mvprintTxt(40, 5, "Attaque: "+ to_string(equipement -> getAtt())); 
     mvprintTxt(40, 6, "Defense: "+ to_string(equipement -> getDef())); 
     mvprintTxt(40, 7, "Dexterité: "+ to_string(equipement -> getDext())); 
 }
-        
+
+/**
+ * \fn int Screen::chooseAction()
+ * \brief Choisit les actions lors du combat et renvoit le choix associé
+ * \param void 
+ * \return int
+ */        
 int Screen::chooseAction() {
 	enum choices:int { ATTACK = 1, DEFENSE=2, RUN=3};
 	mvprintTxt(2, 9, "Choisissez votre action");
@@ -317,6 +453,12 @@ int Screen::chooseAction() {
 	return ATTACK;
 }
 
+/**
+ * \fn bool Screen::equip()
+ * \brief Permet de choisir oui, ou non. Sert pour équiper un nouveau butin
+ * \param void 
+ * \return bool
+ */
 bool Screen::equip() { 
     int ch; int x(18);
     mvprintTxt(2, 9, "Equiper ?") ;
@@ -344,7 +486,13 @@ bool Screen::equip() {
         return false;
     }
 }
- 
+
+/**
+ * \fn void Screen::endGameScreen(string s, shared_ptr<Character> character)
+ * \brief Affiche l'écran de fin du jeu et le score
+ * \param string s, shared_ptr<Character> character
+ * \return void
+ */ 
 void Screen::endGameScreen(string s, shared_ptr<Character> character) {
 	init();
 	int x(COLS/2 - (0.5)*s.length());
@@ -392,7 +540,13 @@ void Screen::endGameScreen(string s, shared_ptr<Character> character) {
 	    ch = getch();
 	}
 }
-        
+
+/**
+ * \fn WINDOW* Screen::createWindow(int height, int width, int starty, int startx)
+ * \brief Crée la fenetre avec les paramètres entrés
+ * \param int height, int width, int starty, int startx
+ * \return WINDOW*
+ */        
 WINDOW* Screen::createWindow(int height, int width, int starty, int startx) {
 	WINDOW *local_win;
 	local_win = newwin(height, width, starty, startx);
@@ -403,6 +557,12 @@ WINDOW* Screen::createWindow(int height, int width, int starty, int startx) {
 	return local_win;
 }
 
+/**
+ * \fn void Screen::destroyWindow(WINDOW* local_win)
+ * \brief Détruit la fenêtre en entrée
+ * \param WINDOW* local_win
+ * \return void
+ */
 void Screen::destroyWindow(WINDOW* local_win) {
 	wborder(local_win, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
 	//empty char for each corners and side of the window

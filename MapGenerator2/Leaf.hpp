@@ -1,23 +1,28 @@
-#ifndef LEAF_HPP
-#define LEAF_HPP
-
-#include<iostream>
-#include<stdint.h>
-#include<vector>
+/**
+ * \file Leaf.hpp
+ * \class Leaf
+ * \brief Class definition for manipulating the rooms of the dungeon
+ * \author Thibault BLF. Corentin M.
+ * \version 1.00
+ * \date 27/11/2014
+ *
+ */
+#ifndef __LEAF_HPP__
+#define __LEAF_HPP__
 
 class Leaf {
     private:
-        int static const MIN_LEAF_SIZE = 6; //Min size of the leaf
-        int static const MAX_LEAF_SIZE = 15;
-        int x; // Room Position
-        int y; 
-        int height; // Dimensions of the leaf
-        int width;
-        Leaf *right; // Sons of the node
-        Leaf *left;
-        Rectangle *room; //The room, inside the leaf
-        bool linked;
-        bool empty;
+        int static const MIN_LEAF_SIZE = 8; /*!< Min size of the leaf */
+        int static const MAX_LEAF_SIZE = 17; /*!< Max size of the leaf */
+        int x; /*!<Room Position */
+        int y; /*!<Room position */
+        int height; /*!< height of the leaf */
+        int width; /*!< width of the leaf */
+        Leaf *right; /*!< right son of the node */
+        Leaf *left; /*!< left son of the node */
+        Rectangle *room; /*!< The room, inside the leaf */
+        bool linked; /*!< True is the room has no hall */
+        bool empty; /*!< True if the room has no monster */
 
     
     public:

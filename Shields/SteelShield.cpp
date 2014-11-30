@@ -9,8 +9,18 @@
  *
  */
 
+/**
+* \class SteelShield
+* \brief Define a concrete shield
+*/
 class SteelShield : public Shield {
     public:
+       /**
+        * \fn SteelShield()
+        * \brief Instancie une armure concrete avec des attributs pré-définis
+        * \param void
+        * \return void
+        */    
         SteelShield() {
             Item::name_ = "Bouclier en acier";
 		    Item::desc_ = "Un solide bouclier d'acier. Très lourd. ";

@@ -8,16 +8,26 @@
  * Monster for FuzzyOctoNemesis. Can be found in the dungeon
  *
  */
+/**
+* \class Eternal
+* \brief Define a concrete Monster
+*/ 
  class Eternal : public Monster {
     public: 
+    /**
+    * \fn Eternal()
+    * \brief Instancie un monstre concret avec ses attributs définis
+    * \param void 
+    * \return void
+    */    
 	Eternal() {
-	Character::	desc_ = "Un magicien qui déchaine les éléments";
-	Character::	name_ = "Eternel";
-	Character::symbol_ = 'E';
-	Character::	attack_ = 85;
-	Character::	def_ = 34;
-	Character::	life_ = 115;
-	Character::	dext_ = 32;
-	Monster::lootList = {19,24};
+	    Character::	desc_ = "Un magicien qui déchaine les éléments";
+	    Character::	name_ = "Eternel";
+	    Character::symbol_ = 'E';
+	    Character::	attack_ = 85;
+	    Character::	def_ = 34;
+	    Character::	life_ = 115;
+	    Character::	dext_ = 32;
+	    Monster::lootList = {19,24};
 	}
 };

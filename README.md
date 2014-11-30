@@ -1,17 +1,21 @@
-RogueLike Project Game for Design Pattern class, University of Nantes, France
+~ FUZZY OCTO NEMESIS ~
 
-Coded with C++11, Doxygen, and on github at 
-github.com/orichalque/Fuzzy_Octo_Nemesis
+RogueLike Project Game for Design Pattern class, University of Nantes, France \n
 
-How to
-compile:
+Coded with C++11, Doxygen, and on github at \n  
+github.com/orichalque/Fuzzy_Octo_Nemesis \n
+
+
+How to \n
+compile: \n
 make
 
-launch the game:
+launch the game: \n
 make run
 
-clean the files:
+clean the files: \n
 make clean
 
-
+open the Doxygen documentation: \n
+make site
 

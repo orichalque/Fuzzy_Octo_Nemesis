@@ -8,8 +8,19 @@
  * Iron shield equipement. Medium stats
  *
  */
+
+/**
+* \class IronShield
+* \brief Define a concrete shield
+*/
  class IronShield : public Shield {
     public:
+       /**
+        * \fn IronShield()
+        * \brief Instancie une armure concrete avec des attributs pré-définis
+        * \param void
+        * \return void
+        */    
         IronShield() {
             Item::name_ = "Bouclier en fer";
 		    Item::desc_ = "Un classique bouclier en fer. Encombrant. ";

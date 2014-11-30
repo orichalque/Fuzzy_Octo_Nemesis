@@ -18,7 +18,6 @@ class Weapon : public Equipement /* Abstract class */
 	    Weapon();
 	    ~Weapon();
 		virtual bool isWeapon();
-		virtual bool isEquipement(); 
 };
 
 #endif

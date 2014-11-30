@@ -9,8 +9,18 @@
  *
  */
  
+ /**
+* \class LeatherHelm
+* \brief define a concrete helmet
+*/
 class LeatherHelm : public Helmet {
     public:
+       /**
+        * \fn LeatherHelm()
+        * \brief Instancie un casque concret avec des attributs définis
+        * \param void
+        * \return void
+        */    
         LeatherHelm() {
             Item::name_ = "Casque en cuir";
 		    Item::desc_ = "Un casque en cuir, léger mais peu résistant. ";

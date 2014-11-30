@@ -9,8 +9,18 @@
  *
  */
  
+/**
+* \class Kobold
+* \brief Define a concrete Monster
+*/   
 class Kobold : public Monster {
     public:
+    /**
+    * \fn Kobold()
+    * \brief Instancie un monstre concret avec ses attributs définis
+    * \param void 
+    * \return void
+    */       
 	Kobold() {
 		Character::desc_ = "Un Kobold poilu. Il sent très mauvais";
 		Character::name_ = "Kobold";

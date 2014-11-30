@@ -8,8 +8,19 @@
  * Berserk character class. High Attack and low defense
  *
  */
+ 
+/**
+ * \class Berserk
+ * \brief Character concrete class 
+ */
 class Berserk : public Character {
     public: 
+       /**
+        * \fn Berserk()
+        * \brief Instancie un personnage avec des attributs définis
+        * \param void 
+        * \return void
+        */
         Berserk() {
             Character::desc_ = "Un violent combattant assoiffé de bataille. Bonne attaque et bonne santé. ";
             Character::name_ = "Berserk";

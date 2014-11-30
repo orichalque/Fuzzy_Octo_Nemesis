@@ -8,8 +8,19 @@
  * Monster for FuzzyOctoNemesis. Can be found in the dungeon
  *
  */
+ 
+/**
+* \class Squeleton
+* \brief Define a concrete Monster
+*/   
  class Squeleton : public Monster {
     public: 
+    /**
+    * \fn Squeleton()
+    * \brief Instancie un monstre concret avec ses attributs définis
+    * \param void 
+    * \return void
+    */       
 	Squeleton() {
 		Character::desc_ = "Un Squelette avec une épée et un bouclier";
 		Character::name_ = "Squelette";

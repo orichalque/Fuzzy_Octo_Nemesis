@@ -1,8 +1,25 @@
 #include "MoveState.hpp"
 
+/**
+ * \fn MoveState::MoveState(Game* game) : GameState(game)
+ * \brief Instancie l'état de déplacement
+ *
+ * \param void
+ * \return void
+ *
+ */ 
 MoveState::MoveState(Game* game) : GameState(game)
 {}
 
+/**
+ * \fn void MoveState::action()
+ * \brief Déplace le personnage de la classe cliente
+ *
+ * \param void
+ * \return void
+ *
+ * On récupère les entrées clavier, modifie le personnage en conséquence, et met à jour l'affichage graphique.
+ */ 
 void MoveState::action()
 {
     int ch = getch();
@@ -29,6 +46,15 @@ void MoveState::action()
     }
 }
 
+/**
+ * \fn void MoveState::action(shared_ptr<Monster> mon)
+ * \brief Appelle la méthode Action(void)
+ *
+ * \param shared_ptr<Monster> mon
+ * \return void
+ *
+ * Si jamais on fuit en combat, on appelle la méthode action(shared_ptr<Monster>), mais on ne veut pas répartir le butin, juste retourner a l'écran de déplacements. D'où ce subterfuge
+ */ 
 void MoveState::action(shared_ptr<Monster> mon) {
     action();
 }

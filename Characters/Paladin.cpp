@@ -9,8 +9,18 @@
  *
  */
  
+/**
+ * \class Paladin
+ * \brief Character concrete class 
+ */
 class Paladin : public Character {
     public:
+        /**
+        * \fn Paladin()
+        * \brief Instancie un personnage avec des attributs définis
+        * \param void 
+        * \return void
+        */    
         Paladin() {
             Character::desc_ = "Un soldat en armure. Bonne défense. ";
             Character::name_ = "Paladin";

@@ -8,8 +8,19 @@
  * Rapier weapon equipement. medium stats
  *
  */
+ 
+ /**
+ * \class Rapier
+ * \brief Define a concrete weapon for equiping
+ */
  class Rapier : public Weapon {
     public:
+       /**
+        * \fn Rapier()
+        * \brief Instancie une arme concrete avec des attributs pré-définis
+        * \param void 
+        * \return void 
+        */    
         Rapier() {
             Item::name_ = "Rapière";
 		    Item::desc_ = "Une fine lame horriblement affutée";

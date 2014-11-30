@@ -9,8 +9,18 @@
  *
  */
 
+/**
+* \class Invincible
+* \brief Define a concrete Final Boss
+*/  
 class Invincible : public Monster {
     public: 
+    /**
+    * \fn Invincible()
+    * \brief Instancie un monstre concret avec ses attributs définis
+    * \param void 
+    * \return void
+    */       
 	Invincible() {
 		desc_ = "THE big boss";
 		name_ = "L\'invincible";

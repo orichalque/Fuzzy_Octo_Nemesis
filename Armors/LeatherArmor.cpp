@@ -8,8 +8,19 @@
  * LeatherArmor for equiping
  *
  */
+ 
+ /**
+  * \class LeatherArmor
+  * \brief Concrete armor for equiping
+  */
 class LeatherArmor : public Armor {
     public:
+        /**
+         * \fn LeatherArmor()
+         * \brief instancie une armure avec des attributs définis
+         * \param void
+         * \return void
+         */
         LeatherArmor() {
             Item::name_ = "Armure en cuir";
 		    Item::desc_ = "Une armure en cuir. Souple mais peu résistante. ";

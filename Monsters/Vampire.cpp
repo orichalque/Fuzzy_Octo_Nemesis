@@ -8,8 +8,19 @@
  * Monster for FuzzyOctoNemesis. Can be found in the dungeon
  *
  */
+ 
+/**
+* \class Vampire
+* \brief Define a concrete Monster
+*/   
  class Vampire : public Monster {
     public: 
+    /**
+    * \fn Vampire()
+    * \brief Instancie un monstre concret avec ses attributs définis
+    * \param void 
+    * \return void
+    */       
 	Vampire() {
 		Character::desc_ = "Un vampire assoiffé de sang";
 		Character::name_ = "Vampire";

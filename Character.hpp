@@ -1,5 +1,6 @@
 /**
  * \file Character.hpp
+ * \class Character
  * \brief Character class definition
  * \author Thibault BLF. Corentin M.
  * \version 1.00
@@ -14,21 +15,21 @@
 
 class Character{ //Abstract Class 
 	protected:
-		int life_; //Life Points of the character 
-		int maxLife_;
-		int attack_; //Attack points of the character
-		int def_; //Defense points of the character
-		int dext_; //Dexterity of the Character
-		int x_; //X Axis of the character. Used for graphic display
-		int y_; //Y Axis of the character. Used for graphic display
-		std::string name_; //Name of the character. 
-		std::string desc_; //Short description of the character	
-		char symbol_; //Graphic representation	
+		int life_; /*!< Life Points of the character */
+		int maxLife_; /*!< Nombre maximum de points de vie du personnage. */
+		int attack_; /*!< Attack points of the character */
+		int def_; /*!< Defense points of the character */
+		int dext_; /*!< Dexterity of the Character */
+		int x_; /*!< X Axis of the character. Used for graphic display */
+		int y_; /*!< Y Axis of the character. Used for graphic display */
+		std::string name_; /*!< Name of the character. */
+		std::string desc_; /*!< Short description of the character	*/
+		char symbol_; /*!< Graphic representation */
 		
-        shared_ptr<Equipement> weapon;
-        shared_ptr<Equipement> armor;
-        shared_ptr<Equipement> helmet;
-        shared_ptr<Equipement> shield;
+        shared_ptr<Equipement> weapon;/*!< Equiped Weapon */
+        shared_ptr<Equipement> armor;/*!< Equiped armor */
+        shared_ptr<Equipement> helmet;/*!< Equiped helmet */
+        shared_ptr<Equipement> shield;/*!< Equiped shield */
 	
 	public:
 		Character();

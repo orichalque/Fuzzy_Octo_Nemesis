@@ -18,8 +18,6 @@ class Armor : public Equipement
 	    Armor();
 	    ~Armor();
 		virtual bool isArmor();
-		virtual bool isEquipement();
-		
 };
 
 #endif

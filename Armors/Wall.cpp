@@ -8,8 +8,19 @@
  * Wall for equiping. Best Armor of the game
  *
  */
+ 
+ /**
+  * \class Wall
+  * \brief Concrete armor for equiping
+  */
  class Wall : public Armor {
     public:
+        /**
+         * \fn Wall()
+         * \brief instancie une armure avec des attributs définis
+         * \param void
+         * \return void
+         */
         Wall() {
             Item::name_ = "La Muraille";
 		    Item::desc_ = "L\'armure ultime, réputée infranchissable. ";

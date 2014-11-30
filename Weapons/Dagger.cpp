@@ -8,8 +8,19 @@
  * Dagger weapon equipement. Low stats
  *
  */
+ 
+ /**
+ * \class Dagger
+ * \brief Define a concrete weapon for equiping
+ */
  class Dagger : public Weapon {
     public:
+       /**
+        * \fn Dagger()
+        * \brief Instancie une arme concrete avec des attributs pré-définis
+        * \param void 
+        * \return void 
+        */    
         Dagger() {
             Item::name_ = "Dague";
 		    Item::desc_ = "Une dague affutée.";

@@ -1,12 +1,38 @@
-
 #include "MonsterFactoryConcrete.hpp"
 using namespace std;
+
+/**
+ * \fn MonsterFactoryConcrete::MonsterFactoryConcrete()
+ * \brief Instancie la fabrique concrète de monstres
+ *
+ * \param void
+ * \return void
+ *
+ */ 
 MonsterFactoryConcrete::MonsterFactoryConcrete() {
 }
 
+/**
+ * \fn MonsterFactoryConcrete::~MonsterFactoryConcrete()
+ * \brief Détruit la fabrique concrète de monstres
+ *
+ * \param void
+ * \return void
+ *
+ * Grâce aux smart pointers, c'est vide.
+ */
 MonsterFactoryConcrete::~MonsterFactoryConcrete() { 
 }
 
+/**
+ * \fn shared_ptr<Monster> MonsterFactoryConcrete::create(int i)
+ * \brief Renvoit le monstre correspondant à l'ID en entrée
+ *
+ * \param int 
+ * \return shared_ptr<Monster>
+ *
+ * Chaque tranche de 3 correspond à un niveau. 1->3 : Level 1, 4->6 : Level 2, etc ... 
+ */
 shared_ptr<Monster> MonsterFactoryConcrete::create(int i) {
     switch(i) {
     	/* Level 1 */

@@ -2,14 +2,39 @@
 
 using namespace std;
 
+/**
+ * \fn EquipementFactory::EquipementFactory()
+ * \brief Instancie la factory d'équipement
+ *
+ * \param void
+ * \return void
+ *
+ */ 
 EquipementFactory::EquipementFactory() {
 	
 }
 
+/**
+ * \fn EquipementFactory::~EquipementFactory()
+ * \brief Detruit une factory d'equipement
+ *
+ * \param void
+ * \return void
+ * Grace au smart pointers on a rien a désallouer
+ */ 
 EquipementFactory::~EquipementFactory() {
 
 }
 
+/**
+ * \fn shared_ptr<Equipement> EquipementFactory::create(int i)
+ * \brief renvoit un equipement
+ *
+ * \param int i
+ * \return shared_ptr<Equipement>$
+ *
+ * Instancie l'équipemen correspondant à l'identifiant passé en entrée
+ */ 
 shared_ptr<Equipement> EquipementFactory::create(int i) {
 	switch(i) {
 		case 1:

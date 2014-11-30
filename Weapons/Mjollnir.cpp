@@ -8,8 +8,19 @@
  * Mjollnir weapon equipement. High stats
  *
  */
+ 
+ /**
+ * \class Mjollnir
+ * \brief Define a concrete weapon for equiping
+ */
  class Mjollnir : public Weapon {
     public:
+       /**
+        * \fn Mjollnir()
+        * \brief Instancie une arme concrete avec des attributs pré-définis
+        * \param void 
+        * \return void 
+        */    
         Mjollnir() {
             Item::name_ = "Mjollnir";
 		    Item::desc_ = "Ce marteau est dévastateur, mais terriblement lourd. ";

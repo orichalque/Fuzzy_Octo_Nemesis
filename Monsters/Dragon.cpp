@@ -8,9 +8,19 @@
  * Boss for FuzzyOctoNemesis. Can be found in the dungeon
  *
  */
- 
+
+/**
+* \class Dragon
+* \brief Define a concrete Boss
+*/ 
  class Dragon : public Monster {
     public: 
+    /**
+    * \fn Dragon()
+    * \brief Instancie un monstre concret avec ses attributs définis
+    * \param void 
+    * \return void
+    */    
 	Dragon() {
 		Character::desc_ = "Un lézard vert de 15 mètres crachant du feu";
         Character::name_ = "Dragon";

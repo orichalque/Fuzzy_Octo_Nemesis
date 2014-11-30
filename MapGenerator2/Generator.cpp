@@ -3,12 +3,23 @@
 using namespace std;
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~ Constructor and Destructor ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/** 
+ * \fn Generator::Generator()
+ * \brief Instancie le Generateur, sa racine et la matrice
+ * \param void 
+ * \return void
+ */
 Generator::Generator() {
     root = new Leaf(0,0, SIZE, SIZE); // main leaf
     mat.resize( SIZE, vector<char>( SIZE, '#'));
 }
 
-
+/** 
+ * \fn Generator::~Generator()
+ * \brief Détruit le generateur, sa racine, et ses vectors 
+ * \param void 
+ * \return void
+ */
 Generator::~Generator() {
     delete root;
     for (Leaf *l : leafs) {
@@ -23,14 +34,24 @@ Generator::~Generator() {
     }
 }
 
+/** 
+ * \fn int Generator::getSize()
+ * \brief Renvoit la taille de la matrice
+ * \param void 
+ * \return int
+ */
 int Generator::getSize() {
    return SIZE;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */
 
-/* Find Leaf Method
-/* Return True if the room in parameter is in one of the leafs                          */
+/** 
+ * \fn bool Generator::findLeaf(Rectangle* l)
+ * \brief Return True if the room in parameter is in one of the leafs  
+ * \param Rectangle* l
+ * \return bool
+ */
 bool Generator::findLeaf(Rectangle* l) {
     for (Leaf* i : leafs) {
         if (i -> getRoom() == l) { //Pointing the same Rectangle object ...
@@ -41,27 +62,42 @@ bool Generator::findLeaf(Rectangle* l) {
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */
 
-
-/* GetMap
-/* Return the matrice containing the map. 
-/* PRE : createHalls already called                                                     */
+/** 
+ * \fn vector< vector<char> >  Generator::getMap() 
+ * \brief Return the matrice containing the map.
+ * \param void
+ * \return vector< vector<char> >
+ */                                                   
 vector< vector<char> >  Generator::getMap() {
 	return mat;
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */
 
-
-/*  Split method                                                                        */
-/*  Uses Binary Space Partioning trees                                                  */
-/*  Starts from root leaf, and divide it recursiveley until there's no space remaining  */
+/** 
+ * \fn void Generator::split() 
+ * \brief Launch the splitting of the BSP tree
+ * \param void 
+ * \return void
+ *  Uses Binary Space Partioning trees
+ *  Starts from root leaf, and divide it recursiveley until there's no space remaining
+ */                                                          
 void Generator::split() {
     root -> split(&leafs, 1); //on met en entrée l'adresse du vector.
 }
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */
 
-/*  CreateRoom method                                                                   */
-/*  Uses the CreateRoom method on each leaf                                             */
-/*  PreCondition : split methods already called                                         */
+
+/** 
+ * \fn void Generator::createRoom()
+ * \brief create the rooms in the tree
+ * \param void 
+ * \return void
+ *
+ *  CreateRoom method                                                                   
+ *  Uses the CreateRoom method on each leaf                                             
+ *  PreCondition : split methods already called                                         */
+ 
 void Generator::createRoom() {
     int n = 0;
     for (Leaf* l : leafs) {
@@ -71,9 +107,16 @@ void Generator::createRoom() {
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */
 
-/*  CreateHalls method                                                                   */
-/*  Create the halls between the rooms.                                                  */
-/*  PreCondition : createRoom methods already called                                     */
+/** 
+ * \fn void Generator::createHalls()
+ * \brief create the halls between rooms 
+ * \param void 
+ * \return void
+ *
+ *  CreateHalls method                                                                   
+ *  Create the halls between the rooms.                                                  
+ *  PreCondition : createRoom methods already called                                     */
+ 
 void Generator::createHalls() {
     int i(0); 
     Rectangle * thisR;
@@ -97,7 +140,7 @@ void Generator::createHalls() {
         }
         unions.push_back(leafs.at(Nearestroom) -> getRoom());
         /* Rooms are now joined */
-        leafs.at(Nearestroom) -> join();
+        //leafs.at(Nearestroom) -> join();
         l -> join();
             thisR = l -> getRoom(); // Rectangle of the main leaf 
             itR = leafs.at(Nearestroom) -> getRoom(); // Rectangle of the nearest leaf
@@ -144,10 +187,15 @@ void Generator::createHalls() {
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */
 
-
-/*  BuildMap method
-/*  Build the map inside the matrix
-/*  PreCondition : createHalls already called.                              */           
+/** 
+ * \fn void Generator::buildMap()
+ * \brief build the matrix from the BSP tree
+ * \param void
+ * \return void
+ *
+ *  BuildMap method
+ *  Build the map inside the matrix
+ *  PreCondition : createHalls already called.                              */           
 void Generator::buildMap() {
     int k(0);
     int abs, w2, ord, h2;
@@ -190,10 +238,17 @@ void Generator::buildMap() {
     
 }
 
-/*
+/** 
+ * \fn void Generator::init()
+ * \brief initialise the Generator
+ * \param void 
+ * \return void
+ *
+ *
  *  Init Method
  *  Clear all the vectors for new Map Generation
  */
+ 
 void Generator::init() {
     root = new Leaf(0,0, SIZE, SIZE); // main leaf
     mat.resize( SIZE, vector<char>( SIZE, '#'));
@@ -201,7 +256,12 @@ void Generator::init() {
     halls.clear();
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */
-
+/** 
+ * \fn char Generator::updateCharPosition(shared_ptr<Character> character )
+ * \brief update the position of the character in the map
+ * \param shared_ptr<Character> character
+ * \return char
+ */
 char Generator::updateCharPosition(shared_ptr<Character> character ) {
     char cell = mat[character -> x()][character -> y()];
     mat[character -> x()][character -> y()] = '@';
@@ -228,6 +288,12 @@ char Generator::updateCharPosition(shared_ptr<Character> character ) {
     return cell;
 }
 
+/** 
+ * \fn char Generator::placeCharacter(shared_ptr<Character> c)
+ * \brief place the Character in an empty room
+ * \param shared_ptr<Character> 
+ * \return char
+ */
 char Generator::placeCharacter(shared_ptr<Character> c) {
    char cellBeforeMove;
    for (Leaf* l : leafs) {
@@ -242,7 +308,12 @@ char Generator::placeCharacter(shared_ptr<Character> c) {
    }   
 }
 
-
+/** 
+ * \fn shared_ptr<Monster> Generator::placeBoss(int level, shared_ptr<BossFactory> mf)
+ * \brief place the boss in an empty room
+ * \param int level, shared_ptr<BossFactory> mf
+ * \return shared_ptr<Monster>
+ */
 shared_ptr<Monster> Generator::placeBoss(int level, shared_ptr<BossFactory> mf) {
 	Leaf* l;
 	for (int i = leafs.size()-1; i != 0; i--) {
@@ -256,18 +327,21 @@ shared_ptr<Monster> Generator::placeBoss(int level, shared_ptr<BossFactory> mf) 
 	}
 }
 
+/** 
+ * \fn vector< shared_ptr<Monster> > Generator::placeMonsters(int level, shared_ptr<MonsterFactoryConcrete> mfc, shared_ptr<BossFactory> bf)
+ * \brief place the monsters in empty rooms
+ * \param int level, shared_ptr<MonsterFactoryConcrete> mfc, shared_ptr<BossFactory> bf
+ * \return vector< shared_ptr<Monster> >
+ */
 vector< shared_ptr<Monster> > Generator::placeMonsters(int level, shared_ptr<MonsterFactoryConcrete> mfc, shared_ptr<BossFactory> bf) {
 	vector< shared_ptr<Monster> > monsters;
 	monsters.push_back(placeBoss(level, bf));
 	int mobs_to_add[3];
-	int seed_for_random(0);
-	
-	/* get the 3 right monsters for the actual level */
-	
+	int seed_for_random(0);	
+	/* get the 3 right monsters for the actual level */	
 	for (int i = -1; i < 2; ++i) {
 		mobs_to_add[i+1] = (2*level + (level-1)) +i;
-	}
-	
+	}	
 	for (Leaf* l : leafs) {
 		srand (time(NULL) + seed_for_random);
 		++seed_for_random;
@@ -278,10 +352,8 @@ vector< shared_ptr<Monster> > Generator::placeMonsters(int level, shared_ptr<Mon
         	monsters.back() -> setX(l->getRoom() -> getXCenter());
         	monsters.back() -> setY(l->getRoom() -> getYCenter());
         }
-	} 
-	
+	} 	
 	return monsters;
-	
 }
 
 	

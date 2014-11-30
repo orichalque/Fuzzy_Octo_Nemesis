@@ -8,8 +8,18 @@
  * Monster for FuzzyOctoNemesis. Can be found in the dungeon
  *
  */
+/**
+* \class Bat
+* \brief Define a concrete Monster
+*/ 
  class Bat : public Monster {
     public: 
+    /**
+    * \fn Bat()
+    * \brief Instancie un monstre concret avec ses attributs définis
+    * \param void 
+    * \return void
+    */
 	Bat() {
 		Character::name_ = "Chauve-Souris";
         Character::attack_ = 8;

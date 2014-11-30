@@ -3,7 +3,12 @@
 #include<cstdlib>
 #include"Leaf.hpp"
 
-
+/**
+ * \fn Leaf::Leaf()
+ * \brief Instancie une feuille, de taille nulle et sans fils
+ * \param void
+ * \return void
+ */ 
 Leaf::Leaf() {
     x = 0;
     y = 0;
@@ -16,6 +21,12 @@ Leaf::Leaf() {
     empty = true;
 }
 
+/**
+ * \fn Leaf::Leaf(int x_, int y_, int width_, int height_)
+ * \brief Instancie une feuille avec les attributs en paramètres
+ * \param int x_, int y_, int width_, int height_
+ * \return void
+ */ 
 Leaf::Leaf(int x_, int y_, int width_, int height_) {
     x = x_;
     y = y_;
@@ -27,20 +38,44 @@ Leaf::Leaf(int x_, int y_, int width_, int height_) {
     linked = false;
 }
 
+/**
+ * \fn Leaf::~Leaf()
+ * \brief Détruit la feuille et ses fils récursivement
+ * \param void
+ * \return void
+ */ 
 Leaf::~Leaf() {
     delete right;
     delete left;
     delete room;
 }
 
+/**
+ * \fn Leaf* Leaf::getRight()
+ * \brief Renvoit le fils droit
+ * \param void 
+ * \return Leaf*
+ */ 
 Leaf* Leaf::getRight() {
     return right;
 }
 
+/**
+ * \fn Leaf* Leaf::getLeft()
+ * \brief Renvoit le fils gauche
+ * \param void
+ * \return Leaf*
+ */ 
 Leaf* Leaf::getLeft() {
     return left;
 }
 
+/**
+ * \fn Rectangle* Leaf::getRoom()
+ * \brief Renvoit la pièce a l'intérieur de la feuille
+ * \param void
+ * \return Rectangle*
+ */ 
 Rectangle* Leaf::getRoom() {
     return room;
 }
@@ -49,7 +84,16 @@ Rectangle* Leaf::getRoom() {
 /* Split : feuille trop large ? on coupe verticalement.
     feuille trop longue ? On coupe horizontalement 
     ses deux fils prennent chaque partie coupée */
-    
+/**
+ * \fn bool Leaf::split(vector<Leaf*> *leafs, int seed) 
+ * \brief coupe la feuille en 2.
+ * \param vector<Leaf*> *leafs, int seed
+ * \return bool
+ *
+ * Split : feuille trop large ? on coupe verticalement.
+ * Feuille trop longue ? On coupe horizontalement 
+ * ses deux fils prennent chaque partie coupée
+ */     
 bool Leaf::split(vector<Leaf*> *leafs, int seed) {
     if ((right != NULL) and (left != NULL)) {
         return false; //feuille déjà coupée en deux
@@ -81,26 +125,62 @@ bool Leaf::split(vector<Leaf*> *leafs, int seed) {
     return true;
 }
 
+/**
+ * \fn void Leaf::join()
+ * \brief Indique qu'une feuille est jointe a une autre
+ * \param void
+ * \return void
+ */ 
 void Leaf::join() {
     linked = true;
 }
 
+/**
+ * \fn bool Leaf::isJoined() 
+ * \brief teste si une feuille est liée à une autre
+ * \param void
+ * \return bool
+ */ 
 bool Leaf::isJoined() {
     return linked;
 }
 
+/**
+ * \fn bool Leaf::isEmpty()
+ * \brief teste si une feuille contient une pièce
+ * \param void
+ * \return bool
+ */ 
 bool Leaf::isEmpty() {
     return empty;
 }
 
+/**
+ * \fn void Leaf::setFull() 
+ * \brief remplit une feuille vec une pièce
+ * \param void
+ * \return void
+ */ 
 void Leaf::setFull() {
 	empty = false;
 }
 
+/**
+ * \fn int Leaf::getRoomSurface()
+ * \brief Renvoit la surface de la pièce à l'intérieur de la feuille
+ * \param void
+ * \return int
+ */ 
 int Leaf::getRoomSurface() {
     return (room -> getWidth() * room -> getHeight());
 }
 
+/**
+ * \fn int Leaf::getRoomCenterX()
+ * \brief renvoit l'abscisse du centre de la pièce dans la room
+ * \param void
+ * \return int
+ */ 
 int Leaf::getRoomCenterX() {
     if (room != NULL) {
         return room -> getXCenter();
@@ -109,6 +189,12 @@ int Leaf::getRoomCenterX() {
     }
 }
 
+/**
+ * \fn int Leaf::getRoomCenterY()
+ * \brief renvoit l'ordonnée du centre de la pièce dans la room
+ * \param void
+ * \return int
+ */ 
 int Leaf::getRoomCenterY() {
     if (room != NULL) {
         return room -> getYCenter();
@@ -117,6 +203,12 @@ int Leaf::getRoomCenterY() {
     }
 }
 
+/**
+ * \fn bool Leaf::createRoom(int seed)
+ * \brief Crée une room à l'intérieur de la feuille
+ * \param int seed
+ * \return bool
+ */ 
 bool Leaf::createRoom(int seed) {
     if (right != NULL and left != NULL) {
         cout << "Cette feuille n'est pas terminale" << endl;
@@ -135,6 +227,13 @@ bool Leaf::createRoom(int seed) {
     room = new Rectangle(x+x2, y+y2, w, h);
 }   
 
+/**
+ * \fn void Leaf::getInfoRec()
+ * \brief appelle getInfo sur la feuille terminale récursivement
+ * \param void
+ * \return void
+ * \deprecated Déprécié
+ */ 
 void Leaf::getInfoRec() {
     if (right == NULL and left == NULL) {
         this -> getInfo();
@@ -148,6 +247,13 @@ void Leaf::getInfoRec() {
     }
 }
 
+/**
+ * \fn void Leaf::getInfo()
+ * \brief affiche les infos ... Pour le debug
+ * \param void 
+ * \return void
+ * \deprecated Déprécié
+ */ 
 void Leaf::getInfo() {
     cout << " x,y: " << x << "," << y << " width*height: " << width << "*" << height <<endl;
     if (room != NULL) {
@@ -155,6 +261,14 @@ void Leaf::getInfo() {
     }
 }
 
+/**
+ * \fn int randomize(int min, int max, int seed)
+ * \brief Renvoit un nombre aléatoire entre min et max. 
+ * \param int min, int max, int seed
+ * \return int
+ * La seed permet d'avoir des nombres plus aléatoires quand on appelle la méthode
+ * dans une courte période. 
+ */ 
 int randomize(int min, int max, int seed) {
     srand(time(NULL) + seed); //rand initialisation
     int n = max - min + 1;

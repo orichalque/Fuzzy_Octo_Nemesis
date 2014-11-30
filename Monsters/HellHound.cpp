@@ -8,8 +8,19 @@
  * Boss for FuzzyOctoNemesis. Can be found in the dungeon
  *
  */
+
+/**
+* \class HellHound
+* \brief Define a concrete Boss
+*/   
  class HellHound : public Monster {
     public: 
+    /**
+    * \fn HellHound()
+    * \brief Instancie un monstre concret avec ses attributs définis
+    * \param void 
+    * \return void
+    */       
 	HellHound() {
 		Character::desc_ = "Un monstrueux chien avec des yeux enflammés";
 		Character::name_ = "Chien de l\'enfer";

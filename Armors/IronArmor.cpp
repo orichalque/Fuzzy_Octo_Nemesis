@@ -9,8 +9,18 @@
  *
  */
  
+ /**
+  * \class IronArmor
+  * \brief Concrete armor for equiping
+  */
  class IronArmor : public Armor {
     public:
+        /**
+         * \fn IronArmor()
+         * \brief instancie une armure avec des attributs définis
+         * \param void
+         * \return void
+         */
         IronArmor() {
             Item::name_ = "Armure en fer";
 		    Item::desc_ = "Un armure en fer légèrement rouillée. ";

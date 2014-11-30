@@ -1,8 +1,27 @@
 #include "FightState.hpp"
 
+/**
+ * \fn FightState::FightState(Game* game) : GameState(game)
+ * \brief Constructeur d'etat
+ *
+ * \param Game* game
+ * \return nouvelle instance de fightState
+ *
+ * Crée un état de combat, avec un attribut Game.
+ */ 
 FightState::FightState(Game* game) : GameState(game)
 {}
 
+
+/**
+ * \fn FightState::action(shared_ptr<Monster> monster)
+ * \brief Lance un combat
+ *
+ * \param shared_ptr<Monster> monster
+ * \return void
+ *
+ * Lance un combat conte le monstre en paramètre. Changement d'état à la fin.
+ */ 
 void FightState::action(shared_ptr<Monster> monster)
 {   
 	bool endGame = false;

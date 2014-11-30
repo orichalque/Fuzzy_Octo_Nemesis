@@ -9,8 +9,18 @@
  *
  */
 
+/**
+* \class Kunee
+* \brief define a concrete helmet
+*/
 class Kunee : public Helmet {
     public:
+       /**
+        * \fn Kunee()
+        * \brief Instancie un casque concret avec des attributs définis
+        * \param void
+        * \return void
+        */    
         Kunee() {
             Item::name_ = "Kunée";
 		    Item::desc_ = "Le casque légendaire Kunée. Il dégage une atmosphère confortante. ";

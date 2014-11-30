@@ -9,8 +9,18 @@
  *
  */
  
+ /**
+ * \class ShortSword
+ * \brief Define a concrete weapon for equiping
+ */
 class ShortSword : public Weapon {
     public:
+       /**
+        * \fn ShortSword()
+        * \brief Instancie une arme concrete avec des attributs pré-définis
+        * \param void 
+        * \return void 
+        */    
         ShortSword() {
             Item::name_ = "Epee courte";
 		    Item::desc_ = "Une épée courte à la lame bien affutée. ";

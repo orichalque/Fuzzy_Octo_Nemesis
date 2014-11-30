@@ -9,14 +9,14 @@
  *
  */
 
-#ifndef Shield_HPP
-#define Shield_HPP
+#ifndef __SHIELD_HPP__
+#define __SHIELD_HPP_
 
 class Shield : public Equipement {
 	public:
+	    Shield();
 	    ~Shield();
 		virtual bool isShield();
-		virtual bool isEquipement();
 		
 };
 

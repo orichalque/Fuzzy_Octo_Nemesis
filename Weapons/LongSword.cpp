@@ -8,8 +8,19 @@
  * Long sword weapon equipement. medium stats
  *
  */
+ 
+ /**
+ * \class LongSword
+ * \brief Define a concrete weapon for equiping
+ */
  class LongSword : public Weapon {
     public:
+       /**
+        * \fn LongSword()
+        * \brief Instancie une arme concrete avec des attributs pré-définis
+        * \param void 
+        * \return void 
+        */    
         LongSword() {
             Item::name_ = "Epee longue";
 		    Item::desc_ = "Une épée longue tranchante comme un rasoir. ";

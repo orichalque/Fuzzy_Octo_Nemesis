@@ -8,8 +8,19 @@
  * Guerrier character class. Middle attack and Middle defense
  *
  */
+ 
+/**
+ * \class Guerrier
+ * \brief Character concrete class 
+ */
 class Guerrier : public Character {
     public:
+       /**
+        * \fn Guerrier()
+        * \brief Instancie un personnage avec des attributs définis
+        * \param void 
+        * \return void
+        */
         Guerrier() {
             Character::desc_ = "Un guerrier habitué du combat. Bonne attaque et défense. ";
             Character::name_ = "Guerrier";

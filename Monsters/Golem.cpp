@@ -8,8 +8,19 @@
  * Boss for FuzzyOctoNemesis. Can be found in the dungeon
  *
  */
+ 
+/**
+* \class Golem
+* \brief Define a concrete boss
+*/ 
  class Golem : public Monster {
     public: 
+    /**
+    * \fn Golem()
+    * \brief Instancie un monstre concret avec ses attributs définis
+    * \param void 
+    * \return void
+    */    
 	Golem() {
 		Character::desc_ = "Un Golem de pierre d'au moins cinq mètres de haut !";
 		Character::name_ = "Golem";

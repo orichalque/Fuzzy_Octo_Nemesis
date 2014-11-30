@@ -8,8 +8,19 @@
  * SteelArmor for equiping
  *
  */
+
+ /**
+  * \class SteelArmor
+  * \brief Concrete armor for equiping
+  */
  class SteelArmor : public Armor {
     public:
+        /**
+         * \fn SteelArmor()
+         * \brief instancie une armure avec des attributs définis
+         * \param void
+         * \return void
+         */
         SteelArmor() {
             Item::name_ = "Armure en acier";
 		    Item::desc_ = "Une belle armure en acier, très resistante. ";

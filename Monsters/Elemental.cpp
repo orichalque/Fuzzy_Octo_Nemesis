@@ -8,8 +8,18 @@
  * Monster for FuzzyOctoNemesis. Can be found in the dungeon
  *
  */
+/**
+* \class Elemental
+* \brief Define a concrete Monster
+*/ 
  class Elemental : public Monster {
     public: 
+    /**
+    * \fn Elemental()
+    * \brief Instancie un monstre concret avec ses attributs définis
+    * \param void 
+    * \return void
+    */    
 	Elemental() {
 		Character::desc_ = "Un nuage dégageant des flammes et des éclairs ";
         Character::name_ = "Elemental";

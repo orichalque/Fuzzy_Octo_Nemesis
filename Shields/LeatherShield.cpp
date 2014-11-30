@@ -9,8 +9,18 @@
  *
  */
  
+/**
+* \class LeatherShield
+* \brief Define a concrete shield
+*/
 class LeatherShield : public Shield {
     public:
+       /**
+        * \fn LeatherShield()
+        * \brief Instancie une armure concrete avec des attributs pré-définis
+        * \param void
+        * \return void
+        */    
         LeatherShield() {
             Item::name_ = "Bouclier en cuir";
 		    Item::desc_ = "Un bouclier en bois, recouvert de cuir. ";

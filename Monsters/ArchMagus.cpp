@@ -8,9 +8,19 @@
  * Monster for FuzzyOctoNemesis. Can be found in the dungeon
  *
  */
- 
+
+/**
+* \class ArchMagus
+* \brief Define a concrete Monster
+*/ 
 class ArchMagus : public Monster {
     public: 
+    /**
+    * \fn ArchMagus()
+    * \brief Instancie un monstre concret avec ses attributs définis
+    * \param void 
+    * \return void
+    */
 	ArchMagus() {
 		Character::desc_ = "Un archimage dégageant une aura sinistre";
         Character::name_ = "Archimage";

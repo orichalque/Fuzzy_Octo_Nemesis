@@ -8,8 +8,19 @@
  * Voleur character class. High dexterity, low stats
  *
  */
+
+/**
+ * \class Voleur
+ * \brief Character concrete class 
+ */
 class Voleur : public Character {
     public:
+        /**
+        * \fn Voleur()
+        * \brief Instancie un personnage avec des attributs définis
+        * \param void 
+        * \return void
+        */    
         Voleur() {
             Character::desc_ = "Un brigand au pas souple et rapide. Bonne dextérité. ";
             Character::name_ = "Voleur";

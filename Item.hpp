@@ -18,7 +18,7 @@
 class Item /* Abstract class */
 {
 	public:
-		virtual std::string getName();
+		virtual std::string getName(); 
 		virtual std::string getDescription();
 		virtual int getValue();
 		virtual bool isConsumable();
@@ -26,12 +26,12 @@ class Item /* Abstract class */
 		virtual bool isEquipement();
 
 	protected:
-		std::string name_;
-		std::string desc_;
-		int value_;
-		int id_;
-		bool consumable_;
-		bool settable_;
+		std::string name_; /*!< Name of the item */
+		std::string desc_; /*!< Description of the item*/
+		int value_; /*!< Value of the item, for selling. Not implemented*/
+		int id_; /*!< Id of the item*/
+		bool consumable_;/*!< boolean telling if consumable or not*/
+		bool settable_;/*!< boolean telling if settable or not*/
 };
 
 #endif

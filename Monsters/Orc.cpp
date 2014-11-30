@@ -8,8 +8,19 @@
  * Monster for FuzzyOctoNemesis. Can be found in the dungeon
  *
  */
+
+/**
+* \class Orc
+* \brief Define a concrete Monster
+*/   
  class Orc : public Monster {
     public: 
+    /**
+    * \fn Orc()
+    * \brief Instancie un monstre concret avec ses attributs définis
+    * \param void 
+    * \return void
+    */       
 	Orc() {
 		Character::desc_ = "Un orc à l'allure aggressive";
 		Character::name_ = "Orc";

@@ -8,8 +8,18 @@
  * Monster for FuzzyOctoNemesis. Can be found in the dungeon
  *
  */
+/**
+* \class Ghoul
+* \brief Define a concrete Monster
+*/ 
  class Ghoul : public Monster {
     public: 
+    /**
+    * \fn Ghoul()
+    * \brief Instancie un monstre concret avec ses attributs définis
+    * \param void 
+    * \return void
+    */    
 	Ghoul() {
 		Character::desc_ = "Une goule en décomposition, dégueulasse";
 		Character::name_ = "Goule";

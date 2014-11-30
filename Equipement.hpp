@@ -14,9 +14,9 @@
 
 class Equipement : public Item {
 	protected :
-		int att;
-	    int def;
-		int dext;
+		int att; /*!<Attaque de l'arme */
+	    int def; /*!<Defense de l'arme */
+		int dext; /*!<Dextérité de l'arme */
 	
 	public:
 	    ~Equipement();

@@ -9,9 +9,18 @@
  *
  */
  
- 
+ /**
+* \class SteelHelm
+* \brief define a concrete helmet
+*/
 class SteelHelm : public Helmet {
     public:
+       /**
+        * \fn SteelHelm()
+        * \brief Instancie un casque concret avec des attributs définis
+        * \param void
+        * \return void
+        */    
         SteelHelm() {
             Item::name_ = "Casque en acier";
 		    Item::desc_ = "Un casque en acier hérissé de pointes métalliques. ";

@@ -15,3 +15,6 @@ run:
 clean: 
 	find . -name \*~ -exec rm -rf {} \;
 	$(RM) $(NAME)
+
+site:
+	firefox "html/index.html"

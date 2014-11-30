@@ -9,8 +9,18 @@
  *
  */
  
+ /**
+* \class MithrilHelm
+* \brief define a concrete helmet
+*/
 class MithrilHelm : public Helmet {
     public:
+       /**
+        * \fn MithrilHelm()
+        * \brief Instancie un casque concret avec des attributs définis
+        * \param void
+        * \return void
+        */    
         MithrilHelm() {
             Item::name_ = "Casque en mithril";
 		    Item::desc_ = "Un casque en mithril, léger et pourtant très resistant. ";

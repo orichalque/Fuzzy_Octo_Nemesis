@@ -8,8 +8,19 @@
  * Monster for FuzzyOctoNemesis. Can be found in the dungeon
  *
  */
+ 
+/**
+* \class Harpy
+* \brief Define a concrete Monster
+*/  
  class Harpy : public Monster {
     public: 
+    /**
+    * \fn Harpy()
+    * \brief Instancie un monstre concret avec ses attributs définis
+    * \param void 
+    * \return void
+    */     
 	Harpy() {
 		Character::desc_ = "Une femme-oiseau extremement rapide.";
 		Character::name_ = "Harpie";

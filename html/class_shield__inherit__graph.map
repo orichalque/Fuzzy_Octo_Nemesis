@@ -1,9 +1,0 @@
-<map id="Shield" name="Shield">
-<area shape="rect" id="node4" href="$class_barrel.html" title="Define a concrete shield. " alt="" coords="5,229,60,256"/>
-<area shape="rect" id="node5" href="$class_egid.html" title="Define a concrete shield. " alt="" coords="85,229,133,256"/>
-<area shape="rect" id="node6" href="$class_iron_shield.html" title="Define a concrete shield. " alt="" coords="157,229,236,256"/>
-<area shape="rect" id="node7" href="$class_leather_shield.html" title="Define a concrete shield. " alt="" coords="261,229,363,256"/>
-<area shape="rect" id="node8" href="$class_steel_shield.html" title="Define a concrete shield. " alt="" coords="387,229,475,256"/>
-<area shape="rect" id="node2" href="$class_equipement.html" title="Equipement abstract class definition. " alt="" coords="152,80,243,107"/>
-<area shape="rect" id="node3" href="$class_item.html" title="Abstract mother&#45;class defining the items. " alt="" coords="173,5,221,32"/>
-</map>

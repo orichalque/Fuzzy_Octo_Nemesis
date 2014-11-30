@@ -14,7 +14,9 @@ run:
 	$(LAUNCH)
 clean: 
 	find . -name \*~ -exec rm -rf {} \;
+	$(RM) -rf html
 	$(RM) $(NAME)
 
 site:
+	doxygen Doxyfile
 	firefox "html/index.html"

@@ -1,0 +1,11 @@
+<map id="Weapons.hpp" name="Weapons.hpp">
+<area shape="rect" id="node2" href="$_claymore_8cpp.html" title="Concrete weapon. " alt="" coords="5,80,168,107"/>
+<area shape="rect" id="node3" href="$_dagger_8cpp.html" title="Concrete weapon. " alt="" coords="193,80,340,107"/>
+<area shape="rect" id="node4" href="$_excalibur_8cpp.html" title="Concrete weapon. " alt="" coords="365,80,524,107"/>
+<area shape="rect" id="node5" href="$_knife_8cpp.html" title="Concrete weapon. " alt="" coords="549,80,684,107"/>
+<area shape="rect" id="node6" href="$_long_sword_8cpp.html" title="Concrete weapon. " alt="" coords="709,80,880,107"/>
+<area shape="rect" id="node7" href="$_mjollnir_8cpp.html" title="Concrete weapon. " alt="" coords="904,80,1051,107"/>
+<area shape="rect" id="node8" href="$_ragnarok_8cpp.html" title="Concrete weapon. " alt="" coords="1075,80,1237,107"/>
+<area shape="rect" id="node9" href="$_rapier_8cpp.html" title="Concrete weapon. " alt="" coords="1261,80,1405,107"/>
+<area shape="rect" id="node10" href="$_short_sword_8cpp.html" title="Concrete weapon. " alt="" coords="1430,80,1604,107"/>
+</map>

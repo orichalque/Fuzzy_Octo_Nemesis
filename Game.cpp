@@ -347,31 +347,7 @@ void Game::generateMap() {
  * Parcours la map, et l'affichage
  */ 
 void Game::displayMap() {
-    screen -> clearMap();
-    vector< vector<char> > map = generator -> getMap();
-    string line = "";
-    string vLine = "";   
-    // Add # at the top, the bottom, and the edges of the map for visual enhancement
-    for (int i = 0; i < (generator -> getSize() + 2); ++i) {
-        vLine = vLine + "#";
-    }   
-    
-    
-    screen -> mvprintMap(7,1,vLine);    
-    screen -> mvprintMap(7,1+generator->getSize()+1,vLine);
-    // parse each arrays of the matrix, put them in one string, and display it
-    for (int i = 0; i < generator -> getSize(); i++) {
-        line = "";
-        line = line + "#";
-        for (int j = 0; j < generator -> getSize(); j++) {
-            line = line + map[j][i];
-        }
-        line = line + "#";
-        screen -> mvprintMap(7, i+2, line);    
-    }
-    
-    // level indicator
-    screen -> mvprintMap(2, generator -> getSize() +3, "Level "+to_string(level));
+    screen -> displayMap(generator -> getMap(), generator -> getSize(), level);
 }
 
 

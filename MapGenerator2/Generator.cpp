@@ -133,57 +133,57 @@ void Generator::createHalls() {
         i++;
         for (int j = i; j < leafs.size(); ++j) {
             tmp = l -> getRoom() -> distFromThis(leafs.at(j) -> getRoom());
-            if (tmp >= min and tmp != 0 and !findLeaf(leafs.at(j) -> getRoom())) {
+            if (!leafs.at(j) -> isJoined() and tmp >= min and tmp != 0 and !findLeaf(leafs.at(j) -> getRoom())) {
                 min = tmp;
                 Nearestroom = j;
             }
         }
         unions.push_back(leafs.at(Nearestroom) -> getRoom());
         /* Rooms are now joined */
-        //leafs.at(Nearestroom) -> join();
+        leafs.at(Nearestroom) -> join();
         l -> join();
-            thisR = l -> getRoom(); // Rectangle of the main leaf 
-            itR = leafs.at(Nearestroom) -> getRoom(); // Rectangle of the nearest leaf
+        thisR = l -> getRoom(); // Rectangle of the main leaf 
+        itR = leafs.at(Nearestroom) -> getRoom(); // Rectangle of the nearest leaf
             
-            if (thisR -> getXCenter() > itR -> getXCenter()) {
-                /* The nearest room is on the left side */
+        if (thisR -> getXCenter() > itR -> getXCenter()) {
+            /* The nearest room is on the left side */
                 
-                halls.push_back(new Rectangle(itR -> getXCenter(), thisR -> getYCenter(), abs(thisR -> getXCenter() - itR -> getXCenter()) , 1));
+            halls.push_back(new Rectangle(itR -> getXCenter(), thisR -> getYCenter(), abs(thisR -> getXCenter() - itR -> getXCenter()) , 1));
                 
-                if (thisR -> getYCenter() > itR -> getYCenter()) {
+            if (thisR -> getYCenter() > itR -> getYCenter()) {
                     /* the nearest room is at the top */
                     
-                    halls.push_back(new Rectangle(itR -> getXCenter(), itR -> getYCenter(), 1, abs ( itR -> getYCenter() - thisR -> getYCenter())));
+                halls.push_back(new Rectangle(itR -> getXCenter(), itR -> getYCenter(), 1, abs ( itR -> getYCenter() - thisR -> getYCenter())));
                     
-                } else if (thisR -> getYCenter() < itR -> getYCenter()) {
+            } else if (thisR -> getYCenter() < itR -> getYCenter()) {
                     /* Nearest room is at the bottom */
-                   halls.push_back(new Rectangle(itR -> getXCenter(), thisR -> getYCenter(), 1, abs ( itR -> getYCenter() - thisR -> getYCenter())));
+               halls.push_back(new Rectangle(itR -> getXCenter(), thisR -> getYCenter(), 1, abs ( itR -> getYCenter() - thisR -> getYCenter())));
                     
-                } 
-            } else if (thisR -> getXCenter() > itR -> getXCenter()) {
+            } 
+        } else if (thisR -> getXCenter() > itR -> getXCenter()) {
                 /* the Nearest room is on the right side */
-                    halls.push_back(new Rectangle(thisR -> getXCenter(), thisR -> getYCenter(), abs ( thisR -> getXCenter() - itR -> getXCenter()), 1));
+                halls.push_back(new Rectangle(thisR -> getXCenter(), thisR -> getYCenter(), abs ( thisR -> getXCenter() - itR -> getXCenter()), 1));
                     
-                if (thisR -> getYCenter() > itR -> getYCenter()) {
-                    /* the nearest room is at the top */
-                    halls.push_back(new Rectangle(itR -> getXCenter(), itR -> getYCenter(), 1, abs ( itR -> getYCenter() - thisR -> getYCenter())));
-                } else if (thisR -> getYCenter() < itR -> getYCenter()) {
+            if (thisR -> getYCenter() > itR -> getYCenter()) {
+                   /* the nearest room is at the top */
+                halls.push_back(new Rectangle(itR -> getXCenter(), itR -> getYCenter(), 1, abs ( itR -> getYCenter() - thisR -> getYCenter())));
+            } else if (thisR -> getYCenter() < itR -> getYCenter()) {
                     /* Nearest room is at the bottom */
-                   halls.push_back(new Rectangle(itR -> getXCenter(), thisR -> getYCenter(), 1, abs ( itR -> getYCenter() - thisR -> getYCenter())));
-                } 
-            } else {
+               halls.push_back(new Rectangle(itR -> getXCenter(), thisR -> getYCenter(), 1, abs ( itR -> getYCenter() - thisR -> getYCenter())));
+            } 
+        } else {
             /* Rooms are at the same level */
             /* Only vertical lines are necessary */
-                if (thisR -> getYCenter() > itR -> getYCenter()) {
+            if (thisR -> getYCenter() > itR -> getYCenter()) {
                     /* the nearest room is at the top */
-                    halls.push_back(new Rectangle(itR -> getXCenter(), itR -> getYCenter(), 1, abs ( itR -> getYCenter() - thisR -> getYCenter())));
+                halls.push_back(new Rectangle(itR -> getXCenter(), itR -> getYCenter(), 1, abs ( itR -> getYCenter() - thisR -> getYCenter())));
                     
-                } else if (thisR -> getYCenter() < itR -> getYCenter()) {
+            } else if (thisR -> getYCenter() < itR -> getYCenter()) {
                     /* Nearest room is at the bottom */
-                   halls.push_back(new Rectangle(thisR -> getXCenter(), thisR -> getYCenter(), 1, abs ( itR -> getYCenter() - thisR -> getYCenter())));
-                }
+               halls.push_back(new Rectangle(thisR -> getXCenter(), thisR -> getYCenter(), 1, abs ( itR -> getYCenter() - thisR -> getYCenter())));
             }
-    }   
+        }
+    } 
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */
 

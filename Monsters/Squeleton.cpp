@@ -25,7 +25,7 @@
 		Character::desc_ = "Un Squelette avec une épée et un bouclier";
 		Character::name_ = "Squelette";
 		Character::symbol_ = 'S';
-		Character::attack_ = 18;
+		Character::attack_ = 31;
 		Character::def_ = 17;
 		Character::life_ = 65;
 		Character::dext_ = 13;

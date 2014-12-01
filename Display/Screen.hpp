@@ -39,6 +39,7 @@ class Screen {
         void clearStat();
         
         /* Information display */
+        void displayMap(vector< vector<char> > map, int size, int level);
         void init();
         void updateCharacterInfo(shared_ptr<Character> character);
         void updateMonsterInfo(shared_ptr<Character>monster);

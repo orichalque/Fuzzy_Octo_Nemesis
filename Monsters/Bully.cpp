@@ -23,7 +23,7 @@
 	Bully() {
 		Character::desc_ = "Un orc en armure, il est enragé.";
         Character::name_ = "Brute";
-        Character::attack_ = 60;
+        Character::attack_ = 95;
         Character::def_ = 45;
         Character::life_ = 200;
 	    Character::dext_ = 29;

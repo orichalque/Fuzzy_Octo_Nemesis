@@ -25,7 +25,7 @@
 		Character::desc_ = "Un Sorcier armé d\'un sceptre ensorcelé !";
 		Character::name_ = "Sorcier";
 		Character::symbol_ = 'S';
-		Character::attack_ = 26;
+		Character::attack_ = 49;
 		Character::def_ = 5;
 		Character::life_ = 35;
 		Character::dext_ = 16;

@@ -24,10 +24,10 @@ class Invincible : public Monster {
 	Invincible() {
 		desc_ = "THE big boss";
 		name_ = "L\'invincible";
-		attack_ = 100;
-		def_ = 100;
+		attack_ = 150;
+		def_ = 70;
 		life_ = 1000;
-		dext_ = 50;
+		dext_ = 35;
 		Character::symbol_ = '&';
 		Monster::lootList = {9, 14, 19, 24};
 	}

@@ -25,7 +25,7 @@ class Kobold : public Monster {
 		Character::desc_ = "Un Kobold poilu. Il sent très mauvais";
 		Character::name_ = "Kobold";
 		Character::symbol_ = 'K';
-		Character::attack_ = 16;
+		Character::attack_ = 31;
 		Character::def_ = 12;
 		Character::life_ = 55;
 		Character::dext_ = 14;

@@ -24,7 +24,7 @@
 	HellHound() {
 		Character::desc_ = "Un monstrueux chien avec des yeux enflammés";
 		Character::name_ = "Chien de l\'enfer";
-		Character::attack_ = 29;
+		Character::attack_ = 45;
 		Character::def_ = 19;
 		Character::life_ = 100;
 		Character::dext_ = 16;

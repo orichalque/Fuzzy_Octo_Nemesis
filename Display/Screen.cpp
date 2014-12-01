@@ -113,13 +113,52 @@ void Screen::init(void) {
 }      
 
 /**
+ * \fn void Screen::displayMap(vector< vector<char> > map, int size, int level)
+ * \brief Methode d'affichage de la carte
+ *
+ * \param vector< vector<char> > map, int size, int level
+ * \return void
+ *
+ * Parcours la map du générateur, et l'affiche en fonction de la taille. Affiche aussi le niveau actuel en bas à droite
+ */ 
+void Screen::displayMap(vector< vector<char> > map, int size, int level) {
+    clearMap();
+    string line = "";
+    string vLine = "";   
+    // Add # at the top, the bottom, and the edges of the map for visual enhancement
+    string fon = "~Fuzzy Octo Nemesis~";
+    while (fon.length() != (size+2)) {
+        fon = "#"+fon;
+        fon = fon + "#";
+    }
+    
+    for (int i = 0; i < (size + 2); ++i) {
+        vLine = vLine + "#";
+    }
+      
+    mvprintMap(7,1,fon);    
+    mvprintMap(7,1+size+1,vLine);
+    // parse each arrays of the matrix, put them in one string, and display it
+    for (int i = 0; i < size; i++) {
+        line = "";
+        line = line + "#";
+        for (int j = 0; j < size; j++) {
+            line = line + map[j][i];
+        }
+        line = line + "#";
+        mvprintMap(7, i+2, line);    
+    }
+    
+    // level indicator
+    mvprintMap(2, size +3, "Level "+to_string(level));
+}
+/**
  * \fn void Screen::displayIntro(void) 
  * \brief Affiche l'introduction
  * \param void 
  * \return void 
 
  */   
-
 void Screen::displayIntro(void) {
     string s = "FUZZY OCTO NEMESIS";
     int x(COLS/2 - (0.5)*s.length());
@@ -132,6 +171,8 @@ void Screen::displayIntro(void) {
          this_thread::sleep_for(chrono::milliseconds(150));
     }
     int ch(0);
+    string s3 = "Browse - Kill - Loot - Repeat";
+    mvwprintW(COLS/2 - (0.5)*s3.length(), y + 3, this -> win, s3);
     string s2 = "Press Enter";
     while (ch != 10) {
         mvwprintW(COLS/2 - (0.5)*s2.length(), y + 2, this -> win, s2);

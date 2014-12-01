@@ -1,0 +1,4 @@
+<map id="FightState" name="FightState">
+<area shape="rect" id="node2" href="$class_game_state.html" title="Mother&#45;class of the States. " alt="" coords="5,96,93,123"/>
+<area shape="rect" id="node3" href="$class_game.html" title="client class for FuzzyOctoNemesis " alt="" coords="21,5,77,32"/>
+</map>

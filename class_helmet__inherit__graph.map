@@ -1,0 +1,9 @@
+<map id="Helmet" name="Helmet">
+<area shape="rect" id="node4" href="$class_iron_helm.html" title="define a concrete helmet " alt="" coords="5,229,79,256"/>
+<area shape="rect" id="node5" href="$class_kunee.html" title="define a concrete helmet " alt="" coords="104,229,161,256"/>
+<area shape="rect" id="node6" href="$class_leather_helm.html" title="define a concrete helmet " alt="" coords="187,229,283,256"/>
+<area shape="rect" id="node7" href="$class_mithril_helm.html" title="define a concrete helmet " alt="" coords="307,229,395,256"/>
+<area shape="rect" id="node8" href="$class_steel_helm.html" title="define a concrete helmet " alt="" coords="419,229,500,256"/>
+<area shape="rect" id="node2" href="$class_equipement.html" title="Equipement abstract class definition. " alt="" coords="189,80,280,107"/>
+<area shape="rect" id="node3" href="$class_item.html" title="Abstract mother&#45;class defining the items. " alt="" coords="211,5,259,32"/>
+</map>

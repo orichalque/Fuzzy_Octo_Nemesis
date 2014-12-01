@@ -1,0 +1,5 @@
+<map id="SteelArmor" name="SteelArmor">
+<area shape="rect" id="node2" href="$class_armor.html" title="Armor class for FuzzyOctoNemesis. " alt="" coords="22,155,79,181"/>
+<area shape="rect" id="node3" href="$class_equipement.html" title="Equipement abstract class definition. " alt="" coords="5,80,96,107"/>
+<area shape="rect" id="node4" href="$class_item.html" title="Abstract mother&#45;class defining the items. " alt="" coords="27,5,75,32"/>
+</map>

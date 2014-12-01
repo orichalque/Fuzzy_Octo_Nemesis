@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_game_state.html" title="Mother&#45;class of the States. " alt="" coords="5,81,93,108"/>
+<area shape="rect" id="node2" href="$class_end_game_state.html" title="State ending the game. " alt="" coords="142,5,253,32"/>
+<area shape="rect" id="node3" href="$class_fight_state.html" title="State class for fightning. " alt="" coords="156,56,239,83"/>
+<area shape="rect" id="node4" href="$class_loot_state.html" title="State for looting the dead monsters. " alt="" coords="158,107,237,133"/>
+<area shape="rect" id="node5" href="$class_move_state.html" title="State class for moving. " alt="" coords="155,157,240,184"/>
+</map>

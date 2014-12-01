@@ -1,7 +1,0 @@
-<map id="main" name="main">
-<area shape="rect" id="node2" href="$class_game.html#aedb4cdc93c8ab85f2f7aff018ccd76ca" title="appelle la méthode de lancement du jeu " alt="" coords="105,5,244,32"/>
-<area shape="rect" id="node3" href="$class_game.html#a124812c1a7b84f3aead51cb35a5146f8" title="Methode de génération aléatoire de la map. " alt="" coords="105,56,245,83"/>
-<area shape="rect" id="node4" href="$class_game.html#a265b4a907a360afbb131334300968c9d" title="Methode d&#39;affichage de la carte. " alt="" coords="109,107,240,133"/>
-<area shape="rect" id="node5" href="$class_game.html#a53141ff044e4aa43f23d7dbed11272f6" title="Getter de l&#39;attribut level. " alt="" coords="117,157,232,184"/>
-<area shape="rect" id="node6" href="$class_game.html#a2355400f456780bddd38229a664e8b99" title="appelle la methode action sur l&#39;attribut d&#39;état " alt="" coords="125,208,225,235"/>
-</map>

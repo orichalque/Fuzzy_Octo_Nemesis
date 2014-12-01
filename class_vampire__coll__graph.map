@@ -1,4 +1,0 @@
-<map id="Vampire" name="Vampire">
-<area shape="rect" id="node2" href="$class_monster.html" title="Define the monsters for F.O.Nemesis. " alt="" coords="9,80,79,107"/>
-<area shape="rect" id="node3" href="$class_character.html" title="Character class definition. " alt="" coords="5,5,83,32"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="LongSword" name="LongSword">
-<area shape="rect" id="node2" href="$class_weapon.html" title="Weapon abstract class. " alt="" coords="15,155,85,181"/>
-<area shape="rect" id="node3" href="$class_equipement.html" title="Equipement abstract class definition. " alt="" coords="5,80,96,107"/>
-<area shape="rect" id="node4" href="$class_item.html" title="Abstract mother&#45;class defining the items. " alt="" coords="27,5,75,32"/>
-</map>
